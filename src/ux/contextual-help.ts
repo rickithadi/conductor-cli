@@ -190,9 +190,9 @@ export class ContextualHelp {
     const categories = blessed.list({
       top: 0,
       left: 0,
-      width: '30%',
-      height: '100%',
-      border: { type: 'line', fg: 'cyan' },
+      width: '30%' as any,
+      height: '100%' as any,
+      border: { type: 'line', fg: 'cyan' } as any,
       label: ' 📚 Help Categories ',
       items: [
         '🚀 Getting Started',
@@ -218,7 +218,7 @@ export class ContextualHelp {
       left: '30%' as any,
       width: '70%' as any,
       height: '90%' as any,
-      border: { type: 'line', fg: 'green' },
+      border: { type: 'line', fg: 'green' } as any,
       label: ' 📖 Help Content ',
       scrollable: true,
       alwaysScroll: true,
@@ -235,7 +235,7 @@ export class ContextualHelp {
       left: '30%' as any,
       width: '70%' as any,
       height: 3,
-      border: { type: 'line', fg: 'gray' },
+      border: { type: 'line', fg: 'gray' } as any,
       content: ' Use ↑↓ to navigate categories, Tab to switch panels, q to quit, / to search ',
       style: {
         fg: 'white',
@@ -459,7 +459,7 @@ conductor status --json | jq '.consensus.level'
       left: 'center' as any,
       width: '60%' as any,
       height: 3,
-      border: { type: 'line', fg: 'yellow' },
+      border: { type: 'line', fg: 'yellow' } as any,
       label: ' 🔍 Search Help ',
       inputOnFocus: true,
       style: {

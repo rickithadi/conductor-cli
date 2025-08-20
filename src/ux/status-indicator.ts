@@ -236,7 +236,7 @@ export class StatusIndicator {
       left: 0,
       right: 0,
       height: 3,
-      border: { type: 'line', fg: 'cyan' },
+      border: { type: 'line', fg: 'cyan' } as any,
       style: {
         fg: 'white',
         bg: 'black',
@@ -294,7 +294,7 @@ export class StatusIndicator {
       left: 0,
       width: '70%' as any,
       height: '80%' as any,
-      border: { type: 'line', fg: 'cyan' },
+      border: { type: 'line', fg: 'cyan' } as any,
       label: ' 👥 Agent Orchestra ',
       scrollable: true,
       tags: true
@@ -306,7 +306,7 @@ export class StatusIndicator {
       left: '70%' as any,
       width: '30%' as any,
       height: '80%' as any,
-      border: { type: 'line', fg: 'green' },
+      border: { type: 'line', fg: 'green' } as any,
       label: ' 📊 Consensus ',
       scrollable: true,
       tags: true
@@ -318,7 +318,7 @@ export class StatusIndicator {
       left: 0,
       width: '100%' as any,
       height: '20%' as any,
-      border: { type: 'line', fg: 'yellow' },
+      border: { type: 'line', fg: 'yellow' } as any,
       label: ' 📋 Activity Log ',
       scrollable: true,
       tags: true

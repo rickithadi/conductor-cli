@@ -1,14 +1,17 @@
 {
   "name": "conductor-cli",
   "version": "1.0.0",
-  "description": "🦆 Rubber ducking with AI experts - Your complete development team from PM to ship to secure",
+  "description": "🚂🦆 Complete AI Development Choo Choo Train! All aboard the AI Express with rubber ducking that actually responds. Choo choo your way to expert solutions!",
   "main": "dist/index.js",
   "bin": {
     "conductor": "dist/enhanced-cli.js",
     "multi-agent": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npm run clean && tsc",
+    "build:prod": "npm run clean && tsc --removeComments --sourceMap false",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build:prod",
     "dev": "tsx src/enhanced-cli.ts",
     "dev:legacy": "tsx src/cli.ts",
     "test": "jest",
@@ -27,15 +30,21 @@
     "init": "tsx src/enhanced-cli.ts init",
     "launch": "tsx src/enhanced-cli.ts launch",
     "quick-start": "tsx src/enhanced-cli.ts init --quick",
-    "precommit": "lint-staged",
-    "prepare": "husky install"
+    "recordings": "bash scripts/generate-recordings.sh",
+    "recordings:install": "which vhs || (echo 'Installing VHS...' && (brew install vhs || go install github.com/charmbracelet/vhs@latest))",
+    "precommit": "lint-staged"
   },
   "keywords": [
-    "cli",
-    "ai-development",
+    "conductor-cli",
+    "ai-express",
+    "train-conductor",
     "rubber-ducking",
-    "claude-code",
-    "multi-agent",
+    "claude-code-integration",
+    "multi-agent-orchestra",
+    "ai-development-team",
+    "development-conductor",
+    "express-workflow",
+    "ai-train-crew",
     "developer-tools",
     "github-integration",
     "react-development",
@@ -46,8 +55,24 @@
     "code-review",
     "pair-programming"
   ],
-  "author": "",
+  "author": "Hadi Rickit <team@gallifreyconsulting.com> (https://rickithadi.dev)",
   "license": "ISC",
+  "homepage": "https://github.com/rickithadi/multi-agent-workflow#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rickithadi/multi-agent-workflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rickithadi/multi-agent-workflow/issues"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "INSTALL.md"
+  ],
   "type": "commonjs",
   "lint-staged": {
     "src/**/*.{ts,tsx}": [

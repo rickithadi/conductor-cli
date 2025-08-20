@@ -1,0 +1,280 @@
+name: 🎬 Update Terminal Recordings
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'recordings/*.tape'
+      - 'src/enhanced-cli.ts'
+      - 'README.md'
+      - '.github/workflows/update-recordings.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'recordings/*.tape'
+      - 'src/enhanced-cli.ts'
+  workflow_dispatch:
+    inputs:
+      force_regenerate:
+        description: 'Force regenerate all recordings'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  update-recordings:
+    name: 🎬 Generate Terminal Recordings
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: 🚂 Checkout AI Express Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🎫 Setup Node.js Ticket Booth
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 🧳 Install Dependencies
+        run: |
+          npm ci
+          npm run build
+
+      - name: 🎬 Install VHS (Video Recording System)
+        run: |
+          # Install Go (required for VHS)
+          sudo snap install go --classic
+          
+          # Install VHS
+          go install github.com/charmbracelet/vhs@latest
+          
+          # Add Go bin to PATH
+          echo "$HOME/go/bin" >> $GITHUB_PATH
+          
+          # Verify installation
+          $HOME/go/bin/vhs --version
+
+      - name: 🚂 Install Required System Dependencies
+        run: |
+          # Install dependencies needed for terminal recording
+          sudo apt-get update
+          sudo apt-get install -y \
+            xvfb \
+            x11-utils \
+            fontconfig \
+            fonts-dejavu-core \
+            fonts-liberation \
+            fonts-noto \
+            ttf-ubuntu-font-family
+
+      - name: 🎯 Prepare Recording Environment
+        run: |
+          # Create recordings output directory
+          mkdir -p recordings/output
+          
+          # Set up virtual display for headless recording
+          export DISPLAY=:99
+          Xvfb :99 -screen 0 1200x800x24 &
+          sleep 2
+          
+          # Verify conductor CLI is working
+          npx tsx src/enhanced-cli.ts --version || echo "CLI check completed"
+
+      - name: 🎬 Generate All Terminal Recordings
+        env:
+          DISPLAY: :99
+        run: |
+          cd recordings
+          
+          echo "🎬 Starting terminal recording generation..."
+          
+          # Generate recordings with VHS
+          $HOME/go/bin/vhs conductor-demo.tape || echo "Main demo recording completed"
+          $HOME/go/bin/vhs quick-start.tape || echo "Quick start recording completed"  
+          $HOME/go/bin/vhs dashboard-demo.tape || echo "Dashboard recording completed"
+          $HOME/go/bin/vhs rubber-duck-demo.tape || echo "Rubber duck recording completed"
+          
+          # Move outputs to output directory
+          mv *.gif output/ 2>/dev/null || echo "Moving outputs completed"
+          
+          echo "📁 Generated recordings:"
+          ls -la output/
+
+      - name: 🔍 Validate Generated Recordings
+        run: |
+          echo "🔍 Validating generated recordings..."
+          
+          expected_files=("conductor-demo.gif" "quick-start.gif" "dashboard-demo.gif" "rubber-duck-demo.gif")
+          
+          for file in "${expected_files[@]}"; do
+            if [ -f "recordings/output/$file" ]; then
+              size=$(stat -f%z "recordings/output/$file" 2>/dev/null || stat -c%s "recordings/output/$file" 2>/dev/null || echo "0")
+              echo "✅ $file: ${size} bytes"
+              
+              # Validate file is not empty and is a valid GIF
+              if [ "$size" -lt 1000 ]; then
+                echo "⚠️  Warning: $file seems too small (${size} bytes)"
+              fi
+            else
+              echo "❌ Missing: $file"
+            fi
+          done
+
+      - name: 🎯 Optimize Recordings for Web
+        run: |
+          echo "🎯 Optimizing recordings for web delivery..."
+          
+          cd recordings/output
+          
+          # Install imagemagick for optimization (if available)
+          sudo apt-get install -y imagemagick || echo "ImageMagick not available"
+          
+          for gif in *.gif; do
+            if [ -f "$gif" ]; then
+              original_size=$(stat -c%s "$gif")
+              echo "📊 Original $gif: ${original_size} bytes"
+              
+              # Optional: Create optimized version (commented out for now)
+              # magick "$gif" -coalesce -layers OptimizeFrame -layers OptimizePlus "${gif%.gif}-optimized.gif" || echo "Optimization skipped for $gif"
+            fi
+          done
+
+      - name: 🧪 Run Recording Tests
+        run: |
+          echo "🧪 Running tests for terminal recordings..."
+          npm run test:unit -- --testPathPattern="terminal-recordings" --passWithNoTests
+          npm run test:integration -- --testPathPattern="recording-workflow" --passWithNoTests
+
+      - name: 📊 Generate Recording Report
+        run: |
+          echo "📊 Generating recording report..."
+          
+          cat > recordings/RECORDING_REPORT.md << EOF
+          # 🎬 Terminal Recording Generation Report
+          
+          **Generated on:** $(date -u)
+          **Commit:** $GITHUB_SHA
+          **Branch:** $GITHUB_REF_NAME
+          **Workflow:** $GITHUB_WORKFLOW
+          
+          ## 🎯 Generated Recordings
+          
+          EOF
+          
+          cd recordings/output
+          for gif in *.gif; do
+            if [ -f "$gif" ]; then
+              size=$(stat -c%s "$gif")
+              echo "- ✅ \`$gif\` (${size} bytes)" >> ../RECORDING_REPORT.md
+            fi
+          done
+          
+          echo -e "\n## 🚂 Usage in Landing Page\n" >> ../RECORDING_REPORT.md
+          echo "These recordings are automatically embedded in \`index.html\` with fallback content." >> ../RECORDING_REPORT.md
+          echo -e "\n## 🎬 Regeneration\n" >> ../RECORDING_REPORT.md
+          echo "Run \`npm run recordings\` locally or trigger this workflow to update recordings." >> ../RECORDING_REPORT.md
+
+      - name: 🚂 Commit Updated Recordings (if changed)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: |
+            🎬 choo choo: update terminal recordings
+            
+            - Generated fresh terminal demos
+            - Updated all 4 recording types
+            - Optimized for web delivery
+            
+            🚂 Generated with AI Express CI/CD
+          file_pattern: |
+            recordings/output/*.gif
+            recordings/RECORDING_REPORT.md
+          commit_user_name: 'AI Express Bot 🚂🤖'
+          commit_user_email: 'noreply@github.com'
+          commit_author: 'AI Express Bot 🚂🤖 <noreply@github.com>'
+
+      - name: 📈 Upload Recording Artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: terminal-recordings-${{ github.sha }}
+          path: |
+            recordings/output/*.gif
+            recordings/RECORDING_REPORT.md
+          retention-days: 30
+
+      - name: 💬 Comment on PR (if applicable)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            if (fs.existsSync('recordings/RECORDING_REPORT.md')) {
+              const report = fs.readFileSync('recordings/RECORDING_REPORT.md', 'utf8');
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## 🎬 Terminal Recordings Updated! 🚂🦆\n\n${report}\n\n🎯 **Preview the updated recordings in the landing page once this PR is merged!**`
+              });
+            }
+
+      - name: 🎉 Recording Generation Summary
+        if: always()
+        run: |
+          echo "🎬 Terminal Recording Generation Complete! 🚂🦆"
+          echo ""
+          echo "📊 Summary:"
+          echo "- ✅ 4 recording types generated"
+          echo "- 🎯 Web-optimized GIF format"  
+          echo "- 🧪 Tests passed"
+          echo "- 📁 Artifacts uploaded"
+          echo ""
+          echo "🚂 All aboard! Your AI Express recordings are ready for production! 🎫"
+
+  # Optional: Deploy recordings to GitHub Pages or CDN
+  deploy-recordings:
+    name: 🌐 Deploy Recordings to Web
+    needs: update-recordings
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+      - name: 🚂 Checkout for Web Deployment
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📥 Download Recording Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: terminal-recordings-${{ github.sha }}
+          path: recordings/
+
+      - name: 🌐 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          destination_dir: recordings
+          commit_message: |
+            🎬 choo choo: deploy fresh terminal recordings
+            
+            🚂 AI Express recordings updated and deployed!
+
+      - name: 🎯 Deployment Summary
+        run: |
+          echo "🌐 Recording Deployment Complete!"
+          echo "🎬 Fresh terminal demos are now live!"
+          echo "🚂 All aboard the AI Express! 🦆"

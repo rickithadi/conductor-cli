@@ -34,7 +34,7 @@ module.exports = {
     }
   },
   // Module name mapping for easier imports
-  moduleNameMapping: {
+  moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'
   },
   // Ignore patterns

@@ -142,6 +142,25 @@ describe('Enhanced CLI', () => {
     });
   });
 
+  describe('launch command', () => {
+    it('should have launch command with correct description', () => {
+      const launchCommand = program.commands.find(cmd => cmd.name() === 'launch');
+      expect(launchCommand).toBeDefined();
+      expect(launchCommand?.description()).toBe('🚀 Launch Claude Code with full AI team integration');
+    });
+
+    it('should have expected launch options', () => {
+      const launchCommand = program.commands.find(cmd => cmd.name() === 'launch');
+      const options = (launchCommand as any).options;
+      
+      const optionNames = options.map((opt: any) => opt.long);
+      expect(optionNames).toContain('--background');
+      expect(optionNames).toContain('--verbose');
+      expect(optionNames).toContain('--no-agents');
+      expect(optionNames).toContain('--context');
+    });
+  });
+
   describe('explain command', () => {
     it('should start status indicator for explain command', async () => {
       const explainCommand = program.commands.find(cmd => cmd.name() === 'explain');
@@ -361,7 +380,9 @@ describe('Enhanced CLI', () => {
     it('should have all expected commands', () => {
       const commandNames = program.commands.map(cmd => cmd.name());
       
+      // Core commands
       expect(commandNames).toContain('init');
+      expect(commandNames).toContain('launch');
       expect(commandNames).toContain('ask');
       expect(commandNames).toContain('explain');
       expect(commandNames).toContain('review');
@@ -371,6 +392,24 @@ describe('Enhanced CLI', () => {
       expect(commandNames).toContain('config');
       expect(commandNames).toContain('quick-fix');
       expect(commandNames).toContain('rubber-duck');
+      expect(commandNames).toContain('health');
+      expect(commandNames).toContain('plan-launch');
+      
+      // Rubber duck specialized commands
+      expect(commandNames).toContain('think');
+      expect(commandNames).toContain('debug');
+      expect(commandNames).toContain('design');
+      expect(commandNames).toContain('experiment');
+      
+      // Advanced coordination commands
+      expect(commandNames).toContain('orchestrate');
+      expect(commandNames).toContain('consult');
+      expect(commandNames).toContain('masterclass');
+      
+      // Session management commands
+      expect(commandNames).toContain('session');
+      expect(commandNames).toContain('remember');
+      expect(commandNames).toContain('forget');
     });
 
     it('should have all expected aliases', () => {

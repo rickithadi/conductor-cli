@@ -266,6 +266,132 @@ program
     statusIndicator.succeed('🎯 Problem solving session complete!');
   });
 
+// Rubber Duck Programming Specialized Commands
+program
+  .command('think <problem>')
+  .description('🤔 Think through logic and algorithms with AI guidance')
+  .option('-s, --step-by-step', 'Break down the problem step by step')
+  .option('-a, --algorithm', 'Focus on algorithmic approaches')
+  .action(async (problem, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start('🤔 Deep thinking about your problem...');
+    await thinkThroughProblem(problem, options);
+    statusIndicator.succeed('💡 Problem analysis complete!');
+  });
+
+program
+  .command('debug <error>')
+  .description('🔍 Debug issues with AI detective work')
+  .option('-t, --type <type>', 'Error type (runtime, compile, logic, performance)')
+  .option('-c, --context <context>', 'Additional context about when error occurs')
+  .action(async (error, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start('🔍 AI detective investigating your error...');
+    await debugWithAI(error, options);
+    statusIndicator.succeed('🎯 Debugging session complete!');
+  });
+
+program
+  .command('design <system>')
+  .description('🏗️ Design system architecture with AI architects')
+  .option('-s, --scale <scale>', 'Expected scale (small, medium, large, enterprise)')
+  .option('-t, --type <type>', 'System type (web, mobile, api, microservices)')
+  .option('-p, --patterns', 'Include design pattern recommendations')
+  .action(async (system, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start('🏗️ AI architects designing your system...');
+    await designSystemArchitecture(system, options);
+    statusIndicator.succeed('📐 System design complete!');
+  });
+
+program
+  .command('experiment <idea>')
+  .description('🧪 Experiment with new approaches and technologies')
+  .option('-t, --tech <technology>', 'Specific technology to experiment with')
+  .option('-r, --risks', 'Include risk analysis')
+  .option('-b, --benefits', 'Focus on potential benefits')
+  .action(async (idea, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start('🧪 Setting up AI laboratory for your experiment...');
+    await experimentWithIdea(idea, options);
+    statusIndicator.succeed('🔬 Experiment analysis complete!');
+  });
+
+// Advanced Multi-Agent Coordination Commands
+program
+  .command('orchestrate <task>')
+  .description('🎼 Orchestrate full AI team for complex planning')
+  .option('-a, --agents <agents>', 'Specific agents to include (comma-separated)')
+  .option('-p, --priority <priority>', 'Task priority (low, medium, high, critical)')
+  .action(async (task, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start('🎼 Orchestrating full AI team...');
+    await orchestrateFullTeam(task, options);
+    statusIndicator.succeed('🎯 Team orchestration complete!');
+  });
+
+program
+  .command('consult <agents> <question>')
+  .description('👥 Consult specific group of agents')
+  .option('-c, --consensus', 'Require team consensus')
+  .option('-v, --verbose', 'Detailed reasoning from each agent')
+  .action(async (agents, question, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start(`👥 Consulting with ${agents}...`);
+    await consultAgentGroup(agents, question, options);
+    statusIndicator.succeed('✅ Group consultation complete!');
+  });
+
+program
+  .command('masterclass <agent> <topic>')
+  .description('🎓 Deep dive learning session with expert agent')
+  .option('-l, --level <level>', 'Learning level (beginner, intermediate, advanced)')
+  .option('-e, --examples', 'Include practical examples')
+  .option('-h, --hands-on', 'Interactive hands-on session')
+  .action(async (agent, topic, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start(`🎓 Starting masterclass with ${agent}...`);
+    await masterclassSession(agent, topic, options);
+    statusIndicator.succeed('🏆 Masterclass complete!');
+  });
+
+// Session Management Commands
+program
+  .command('session <action>')
+  .description('📝 Manage development sessions')
+  .option('-n, --name <name>', 'Session name')
+  .option('-t, --tags <tags>', 'Session tags (comma-separated)')
+  .action(async (action, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start(`📝 Managing session: ${action}...`);
+    await manageSession(action, options);
+    statusIndicator.succeed('📋 Session management complete!');
+  });
+
+program
+  .command('remember <context>')
+  .description('🧠 Remember context for future conversations')
+  .option('-t, --tags <tags>', 'Context tags for easy retrieval')
+  .option('-p, --priority <priority>', 'Context priority (low, medium, high)')
+  .action(async (context, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start('🧠 Storing context in AI memory...');
+    await rememberContext(context, options);
+    statusIndicator.succeed('💾 Context stored successfully!');
+  });
+
+program
+  .command('forget <context>')
+  .description('🗑️ Forget specific context or clear memory')
+  .option('-a, --all', 'Clear all stored context')
+  .option('-t, --tags <tags>', 'Forget by tags')
+  .action(async (context, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start('🗑️ Clearing context from AI memory...');
+    await forgetContext(context, options);
+    statusIndicator.succeed('🧹 Context cleared successfully!');
+  });
+
 // Error handling with helpful suggestions
 program.exitOverride();
 program.configureHelp({
@@ -323,6 +449,49 @@ async function provideQuickFixes(): Promise<void> {
 
 async function startRubberDuckSession(problem: string, options: any): Promise<void> {
   // Implementation for rubber duck sessions
+}
+
+// Rubber Duck Programming Specialized Functions
+async function thinkThroughProblem(problem: string, options: any): Promise<void> {
+  // Implementation for deep thinking about problems
+}
+
+async function debugWithAI(error: string, options: any): Promise<void> {
+  // Implementation for AI-assisted debugging
+}
+
+async function designSystemArchitecture(system: string, options: any): Promise<void> {
+  // Implementation for system design with AI architects
+}
+
+async function experimentWithIdea(idea: string, options: any): Promise<void> {
+  // Implementation for experimenting with new approaches
+}
+
+// Advanced Multi-Agent Coordination Functions
+async function orchestrateFullTeam(task: string, options: any): Promise<void> {
+  // Implementation for full team orchestration
+}
+
+async function consultAgentGroup(agents: string, question: string, options: any): Promise<void> {
+  // Implementation for consulting specific agent groups
+}
+
+async function masterclassSession(agent: string, topic: string, options: any): Promise<void> {
+  // Implementation for masterclass sessions with expert agents
+}
+
+// Session Management Functions
+async function manageSession(action: string, options: any): Promise<void> {
+  // Implementation for session management (start, stop, summary, list)
+}
+
+async function rememberContext(context: string, options: any): Promise<void> {
+  // Implementation for storing context in AI memory
+}
+
+async function forgetContext(context: string, options: any): Promise<void> {
+  // Implementation for clearing context from AI memory
 }
 
 async function planLaunchStrategy(strategy: string, options: any): Promise<void> {

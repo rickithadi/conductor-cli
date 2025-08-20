@@ -82,7 +82,7 @@ export class SmartDashboard {
     const header = blessed.box({
       top: 0,
       left: 0,
-      width: '100%',
+      width: '100%' as any,
       height: 3,
       content: this.getHeaderContent(),
       style: {
@@ -99,7 +99,7 @@ export class SmartDashboard {
       left: 0,
       width: '40%' as any,
       height: '60%' as any,
-      border: { type: 'line', fg: 'cyan' },
+      border: { type: 'line', fg: 'cyan' } as any,
       label: ' 👥 Agent Orchestra ',
       scrollable: true,
       alwaysScroll: true,
@@ -116,7 +116,7 @@ export class SmartDashboard {
       left: '40%' as any,
       width: '60%' as any,
       height: '60%' as any,
-      border: { type: 'line', fg: 'green' },
+      border: { type: 'line', fg: 'green' } as any,
       label: ' 📊 Team Consensus & Recommendations ',
       scrollable: true,
       alwaysScroll: true,
@@ -133,7 +133,7 @@ export class SmartDashboard {
       left: 0,
       width: '100%' as any,
       height: '32%' as any,
-      border: { type: 'line', fg: 'yellow' },
+      border: { type: 'line', fg: 'yellow' } as any,
       label: ' 📋 Live Activity Feed ',
       scrollable: true,
       alwaysScroll: true,
@@ -195,7 +195,7 @@ export class SmartDashboard {
     const header = blessed.box({
       top: 0,
       left: 0,
-      width: '100%',
+      width: '100%' as any,
       height: 1,
       content: ' 🎭 Conductor CLI - Minimal Dashboard ',
       style: {
@@ -210,7 +210,7 @@ export class SmartDashboard {
       left: 0,
       width: '100%' as any,
       height: '90%' as any,
-      border: { type: 'line', fg: 'cyan' },
+      border: { type: 'line', fg: 'cyan' } as any,
       label: ' AI Team Status ',
       scrollable: true,
       tags: true
@@ -427,7 +427,7 @@ export class SmartDashboard {
       left: 'center' as any,
       width: '60%' as any,
       height: '70%' as any,
-      border: { type: 'line', fg: 'yellow' },
+      border: { type: 'line', fg: 'yellow' } as any,
       label: ' 📚 Conductor CLI Dashboard Help ',
       content: this.getHelpContent(),
       scrollable: true,

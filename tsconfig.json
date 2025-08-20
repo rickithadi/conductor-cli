@@ -11,9 +11,13 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "noImplicitAny": false
+    "declarationMap": false,
+    "sourceMap": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "importHelpers": true,
+    "inlineSourceMap": false,
+    "inlineSources": false
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "__tests__", "src/**/*.test.ts", "src/**/__tests__/**/*"]
