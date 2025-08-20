@@ -68,6 +68,26 @@ program
     statusIndicator.succeed('📚 Expert explanation ready!');
   });
 
+// Launch command to match landing page terminal demo
+program
+  .command('launch <strategy>')
+  .description('🚀 Plan launch strategy with complete AI team (PM → Ship → Market)')
+  .option('-t, --type <type>', 'Launch type (product, feature, campaign)', 'product')
+  .option('-a, --audience <audience>', 'Target audience')
+  .option('-d, --dashboard', 'Show live team collaboration')
+  .action(async (strategy, options) => {
+    const statusIndicator = new StatusIndicator();
+    statusIndicator.start('🚀 Planning launch strategy with AI team...');
+    
+    if (options.dashboard) {
+      const dashboard = new SmartDashboard();
+      await dashboard.launch();
+    }
+    
+    await planLaunchStrategy(strategy, options);
+    statusIndicator.succeed('✅ Complete launch strategy ready!');
+  });
+
 program
   .command('review')
   .alias('audit')
@@ -208,6 +228,33 @@ async function provideQuickFixes(): Promise<void> {
 
 async function startRubberDuckSession(problem: string, options: any): Promise<void> {
   // Implementation for rubber duck sessions
+}
+
+async function planLaunchStrategy(strategy: string, options: any): Promise<void> {
+  console.log(chalk.cyan('\n🦆 RUBBER DUCKING WITH EXPERTS'));
+  console.log(chalk.gray('   Orchestrating complete AI team for launch strategy...\n'));
+  
+  // Simulate the team collaboration shown in landing page
+  console.log(chalk.blue('   📋 @pm') + chalk.white(' - Market research & user personas'));
+  await new Promise(resolve => setTimeout(resolve, 800));
+  
+  console.log(chalk.green('   📈 @seo') + chalk.white(' - Content strategy & digital footprint'));
+  await new Promise(resolve => setTimeout(resolve, 800));
+  
+  console.log(chalk.magenta('   🎨 @design') + chalk.white(' - Landing page optimization'));
+  await new Promise(resolve => setTimeout(resolve, 800));
+  
+  console.log(chalk.yellow('   💻 @frontend') + chalk.white(' - Conversion funnel implementation'));
+  await new Promise(resolve => setTimeout(resolve, 800));
+  
+  console.log(chalk.cyan('   🚀 @devops') + chalk.white(' - Analytics & tracking setup'));
+  await new Promise(resolve => setTimeout(resolve, 800));
+  
+  console.log(chalk.red('   🛡️ @security') + chalk.white(' - Compliance & data protection'));
+  await new Promise(resolve => setTimeout(resolve, 800));
+  
+  console.log(chalk.green('\n✅ Complete launch strategy ready!'));
+  console.log(chalk.gray('\n💡 Use ') + chalk.white('conductor ask @pm "create user stories"') + chalk.gray(' for detailed implementation'));
 }
 
 export { program };

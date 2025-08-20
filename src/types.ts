@@ -27,6 +27,9 @@ export interface SubagentDefinition {
   domainKnowledge?: string[];
   technicalStack: string[];
   specialInstructions?: string[];
+  frameworkSpecific?: string[]; // Framework-specific guidance
+  businessContext?: any; // Business context for marketing/PM agents
+  integrations?: string[]; // Available integrations
   // Security-focused extensions
   securityFocus?: {
     primaryThreats: string[];
