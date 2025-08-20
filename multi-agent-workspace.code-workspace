@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "name": "Project Root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "terminal.integrated.defaultProfile.osx": "Multi-Agent Assistant",
+    "terminal.integrated.defaultProfile.linux": "Multi-Agent Assistant",
+    "terminal.integrated.defaultProfile.windows": "Multi-Agent Assistant",
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/.git": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "anthropic.claude-code"
+    ]
+  }
+}

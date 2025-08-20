@@ -1,0 +1,122 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Multi-Agent Session",
+      "type": "shell",
+      "command": "claude-code",
+      "args": [
+        "--context",
+        "multi-agent"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Consult @frontend",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Consulting @frontend - Frontend Architecture Specialist",
+        "&&",
+        "claude-code",
+        "--agent",
+        "@frontend"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Consult @backend",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Consulting @backend - API & Server Specialist",
+        "&&",
+        "claude-code",
+        "--agent",
+        "@backend"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Consult @ux",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Consulting @ux - User Experience Specialist",
+        "&&",
+        "claude-code",
+        "--agent",
+        "@ux"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Consult @review",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Consulting @review - Code Quality & Architecture Specialist",
+        "&&",
+        "claude-code",
+        "--agent",
+        "@review"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Consult @testing",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Consulting @testing - Testing & Quality Assurance Specialist",
+        "&&",
+        "claude-code",
+        "--agent",
+        "@testing"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "requiresApproval": {
+    "codeChanges": true,
+    "newFeatures": true,
+    "architectureChanges": true,
+    "dependencies": true,
+    "configChanges": true
+  },
+  "autoApprove": {
+    "lowRiskChanges": false,
+    "documentation": false,
+    "tests": false
+  },
+  "notificationSettings": {
+    "showPriority": true,
+    "showAgentConsensus": true,
+    "showRiskAssessment": true
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "id": "cp_mejlpa1d_k3oaf",
+  "timestamp": "2025-08-20T06:37:51.505Z",
+  "projectContext": {
+    "framework": "unknown",
+    "language": "typescript",
+    "packageManager": "npm",
+    "hasDatabase": false,
+    "hasAuthentication": false,
+    "hasAPI": false,
+    "hasTesting": true,
+    "hasLinting": false,
+    "hasTypeScript": true,
+    "architecturalDecisions": [],
+    "dependencies": [
+      "commander",
+      "chalk",
+      "inquirer",
+      "fs-extra",
+      "glob",
+      "yaml"
+    ],
+    "devDependencies": [
+      "@types/node",
+      "@types/inquirer",
+      "@types/fs-extra",
+      "@types/jest",
+      "typescript",
+      "tsx",
+      "jest",
+      "ts-jest",
+      "eslint",
+      "@typescript-eslint/parser",
+      "@typescript-eslint/eslint-plugin"
+    ],
+    "scripts": {
+      "build": "tsc",
+      "dev": "tsx src/cli.ts",
+      "test": "jest",
+      "lint": "eslint src/**/*.ts",
+      "start": "node dist/cli.js"
+    },
+    "rootPath": "/Users/hadi.rickit/dev/multi-agent-workflow"
+  },
+  "activeAgents": [
+    {
+      "name": "@frontend",
+      "role": "Frontend Architecture Specialist",
+      "expertise": [
+        "Component architecture",
+        "State management",
+        "Performance optimization",
+        "Responsive design",
+        "Browser compatibility"
+      ],
+      "technicalStack": [
+        "typescript",
+        "unknown"
+      ],
+      "specialInstructions": [
+        "Focus on component reusability and maintainability",
+        "Ensure accessibility compliance (WCAG 2.1 AA)",
+        "Optimize for Core Web Vitals",
+        "Follow established design system patterns"
+      ]
+    },
+    {
+      "name": "@backend",
+      "role": "API & Server Specialist",
+      "expertise": [
+        "API design",
+        "Database optimization",
+        "Security patterns",
+        "Performance tuning",
+        "Error handling"
+      ],
+      "technicalStack": [
+        "typescript"
+      ],
+      "domainKnowledge": [
+        "RESTful API patterns",
+        "GraphQL best practices",
+        "Database normalization",
+        "Caching strategies"
+      ],
+      "specialInstructions": [
+        "Follow OpenAPI specification standards",
+        "Implement proper error handling and logging",
+        "Ensure security best practices",
+        "Optimize database queries"
+      ]
+    },
+    {
+      "name": "@ux",
+      "role": "User Experience Specialist",
+      "expertise": [
+        "User interface design",
+        "Accessibility compliance",
+        "User flow optimization",
+        "Mobile-first design",
+        "Information architecture"
+      ],
+      "technicalStack": [
+        "WCAG 2.1 guidelines",
+        "Responsive design patterns",
+        "Progressive enhancement"
+      ],
+      "specialInstructions": [
+        "Ensure WCAG 2.1 AA compliance",
+        "Design for mobile-first approach",
+        "Consider user cognitive load",
+        "Implement clear error states and feedback",
+        "Focus on conversion optimization for business goals"
+      ]
+    },
+    {
+      "name": "@review",
+      "role": "Code Quality & Architecture Specialist",
+      "expertise": [
+        "Code quality assessment",
+        "Architecture patterns",
+        "Technical debt analysis",
+        "Best practices enforcement",
+        "Integration patterns",
+        "Test coverage analysis"
+      ],
+      "technicalStack": [
+        "typescript"
+      ],
+      "specialInstructions": [
+        "Enforce established coding standards",
+        "Identify potential security vulnerabilities",
+        "Suggest performance improvements",
+        "Ensure maintainability and scalability",
+        "Review for technical debt accumulation"
+      ]
+    },
+    {
+      "name": "@testing",
+      "role": "Testing & Quality Assurance Specialist",
+      "expertise": [
+        "Test strategy design",
+        "Unit testing patterns",
+        "Integration testing",
+        "End-to-end testing",
+        "Test automation"
+      ],
+      "technicalStack": [],
+      "specialInstructions": [
+        "Implement comprehensive test coverage",
+        "Design maintainable test suites",
+        "Focus on critical user paths",
+        "Ensure test reliability and speed"
+      ]
+    }
+  ],
+  "currentSession": {
+    "tasksCompleted": [
+      "Project analysis completed"
+    ],
+    "tasksInProgress": [
+      "Manual checkpoint creation"
+    ],
+    "tasksPending": [],
+    "currentFocus": "Checkpoint management",
+    "keyDecisions": [
+      "Enabled checkpoint system"
+    ],
+    "importantContext": [
+      "User manually created checkpoint"
+    ]
+  },
+  "approvalHistory": {
+    "totalProposals": 0,
+    "approvedProposals": 0,
+    "rejectedProposals": 0,
+    "recentProposals": []
+  },
+  "nextSteps": [
+    "Continue with planned development tasks"
+  ],
+  "warnings": [],
+  "estimatedTokenUsage": 0,
+  "contextWindowUtilization": 0
+}

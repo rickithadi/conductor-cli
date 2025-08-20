@@ -1,0 +1,41 @@
+{
+  "name": "multi-agent-cli",
+  "version": "1.0.0",
+  "description": "Multi-agent development CLI with subagent coordination",
+  "main": "dist/index.js",
+  "bin": {
+    "multi-agent": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "start": "node dist/cli.js"
+  },
+  "keywords": ["cli", "multi-agent", "claude", "development"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.6",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "yaml": "^2.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/inquirer": "^8.2.10",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jest": "^29.5.8",
+    "typescript": "^5.3.2",
+    "tsx": "^4.6.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "eslint": "^8.54.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "@typescript-eslint/eslint-plugin": "^6.12.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "warningThreshold": 0.9,
+  "checkpointThreshold": 0.95,
+  "maxContextTokens": 180000,
+  "autoRestart": false,
+  "saveFrequency": 10,
+  "retentionDays": 7
+}
