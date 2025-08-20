@@ -1,0 +1,1 @@
+{"version": "1.0.0", "projectType": "nextjs", "agents": [{"name": "@frontend", "role": "Frontend Developer", "enabled": true}, {"name": "@backend", "role": "Backend Engineer", "enabled": true}], "experienceLevel": "intermediate"}

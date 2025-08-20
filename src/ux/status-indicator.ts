@@ -22,6 +22,8 @@ export class StatusIndicator {
   private frameIndex = 0;
   private agents: Map<string, AgentStatus> = new Map();
   private consensus: TeamConsensus | null = null;
+  private progressSteps: string[] = [];
+  private currentStep = 0;
 
   constructor() {
     this.initializeAgents();
@@ -57,14 +59,67 @@ export class StatusIndicator {
     }, 100);
   }
 
-  succeed(message: string): void {
-    this.stop();
-    console.log(chalk.green(`✅ ${message}`));
+  startProgress(steps: string[]): void {
+    this.progressSteps = steps;
+    this.currentStep = 0;
+    this.displayProgressStep();
+    
+    this.currentSpinner = setInterval(() => {
+      this.frameIndex = (this.frameIndex + 1) % this.spinnerFrames.length;
+      this.displayProgressStep();
+    }, 100);
   }
 
-  fail(message: string): void {
+  nextStep(): void {
+    if (this.currentStep < this.progressSteps.length - 1) {
+      this.currentStep++;
+      this.displayProgressStep();
+    }
+  }
+
+  private displayProgressStep(): void {
+    if (this.progressSteps.length === 0) return;
+    
+    const current = this.currentStep + 1;
+    const total = this.progressSteps.length;
+    const progress = Math.round((current / total) * 20);
+    const progressBar = '█'.repeat(progress) + '░'.repeat(20 - progress);
+    
+    const message = this.progressSteps[this.currentStep];
+    const stepInfo = chalk.gray(`[${current}/${total}]`);
+    const spinner = chalk.blue(this.spinnerFrames[this.frameIndex]);
+    
+    process.stdout.write(`\r${spinner} ${stepInfo} ${message}\n`);
+    process.stdout.write(`${chalk.cyan(progressBar)} ${chalk.yellow(`${Math.round((current / total) * 100)}%`)}`);
+  }
+
+  succeed(message: string, showCelebration = false): void {
+    this.stop();
+    if (showCelebration) {
+      this.showSuccessAnimation(message);
+    } else {
+      console.log(chalk.green(`✅ ${message}`));
+    }
+  }
+
+  fail(message: string, suggestion?: string): void {
     this.stop();
     console.log(chalk.red(`❌ ${message}`));
+    if (suggestion) {
+      console.log(chalk.yellow(`💡 ${suggestion}`));
+    }
+    console.log(chalk.gray(`🆘 Need help? Run: conductor ask "help with this error"`));
+  }
+
+  private async showSuccessAnimation(message: string): Promise<void> {
+    const frames = ['✨', '🎉', '⭐', '✅'];
+    const colors = [chalk.yellow, chalk.green, chalk.cyan, chalk.green];
+    
+    for (let i = 0; i < frames.length; i++) {
+      process.stdout.write(`\r${colors[i](frames[i])} ${message}`);
+      await this.sleep(200);
+    }
+    console.log('');
   }
 
   info(message: string): void {
@@ -237,8 +292,8 @@ export class StatusIndicator {
     const agentBox = blessed.box({
       top: 0,
       left: 0,
-      width: '70%',
-      height: '80%',
+      width: '70%' as any,
+      height: '80%' as any,
       border: { type: 'line', fg: 'cyan' },
       label: ' 👥 Agent Orchestra ',
       scrollable: true,
@@ -248,9 +303,9 @@ export class StatusIndicator {
     // Consensus panel
     const consensusBox = blessed.box({
       top: 0,
-      left: '70%',
-      width: '30%',
-      height: '80%',
+      left: '70%' as any,
+      width: '30%' as any,
+      height: '80%' as any,
       border: { type: 'line', fg: 'green' },
       label: ' 📊 Consensus ',
       scrollable: true,
@@ -259,10 +314,10 @@ export class StatusIndicator {
 
     // Activity log
     const logBox = blessed.log({
-      top: '80%',
+      top: '80%' as any,
       left: 0,
-      width: '100%',
-      height: '20%',
+      width: '100%' as any,
+      height: '20%' as any,
       border: { type: 'line', fg: 'yellow' },
       label: ' 📋 Activity Log ',
       scrollable: true,
@@ -328,7 +383,9 @@ export class StatusIndicator {
     });
 
     screen.key(['c'], () => {
-      logBox.clear();
+      if ((logBox as any).clear) {
+        (logBox as any).clear();
+      }
       logBox.log('🧹 Activity log cleared');
     });
 
@@ -365,6 +422,10 @@ export class StatusIndicator {
       critical: '🔴'
     };
     return icons[priority];
+  }
+
+  private sleep(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   // Method to simulate agent activity for demo purposes

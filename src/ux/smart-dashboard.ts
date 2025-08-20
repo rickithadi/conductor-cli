@@ -97,8 +97,8 @@ export class SmartDashboard {
     const agentPanel = blessed.box({
       top: 3,
       left: 0,
-      width: '40%',
-      height: '60%',
+      width: '40%' as any,
+      height: '60%' as any,
       border: { type: 'line', fg: 'cyan' },
       label: ' 👥 Agent Orchestra ',
       scrollable: true,
@@ -113,9 +113,9 @@ export class SmartDashboard {
     // Consensus and recommendations panel (right side)
     const consensusPanel = blessed.box({
       top: 3,
-      left: '40%',
-      width: '60%',
-      height: '60%',
+      left: '40%' as any,
+      width: '60%' as any,
+      height: '60%' as any,
       border: { type: 'line', fg: 'green' },
       label: ' 📊 Team Consensus & Recommendations ',
       scrollable: true,
@@ -129,10 +129,10 @@ export class SmartDashboard {
 
     // Activity log (bottom)
     const activityPanel = blessed.log({
-      top: '63%',
+      top: '63%' as any,
       left: 0,
-      width: '100%',
-      height: '32%',
+      width: '100%' as any,
+      height: '32%' as any,
       border: { type: 'line', fg: 'yellow' },
       label: ' 📋 Live Activity Feed ',
       scrollable: true,
@@ -148,7 +148,7 @@ export class SmartDashboard {
     const statusBar = blessed.box({
       bottom: 0,
       left: 0,
-      width: '100%',
+      width: '100%' as any,
       height: 1,
       content: this.getStatusBarContent(),
       style: {
@@ -208,8 +208,8 @@ export class SmartDashboard {
     const statusPanel = blessed.box({
       top: 1,
       left: 0,
-      width: '100%',
-      height: '90%',
+      width: '100%' as any,
+      height: '90%' as any,
       border: { type: 'line', fg: 'cyan' },
       label: ' AI Team Status ',
       scrollable: true,
@@ -220,7 +220,7 @@ export class SmartDashboard {
     const statusBar = blessed.box({
       bottom: 0,
       left: 0,
-      width: '100%',
+      width: '100%' as any,
       height: 1,
       content: ' Press q to quit, r to refresh ',
       style: {
@@ -423,10 +423,10 @@ export class SmartDashboard {
     if (!this.screen) return;
 
     const helpBox = blessed.box({
-      top: 'center',
-      left: 'center',
-      width: '60%',
-      height: '70%',
+      top: 'center' as any,
+      left: 'center' as any,
+      width: '60%' as any,
+      height: '70%' as any,
       border: { type: 'line', fg: 'yellow' },
       label: ' 📚 Conductor CLI Dashboard Help ',
       content: this.getHelpContent(),

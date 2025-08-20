@@ -2,9 +2,9 @@ import chalk from 'chalk';
 import * as inquirer from 'inquirer';
 import * as fs from 'fs-extra';
 import * as path from 'path';
-import { ContextScanner } from '../context-scanner';
-import { SubagentGenerator } from '../subagent-generator';
-import { VSCodeIntegration } from '../vscode-integration';
+import { ContextScanner } from '../stubs/context-scanner';
+import { SubagentGenerator } from '../subagent-generator';  
+import { VSCodeIntegration } from '../stubs/vscode-integration';
 import { StatusIndicator } from './status-indicator';
 
 interface LaunchOptions {
