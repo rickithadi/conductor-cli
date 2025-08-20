@@ -1,13 +1,15 @@
-# Contributing to Multi-Agent CLI
+# 🤝 Contributing to Conductor CLI
 
-Thank you for your interest in contributing to the Multi-Agent CLI! This document provides guidelines and information for contributors.
+> **Help build the future of AI-powered development orchestration**
+
+Thank you for your interest in contributing to Conductor CLI! This document provides comprehensive guidelines for contributors to our multi-agent workflow system, powered by Claude Code and Anthropic's Claude AI, with professional security integration by Gallifrey Consulting.
 
 ## 🚀 Quick Start
 
 1. **Fork and clone the repository**
 ```bash
-git clone https://github.com/your-username/multi-agent-workflow
-cd multi-agent-workflow
+git clone https://github.com/your-username/conductor-cli
+cd conductor-cli
 ```
 
 2. **Install dependencies**
@@ -27,34 +29,47 @@ npm link
 
 5. **Test your changes**
 ```bash
-multi-agent init --force
+conductor init --force
+conductor recommend "test feature implementation"
+conductor dashboard --test-mode
 ```
 
 ## 🛠️ Development Setup
 
 ### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-- TypeScript knowledge
-- Git
+- **Node.js 18+** (LTS recommended)
+- **npm or yarn** (npm preferred)
+- **TypeScript knowledge** (intermediate level)
+- **Git** with GitHub account
+- **Claude Code access** (for testing AI agent integration)
+- **Basic understanding** of multi-agent systems (helpful but not required)
 
 ### Project Structure
 ```
 src/
 ├── types.ts              # Core type definitions
-├── context-scanner.ts    # Project analysis
-├── subagent-generator.ts # Agent creation logic
+├── context-scanner.ts    # Project analysis & framework detection
+├── subagent-generator.ts # Multi-agent creation logic
 ├── claude-generator.ts   # Claude context generation
-├── approval-system.ts    # Approval workflow
-├── vscode-integration.ts # VSCode setup
-├── external-collaboration.ts # File-based collaboration
+├── approval-system.ts    # Multi-agent approval workflow
+├── checkpoint-system.ts  # Session management & recovery
+├── security-scanner.ts   # Security vulnerability detection (Gallifrey)
+├── security-agents.ts    # Security-focused agent definitions
+├── tui-dashboard.ts      # Terminal UI dashboard (blessed.js)
+├── vscode-integration.ts # VSCode workspace integration
 └── cli.ts               # Main CLI interface
 
-templates/                # Project templates
+templates/                # Framework templates with agent contexts
 ├── nextjs/
+│   └── claude-contexts/  # Next.js specific agent contexts
 ├── react/
+│   └── claude-contexts/  # React specific agent contexts
 ├── vue/
-└── express/
+│   └── claude-contexts/  # Vue specific agent contexts
+├── express/
+│   └── claude-contexts/  # Express specific agent contexts
+└── jekyll/
+    └── claude-contexts/  # Jekyll specific agent contexts
 
 docs/                     # Documentation
 tests/                    # Test files
@@ -76,13 +91,19 @@ npm run test:coverage
 ### Testing Your Changes
 ```bash
 # Test CLI commands
-multi-agent init --force
-multi-agent agents
-multi-agent recommend "test feature" --type feature
+conductor init --force
+conductor recommend "test multi-agent workflow"
+conductor dashboard --watch
+conductor scan --security --test-mode
 
 # Test different project types
-cd /path/to/nextjs-project && multi-agent init
-cd /path/to/react-project && multi-agent init
+cd /path/to/nextjs-project && conductor init --framework nextjs
+cd /path/to/react-project && conductor init --framework react
+cd /path/to/vue-project && conductor init --framework vue
+
+# Test agent interactions
+conductor recommend "implement authentication" --agents frontend,backend,security
+conductor recommend "optimize performance" --detailed --consensus
 ```
 
 ## 📝 Code Guidelines

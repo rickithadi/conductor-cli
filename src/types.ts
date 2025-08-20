@@ -8,6 +8,8 @@ export interface ProjectContext {
   hasTesting: boolean;
   hasLinting: boolean;
   hasTypeScript: boolean;
+  hasAuth: boolean; // Alias for hasAuthentication for tests
+  hasTests: boolean; // Alias for hasTesting for tests
   brandGuidelines?: string;
   apiDocs?: string;
   architecturalDecisions?: string[];
@@ -25,6 +27,32 @@ export interface SubagentDefinition {
   domainKnowledge?: string[];
   technicalStack: string[];
   specialInstructions?: string[];
+  // Security-focused extensions
+  securityFocus?: {
+    primaryThreats: string[];
+    complianceFrameworks: string[];
+    tools: string[];
+  };
+  complianceFocus?: {
+    regulations: string[];
+    dataTypes: string[];
+    rights: string[];
+  };
+  auditFocus?: {
+    frameworks: string[];
+    controls: string[];
+    evidence: string[];
+  };
+  reviewFocus?: {
+    patterns: string[];
+    tools: string[];
+    metrics: string[];
+  };
+  responseFocus?: {
+    phases: string[];
+    monitoring: string[];
+    communication: string[];
+  };
 }
 
 export interface CLIConfig {

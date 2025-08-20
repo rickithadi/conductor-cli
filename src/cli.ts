@@ -12,6 +12,8 @@ import { VSCodeIntegration } from './vscode-integration';
 import { ExternalCollaborationMode } from './external-collaboration';
 import { ApprovalSystem } from './approval-system';
 import { CheckpointSystem } from './checkpoint-system';
+import { TUIDashboard } from './tui-dashboard';
+import { SecurityScanner } from './security-scanner';
 import { CoordinationMode } from './types';
 
 const program = new Command();
@@ -88,6 +90,7 @@ program
   .command('recommend <task>')
   .description('Get multi-agent recommendations for a task')
   .option('-t, --type <type>', 'Task type (feature|bugfix|refactor|optimization|security|design)', 'feature')
+  .option('--tui', 'Use Terminal UI dashboard (experimental)')
   .action(async (task, options) => {
     await getRecommendations(task, options);
   });
@@ -103,6 +106,80 @@ program
   .action(async (options) => {
     await manageCheckpoints(options);
   });
+
+program
+  .command('scan')
+  .description('Security and code quality scanning')
+  .option('--security', 'Run security vulnerability scan')
+  .option('--deps', 'Scan dependencies for vulnerabilities')
+  .option('--detailed', 'Generate detailed report')
+  .option('--json', 'Output results as JSON')
+  .option('-o, --output <path>', 'Output report to file')
+  .action(async (options) => {
+    await runSecurityScan(options);
+  });
+
+program
+  .command('audit')
+  .description('Comprehensive security and compliance audit')
+  .option('--compliance <type>', 'Compliance framework (gdpr|hipaa|sox)')
+  .option('--detailed', 'Generate detailed audit report')
+  .action(async (options) => {
+    await runSecurityAudit(options);
+  });
+
+async function runSecurityScan(options: any): Promise<void> {
+  console.log(chalk.blue('🔒 AEGIS SECURITY SCAN'));
+  console.log(chalk.gray('═'.repeat(50)));
+  
+  try {
+    const scanner = new SecurityScanner();
+    const result = await scanner.scanProject();
+    
+    if (options.json) {
+      console.log(JSON.stringify(result, null, 2));
+    }
+    
+    if (options.detailed) {
+      const reportPath = await scanner.generateDetailedReport(result, options.output);
+      console.log(chalk.green(`📄 Detailed report: ${reportPath}`));
+    }
+  } catch (error) {
+    console.error(chalk.red('Security scan failed:'), error);
+  }
+}
+
+async function runSecurityAudit(options: any): Promise<void> {
+  console.log(chalk.blue('🛡️ AEGIS SECURITY AUDIT'));
+  console.log(chalk.gray('═'.repeat(50)));
+  
+  try {
+    const scanner = new SecurityScanner();
+    const result = await scanner.scanProject();
+    
+    console.log(`📊 Security Score: ${calculateSecurityScore(result)}/100`);
+    
+    if (options.compliance) {
+      console.log(`🏛️ Compliance Framework: ${options.compliance.toUpperCase()}`);
+      // Add compliance-specific checks here
+    }
+    
+    if (options.detailed) {
+      await scanner.generateDetailedReport(result);
+    }
+  } catch (error) {
+    console.error(chalk.red('Security audit failed:'), error);
+  }
+}
+
+function calculateSecurityScore(result: any): number {
+  const baseScore = 100;
+  const criticalPenalty = result.critical.length * 20;
+  const highPenalty = result.high.length * 10;
+  const mediumPenalty = result.medium.length * 5;
+  
+  return Math.max(0, baseScore - criticalPenalty - highPenalty - mediumPenalty);
+}
 
 async function initializeProject(options: any): Promise<void> {
   const projectPath = process.cwd();
@@ -504,8 +581,18 @@ async function getRecommendations(task: string, options: any): Promise<void> {
       recommendations
     );
     
-    // Present for approval
-    await approvalSystem.presentProposalForApproval(proposal);
+    // Present for approval - Use TUI if requested
+    if (options.tui) {
+      const tui = new TUIDashboard();
+      try {
+        const action = await tui.showProposalDashboard(proposal);
+        console.log(chalk.green(`Action selected: ${action}`));
+      } finally {
+        tui.destroy();
+      }
+    } else {
+      await approvalSystem.presentProposalForApproval(proposal);
+    }
     
   } catch (error) {
     console.error(chalk.red('Error getting recommendations:'), error);

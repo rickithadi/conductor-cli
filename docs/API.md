@@ -1,37 +1,203 @@
-# API Documentation
+# 📋 Conductor CLI - API Reference
 
-This document provides detailed API documentation for developers who want to extend or integrate with the Multi-Agent CLI.
+> **Complete API documentation for the AI development orchestrator powered by Claude Code and Anthropic's Claude AI**
 
-## 📦 Core Classes
+This document provides comprehensive API reference for Conductor CLI, including all commands, options, configuration, and programmatic usage leveraging the **MULTI_AGENT_WORKFLOW** orchestration system.
 
-### ContextScanner
+---
 
-Analyzes project structure and technology stack.
+## 🚀 **Core Commands**
 
-```typescript
-class ContextScanner {
-  constructor(projectPath: string = process.cwd())
-  
-  async scan(): Promise<ProjectContext>
-  
-  private async detectFramework(): Promise<FrameworkDetectionResult>
-  private async detectLanguage(): Promise<string>
-  private async detectPackageManager(): Promise<string>
-  private async hasTypeScript(): Promise<boolean>
-  private async hasDatabase(): Promise<boolean>
-  private async hasAuthentication(): Promise<boolean>
-  // ... other detection methods
+### **`conductor init`**
+Initialize Conductor CLI in your project with intelligent framework detection and multi-agent orchestration setup.
+
+```bash
+conductor init [options]
+```
+
+**Options:**
+- `--framework <type>` - Specify framework: `nextjs`, `react`, `vue`, `express`, `jekyll`
+- `--typescript` - Enable TypeScript support
+- `--security-profile <level>` - Security profile: `enterprise`, `startup`, `government`
+- `--database <type>` - Database type: `postgresql`, `mysql`, `mongodb`, `sqlite`
+- `--agents <list>` - Comma-separated list of agents to enable
+- `--force` - Overwrite existing configuration
+- `--verbose` - Detailed initialization output
+
+**Examples:**
+```bash
+# Auto-detect framework and setup all agents
+conductor init
+
+# Next.js with TypeScript and enterprise security
+conductor init --framework nextjs --typescript --security-profile enterprise
+
+# Full-stack setup with database
+conductor init --framework nextjs --database postgresql --agents frontend,backend,security,testing
+```
+
+**Multi-Agent Setup:**
+- Creates `.conductor/` directory with orchestration configuration
+- Generates agent-specific contexts in `.conductor/agents/`
+- Sets up VS Code integration with agent terminals
+- Creates main `claude.md` context file with MULTI_AGENT_WORKFLOW
+- Initializes checkpoint system for session management
+
+---
+
+### **`conductor recommend`**
+Get expert recommendations from the specialized AI agent team using the multi-agent workflow orchestration.
+
+```bash
+conductor recommend "<question>" [options]
+```
+
+**Options:**
+- `--agent <name>` - Consult specific agent: `@frontend`, `@backend`, `@security`, `@testing`, `@seo`, `@ux`, `@review`
+- `--priority <level>` - Priority level: `low`, `medium`, `high`, `critical`
+- `--format <type>` - Output format: `terminal`, `json`, `markdown`, `html`
+- `--export <file>` - Export recommendations to file
+- `--security-focus` - Include security analysis from @security agent
+- `--detailed` - Include detailed implementation steps
+- `--consensus` - Show agent consensus scores
+- `--interactive` - Interactive recommendation mode with all agents
+
+**Multi-Agent Workflow Examples:**
+```bash
+# All agents collaborate on authentication implementation
+conductor recommend "Add authentication to my Next.js app"
+
+# Backend-specific recommendation with security review
+conductor recommend "Optimize database queries" --agent @backend --security-focus
+
+# Full team consensus on security implementation
+conductor recommend "Implement OAuth 2.0" --consensus --detailed
+
+# Export comprehensive recommendation from all agents
+conductor recommend "Code review checklist" --format markdown --export checklist.md
+```
+
+**Multi-Agent Response Format:**
+```json
+{
+  "id": "rec_abc123",
+  "question": "Add authentication to my Next.js app",
+  "timestamp": "2025-01-20T10:30:00Z",
+  "orchestration_type": "MULTI_AGENT_WORKFLOW",
+  "agents_consulted": [
+    {
+      "name": "@frontend",
+      "role": "React/Next.js Specialist",
+      "recommendation": "Implement NextAuth.js with JWT strategy for seamless SSR support...",
+      "priority": "high",
+      "confidence": 95,
+      "dependencies": ["@backend", "@security"],
+      "implementation_steps": ["Install NextAuth.js", "Configure providers", "Set up session management"],
+      "risks": ["Session complexity", "Provider configuration"],
+      "benefits": ["SSR compatibility", "Multiple provider support"]
+    },
+    {
+      "name": "@security",
+      "role": "Security Expert (Gallifrey Built-in)",
+      "recommendation": "Ensure PKCE flow for OAuth 2.0, implement proper session security...",
+      "priority": "critical",
+      "confidence": 98,
+      "security_analysis": {
+        "owasp_compliance": "A07:2021-Authentication-Failures",
+        "threat_mitigation": ["Session hijacking", "CSRF attacks"],
+        "security_score_impact": "+15"
+      }
+    },
+    {
+      "name": "@backend",
+      "role": "API & Server Expert",
+      "recommendation": "Design RESTful auth endpoints with proper error handling...",
+      "priority": "high",
+      "confidence": 92,
+      "api_design": {
+        "endpoints": ["/api/auth/signin", "/api/auth/callback", "/api/auth/session"],
+        "middleware": ["CORS", "Rate limiting", "Input validation"]
+      }
+    }
+  ],
+  "consensus": {
+    "overall_score": 95,
+    "agent_agreement": 98,
+    "implementation_difficulty": "medium",
+    "estimated_time": "3-4 hours",
+    "security_impact": "high",
+    "recommended_approach": "NextAuth.js with custom session management"
+  },
+  "orchestration_summary": {
+    "agents_active": 7,
+    "consensus_reached": true,
+    "conflict_resolution": "none_required",
+    "follow_up_actions": ["Security review after implementation", "Performance testing"]
+  }
 }
 ```
 
-**Usage:**
-```typescript
-import { ContextScanner } from './context-scanner';
+---
 
-const scanner = new ContextScanner('/path/to/project');
-const context = await scanner.scan();
-console.log(context.framework); // "nextjs"
-console.log(context.hasDatabase); // true
+### **`conductor dashboard`**
+Launch the beautiful terminal dashboard with real-time multi-agent monitoring and orchestration visualization.
+
+```bash
+conductor dashboard [options]
+```
+
+**Options:**
+- `--watch` - Enable real-time updates from all agents
+- `--agent <name>` - Agent-specific dashboard view
+- `--security` - Security-focused dashboard with OWASP monitoring
+- `--theme <name>` - Dashboard theme: `gallifrey`, `dark`, `light`, `cyberpunk`
+- `--port <number>` - Web dashboard port (if available)
+- `--full-screen` - Launch in full-screen mode
+- `--minimal` - Minimal dashboard view
+
+**Multi-Agent Dashboard Features:**
+- **Agent Status Board** - Real-time activity from all 7 agents
+- **Consensus Tracking** - Team agreement metrics and conflict resolution
+- **Recommendation Queue** - Pending and completed multi-agent recommendations
+- **Security Monitoring** - OWASP compliance and threat detection by @security
+- **Performance Metrics** - System and project performance from all agents
+- **Agent Communication** - Inter-agent dependency tracking
+
+**Interactive Controls:**
+- `Tab` - Switch between agent sections
+- `Enter` - Expand multi-agent recommendation details
+- `Space` - Toggle specific agent activity
+- `c` - Show consensus matrix between agents
+- `r` - Refresh all agent data
+- `q` - Quit dashboard
+
+**Dashboard Layout:**
+```
+┌─ CONDUCTOR MULTI-AGENT DASHBOARD ─────────────────────────────────────────────┐
+│                                                                               │
+│  🤖 AGENT STATUS               📊 CONSENSUS METRICS                          │
+│  ─────────────────             ─────────────────────                         │
+│  @frontend     🟢 Active        Agent Agreement:    94%                      │
+│  @backend      🟢 Active        Conflict Resolution: 0                       │
+│  @security     🟡 Analyzing     Implementation Score: 92                     │
+│  @testing      🟢 Active        Security Compliance: 100%                    │
+│  @seo          💤 Idle                                                        │
+│  @ux           🟢 Active        🎯 ACTIVE ORCHESTRATION                      │
+│  @review       🟢 Active        ─────────────────────────                    │
+│                                 Current Task: "Add authentication"            │
+│  📋 RECOMMENDATIONS             Agents Collaborating: 5/7                    │
+│  ──────────────────────         Expected Completion: 12 min                 │
+│  🔄 In Progress (3)             Cross-Agent Dependencies: 2                  │
+│  ✅ Completed (12)                                                            │
+│  ⏳ Pending (1)               🛡️ SECURITY STATUS                            │
+│                                ─────────────────────                         │
+│  🎭 ORCHESTRATION              OWASP Compliance: ✅                          │
+│  ───────────────────           Vulnerabilities: 0 Critical                   │
+│  Multi-Agent Mode: ON          Security Score: 98/100                        │
+│  Consensus Required: YES                                                      │
+│  Auto-Resolve: MINOR          📈 PERFORMANCE                                │
+│                                ──────────────────                            │
+└───────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### SubagentGenerator

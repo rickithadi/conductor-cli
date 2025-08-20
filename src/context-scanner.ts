@@ -16,14 +16,19 @@ export class ContextScanner {
     const language = await this.detectLanguage();
     const packageManager = await this.detectPackageManager();
     
+    const hasAuthentication = await this.hasAuthentication();
+    const hasTesting = await this.hasTesting();
+    
     return {
       framework: framework.framework,
       language,
       packageManager,
       hasDatabase: await this.hasDatabase(),
-      hasAuthentication: await this.hasAuthentication(),
+      hasAuthentication,
+      hasAuth: hasAuthentication, // Alias for tests
       hasAPI: await this.hasAPI(),
-      hasTesting: await this.hasTesting(),
+      hasTesting,
+      hasTests: hasTesting, // Alias for tests
       hasLinting: await this.hasLinting(),
       hasTypeScript: await this.hasTypeScript(),
       brandGuidelines: await this.findBrandGuidelines(),

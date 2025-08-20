@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Agent CLI - AI-Powered Development Workflows | Gallifrey Consulting</title>
+    <title>Conductor CLI - Rubber Ducking with AI Experts | Complete Dev Team from PM to Ship</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Transform your development workflow with AI-powered agent coordination. Multi-Agent CLI brings structured collaboration, approval workflows, and intelligent checkpoints to your projects. Built by Gallifrey Consulting.">
-    <meta name="keywords" content="multi-agent AI, development CLI, AI development tools, workflow automation, agent coordination, development productivity, TypeScript CLI, AI consulting, Gallifrey Consulting, Hadi Rickit">
+    <meta name="description" content="Rubber ducking reimagined with AI experts. Your complete development team from PM to design to code to ship to secure. GitHub integration, automatic expert consultation for React, Next.js, TypeScript. Powered by Claude Code.">
+    <meta name="keywords" content="rubber ducking AI, AI development team, PM to ship workflow, GitHub integration, Claude Code, React development, Next.js CLI, TypeScript tools, full-stack development, AI pair programming, automatic code review, DevOps automation, Gallifrey Consulting"
     <meta name="author" content="Hadi Rickit - Gallifrey Consulting">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Multi-Agent CLI - AI-Powered Development Workflows">
-    <meta property="og:description" content="Revolutionary CLI tool that brings structured multi-agent collaboration to your development process with built-in approval workflows.">
+    <meta property="og:title" content="Conductor CLI - AI Development Orchestrator for Web Developers">
+    <meta property="og:description" content="Transform your web development with AI-powered agent coordination. Specialized agents for React, Next.js, TypeScript, and full-stack development with enterprise security built-in.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rickithadi.github.io/multi-agent-workflow">
     <meta property="og:image" content="https://rickithadi.github.io/multi-agent-workflow/og-image.png">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Multi-Agent CLI - AI-Powered Development Workflows">
-    <meta name="twitter:description" content="Transform development with AI agents, approval workflows, and intelligent checkpoints.">
+    <meta name="twitter:title" content="Conductor CLI - AI Development Orchestrator">
+    <meta name="twitter:description" content="AI-powered development workflow with specialized agents for modern web development. Security by Gallifrey built-in.">
     <meta name="twitter:image" content="https://rickithadi.github.io/multi-agent-workflow/og-image.png">
     
     <!-- Schema.org -->
@@ -28,8 +28,8 @@
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Multi-Agent CLI",
-        "description": "AI-powered development CLI with multi-agent coordination and approval workflows",
+        "name": "Conductor CLI",
+        "description": "AI development orchestrator with specialized agents for React, Next.js, TypeScript, and full-stack web development. Enterprise security built-in by Gallifrey Consulting.",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "macOS, Linux, Windows",
         "author": {
@@ -44,7 +44,8 @@
         },
         "downloadUrl": "https://github.com/rickithadi/multi-agent-workflow",
         "softwareVersion": "1.0.0",
-        "programmingLanguage": "TypeScript"
+        "programmingLanguage": "TypeScript",
+        "featureList": ["AI Agent Coordination", "React/Next.js Specialization", "Development Workflow Automation", "Built-in Security Scanning", "Terminal Dashboard", "TypeScript Support"]
     }
     </script>
     
@@ -58,14 +59,19 @@
     
     <style>
         :root {
-            /* Gallifrey Consulting Brand Colors */
+            /* Enhanced Gallifrey Consulting Brand Colors */
             --primary-teal: #2D5A87;
-            --primary-charcoal: #1F2937;
+            --secondary-teal: #1E3A5F;
             --accent-teal: #3B82F6;
-            --light-gray: #F8FAFC;
+            --gallifrey-gold: #F59E0B;
+            --primary-charcoal: #1F2937;
+            --light-gray: #F9FAFB;
             --stone-gray: #64748B;
+            --warm-gray: #78716C;
             --white: #FFFFFF;
             --black: #0F172A;
+            --success-green: #10B981;
+            --warning-orange: #F59E0B;
             
             /* Typography */
             --font-heading: 'Montserrat', sans-serif;
@@ -680,6 +686,11 @@
                 grid-template-columns: 1fr;
             }
             
+            .security .container > div {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+            
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -717,6 +728,117 @@
             60% { content: '..'; }
             80%, 100% { content: '...'; }
         }
+        
+        /* Subtle classy animations */
+        .hero-text h1 {
+            animation: slideInFromLeft 1s ease-out;
+        }
+        
+        .hero-text .subtitle {
+            animation: slideInFromLeft 1s ease-out 0.2s both;
+        }
+        
+        .hero-stats {
+            animation: slideInFromLeft 1s ease-out 0.4s both;
+        }
+        
+        .hero-actions {
+            animation: slideInFromLeft 1s ease-out 0.6s both;
+        }
+        
+        .terminal-window {
+            animation: slideInFromRight 1s ease-out 0.3s both;
+        }
+        
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Subtle glow effect on hover for important elements */
+        .btn-primary:hover {
+            box-shadow: 0 20px 50px rgba(45, 90, 135, 0.4), 0 0 20px rgba(45, 90, 135, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .feature-card:hover {
+            box-shadow: 0 25px 60px rgba(45, 90, 135, 0.15), 0 0 40px rgba(45, 90, 135, 0.05);
+        }
+        
+        /* Subtle pulse animation for security badges */
+        .agent-card[style*="border: 2px solid"] {
+            animation: subtlePulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes subtlePulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 20px 40px rgba(45, 90, 135, 0.1);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 25px 50px rgba(245, 158, 11, 0.2);
+            }
+        }
+        
+        /* Gentle background animation */
+        .hero::before {
+            animation: gentleFloat 25s ease-in-out infinite;
+        }
+        
+        @keyframes gentleFloat {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px); 
+            }
+            25% { 
+                transform: translateY(-5px) translateX(5px); 
+            }
+            50% { 
+                transform: translateY(-10px) translateX(-5px); 
+            }
+            75% { 
+                transform: translateY(-5px) translateX(-10px); 
+            }
+        }
+        
+        /* Smooth section transitions */
+        section {
+            transform: translateY(0);
+            transition: all 0.6s ease-out;
+        }
+        
+        /* Subtle text highlight animations */
+        .highlight {
+            background-size: 200% 100%;
+            background-position: 200% 0;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 200% 0;
+            }
+            50% {
+                background-position: -200% 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -724,12 +846,12 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                🤖 Multi-Agent CLI
+                🎭 Conductor CLI
             </a>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#agents">Agents</a></li>
-                <li><a href="#docs">Docs</a></li>
+                <li><a href="#security">Security</a></li>
                 <li><a href="https://gallifrey.consulting" target="_blank">Gallifrey</a></li>
             </ul>
         </div>
@@ -741,35 +863,39 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>
-                        Transform Development with
-                        <span class="highlight">AI Agent Coordination</span>
+                        <span class="highlight">Rubber Ducking</span> with
+                        Expert AI Development Team
                     </h1>
                     <p class="subtitle">
-                        Revolutionary CLI that brings structured multi-agent collaboration to your workflow. 
-                        Get recommendations backed by specialized AI agents with built-in approval workflows.
+                        Your complete AI development team from PM to design to code to ship to secure. Automatic expert consultation for React, Next.js, TypeScript, and full-stack development. 
+                        Powered by <strong>Claude Code</strong> and <strong>Anthropic's Claude</strong>, with GitHub integration and enterprise security built-in by Gallifrey Consulting.
                     </p>
                     <div class="hero-stats">
                         <div class="stat">
-                            <div class="stat-number">7+</div>
-                            <div class="stat-label">Specialized Agents</div>
+                            <div class="stat-number">PM→Ship</div>
+                            <div class="stat-label">Complete Dev Cycle</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">95%</div>
-                            <div class="stat-label">Context Efficiency</div>
+                            <div class="stat-number">🦆</div>
+                            <div class="stat-label">Rubber Duck Experts</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">User Approval</div>
+                            <div class="stat-number">GitHub</div>
+                            <div class="stat-label">Full Integration</div>
                         </div>
                     </div>
                     <div class="hero-actions">
                         <a href="https://github.com/rickithadi/multi-agent-workflow" class="btn btn-primary" target="_blank">
                             🚀 Get Started
                         </a>
-                        <a href="#features" class="btn btn-secondary">
-                            📖 Learn More
+                        <a href="#security" class="btn btn-secondary">
+                            🛡️ Security Features
                         </a>
                     </div>
+                    <p style="font-size: 0.875rem; color: var(--stone-gray); margin-top: 24px; display: flex; align-items: center; gap: 8px;">
+                        <span style="background: #E5F3FF; color: #1E40AF; padding: 4px 8px; border-radius: 6px; font-weight: 500;">⚡ Requires Claude Code</span>
+                        Launch with: <code style="background: #F1F5F9; padding: 2px 6px; border-radius: 4px; font-family: monospace;">claude --dangerously-skip-permissions https://github.com/rickithadi/multi-agent-workflow/blob/main/README.md</code>
+                    </p>
                 </div>
                 <div class="hero-visual">
                     <div class="terminal-window">
@@ -777,16 +903,81 @@
                             <div class="terminal-dot dot-red"></div>
                             <div class="terminal-dot dot-yellow"></div>
                             <div class="terminal-dot dot-green"></div>
-                            <div class="terminal-title">Multi-Agent CLI</div>
+                            <div class="terminal-title">Conductor CLI</div>
                         </div>
                         <div class="terminal-content">
-                            <div class="terminal-line"><span class="prompt">$</span> multi-agent init</div>
-                            <div class="terminal-line"><span class="success">✅ Generated Agents:</span></div>
-                            <div class="terminal-line"><span class="output">   🎯 @frontend - Frontend Specialist</span></div>
-                            <div class="terminal-line"><span class="output">   🔧 @backend - API & Server Expert</span></div>
-                            <div class="terminal-line"><span class="success">🚀 Multi-agent setup complete!</span></div>
+                            <div class="terminal-line"><span class="prompt">$</span> conductor explain "how should I structure my auth flow?"</div>
+                            <div class="terminal-line"><span class="success">🦆 RUBBER DUCKING WITH EXPERTS</span></div>
+                            <div class="terminal-line"><span class="output">   📋 @pm - Define user stories & requirements</span></div>
+                            <div class="terminal-line"><span class="output">   🎨 @design - UX flow & interface patterns</span></div>
+                            <div class="terminal-line"><span class="output">   💻 @frontend - Next.js implementation</span></div>
+                            <div class="terminal-line"><span class="output">   🚀 @devops - GitHub Actions CI/CD</span></div>
+                            <div class="terminal-line"><span class="output">   🛡️ @security - OWASP compliance check</span></div>
+                            <div class="terminal-line"><span class="success">✅ Complete team consensus achieved!</span></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Section -->
+    <section class="setup" style="padding: 80px 0; background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);">
+        <div class="container">
+            <div class="section-header fade-in" style="text-align: center; margin-bottom: 60px;">
+                <h2 class="section-title" style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 20px; color: var(--primary-charcoal);">⚡ Quick Start</h2>
+                <p class="section-subtitle" style="font-size: 1.125rem; color: var(--stone-gray); max-width: 600px; margin: 0 auto;">
+                    Get up and running with Conductor CLI in minutes. Launch with Claude Code and start orchestrating your AI development team.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+                <div class="fade-in">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; margin-bottom: 24px; color: var(--primary-teal); display: flex; align-items: center; gap: 12px;">
+                        <span style="background: var(--primary-teal); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem;">1</span>
+                        Prerequisites
+                    </h3>
+                    <div style="background: white; border-radius: 16px; padding: 32px; border: 1px solid rgba(100, 116, 139, 0.1);">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding: 12px; background: #F1F5F9; border-radius: 8px;">
+                                <span style="background: #10B981; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem;">✓</span>
+                                <strong>Claude Code</strong> - Required for AI agent orchestration
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #F1F5F9; border-radius: 8px;">
+                                <span style="background: #10B981; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem;">✓</span>
+                                <strong>Node.js 18+</strong> and npm
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; margin-bottom: 24px; color: var(--primary-teal); display: flex; align-items: center; gap: 12px;">
+                        <span style="background: var(--primary-teal); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem;">2</span>
+                        Installation
+                    </h3>
+                    <div style="background: white; border-radius: 16px; padding: 32px; border: 1px solid rgba(100, 116, 139, 0.1);">
+                        <div style="background: #1F2937; border-radius: 12px; padding: 24px; font-family: 'SF Mono', monospace; color: #10B981; font-size: 0.875rem; line-height: 1.6; overflow-x: auto;">
+                            <div style="color: #6B7280; margin-bottom: 12px;"># Step 1: Launch Claude Code with Conductor CLI context</div>
+                            <div style="margin-bottom: 16px; color: #3B82F6;">claude --dangerously-skip-permissions \</div>
+                            <div style="margin-bottom: 20px; padding-left: 20px; color: #F59E0B;">https://github.com/rickithadi/multi-agent-workflow/blob/main/README.md</div>
+                            
+                            <div style="color: #6B7280; margin-bottom: 12px;"># Step 2: In Claude Code, run the multi-agent workflow commands</div>
+                            <div style="color: #10B981; margin-bottom: 8px;">conductor init</div>
+                            <div style="color: #10B981; margin-bottom: 8px;">conductor recommend "Add authentication to my Next.js app"</div>
+                            <div style="color: #10B981; margin-bottom: 8px;">conductor dashboard --watch</div>
+                            <div style="color: #10B981;">conductor scan --security --suggestions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <div class="fade-in" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 12px; padding: 24px; display: inline-block;">
+                    <p style="margin: 0; color: var(--primary-teal); font-weight: 500; display: flex; align-items: center; gap: 12px;">
+                        <span style="background: #3B82F6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">💡</span>
+                        <span><strong>Pro Tip:</strong> The Claude Code command loads the complete multi-agent context, giving you access to all 7 specialized AI agents working together.</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -796,64 +987,65 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 class="section-title">Pixel-Perfect Development Workflows</h2>
+                <h2 class="section-title">🦆 Rubber Ducking Reimagined with AI Experts</h2>
                 <p class="section-subtitle">
-                    Built with Gallifrey Consulting's obsessive attention to detail and security-first engineering
+                    <strong>Talk through your code problems with a complete AI development team.</strong> From PM to design to code to ship to secure – automatic expert consultation that actually understands your context. 
+                    Powered by <strong>Claude Code</strong> and <strong>Anthropic's Claude AI</strong>, with GitHub integration and security built-in by Gallifrey Consulting.
                 </p>
             </div>
             
             <div class="features-grid">
                 <div class="feature-card fade-in">
-                    <span class="feature-icon">🔄</span>
-                    <h3 class="feature-title">Approval-First Workflow</h3>
+                    <span class="feature-icon">🦆</span>
+                    <h3 class="feature-title">Rubber Ducking with Experts</h3>
                     <p class="feature-description">
-                        Every significant change goes through structured review. Multi-agent analysis with priority, 
-                        impacts, risks, and dependencies. No implementation without explicit user consent.
+                        Talk through your problems with AI experts who actually understand. Automatic expert consultation 
+                        that guides you from initial idea through deployment. No more coding in isolation.
                     </p>
                 </div>
                 
                 <div class="feature-card fade-in">
-                    <span class="feature-icon">🤖</span>
-                    <h3 class="feature-title">Intelligent Agent Coordination</h3>
+                    <span class="feature-icon">👥</span>
+                    <h3 class="feature-title">Complete Dev Team: PM→Ship</h3>
                     <p class="feature-description">
-                        Seven specialized AI agents (@frontend, @backend, @ux, @review, @testing, @security, @database) 
-                        provide expert perspectives on every decision.
+                        Full development lifecycle coverage: @pm (requirements), @design (UX), @frontend (React/Next.js), 
+                        @backend (APIs), @devops (CI/CD), @testing (QA), @security (OWASP). Every role, automated.
                     </p>
                 </div>
                 
                 <div class="feature-card fade-in">
-                    <span class="feature-icon">📄</span>
-                    <h3 class="feature-title">Smart Checkpoint System</h3>
+                    <span class="feature-icon">🐙</span>
+                    <h3 class="feature-title">GitHub Integration</h3>
                     <p class="feature-description">
-                        Automatic context monitoring with intelligent warnings at 90% usage. Complete session 
-                        preservation and seamless recovery across context window resets.
+                        Native GitHub workflow integration: PR reviews, issue creation, Actions CI/CD, branch management, 
+                        and automatic commit messages. Your AI team works directly with your repository.
                     </p>
                 </div>
                 
                 <div class="feature-card fade-in">
-                    <span class="feature-icon">🔧</span>
-                    <h3 class="feature-title">VSCode Integration</h3>
+                    <span class="feature-icon">💬</span>
+                    <h3 class="feature-title">Context-Aware Conversations</h3>
                     <p class="feature-description">
-                        Agent-specific terminals with personalized welcome messages, pre-configured tasks, 
-                        and workspace settings optimized for multi-agent workflows.
+                        Smart context management with session preservation. Your AI team remembers your entire project, 
+                        dependencies, patterns, and decisions. True collaborative development experience.
                     </p>
                 </div>
                 
                 <div class="feature-card fade-in">
-                    <span class="feature-icon">📊</span>
-                    <h3 class="feature-title">Context-Aware Intelligence</h3>
+                    <span class="feature-icon">🚀</span>
+                    <h3 class="feature-title">Ship with Confidence</h3>
                     <p class="feature-description">
-                        Automatically detects Next.js, React, Vue, Express, and more. Generates specialized 
-                        agents based on your tech stack and project patterns.
+                        Automated deployment workflows with built-in security scanning, performance optimization, 
+                        and compliance checks. From development to production, your AI team ensures quality.
                     </p>
                 </div>
                 
                 <div class="feature-card fade-in">
-                    <span class="feature-icon">🎯</span>
-                    <h3 class="feature-title">Security-First Design</h3>
+                    <span class="feature-icon">🛡️</span>
+                    <h3 class="feature-title">Security by Default</h3>
                     <p class="feature-description">
-                        Built with Gallifrey Consulting's security-first principles. No external dependencies 
-                        for sensitive operations, complete local control, and audit trails.
+                        OWASP Top 10 scanning, dependency audits, and security best practices built into every 
+                        recommendation. Enterprise security by Gallifrey Consulting, no expertise required.
                     </p>
                 </div>
             </div>
@@ -864,53 +1056,183 @@
     <section class="agents" id="agents">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 class="section-title">Meet Your AI Development Team</h2>
+                <h2 class="section-title">Your Complete AI Development Team: PM → Ship</h2>
                 <p class="section-subtitle">
-                    Specialized agents that understand your domain and provide expert recommendations
+                    A full development team that rubber ducks with you through every phase – from planning to production
                 </p>
             </div>
             
             <div class="agents-grid">
                 <div class="agent-card fade-in">
+                    <span class="agent-icon">📋</span>
+                    <h3 class="agent-name">@pm</h3>
+                    <p class="agent-role">Product Manager</p>
+                    <p class="agent-description">Requirements gathering, user stories, roadmap planning, and stakeholder communication.</p>
+                </div>
+                
+                <div class="agent-card fade-in">
                     <span class="agent-icon">🎨</span>
+                    <h3 class="agent-name">@design</h3>
+                    <p class="agent-role">UX/UI Designer</p>
+                    <p class="agent-description">Design systems, wireframes, user flows, accessibility, and interface patterns.</p>
+                </div>
+                
+                <div class="agent-card fade-in">
+                    <span class="agent-icon">⚛️</span>
                     <h3 class="agent-name">@frontend</h3>
-                    <p class="agent-role">Frontend Architecture Specialist</p>
-                    <p class="agent-description">React/Next.js patterns, component architecture, performance optimization, and modern frontend best practices.</p>
+                    <p class="agent-role">Frontend Developer</p>
+                    <p class="agent-description">React, Next.js, TypeScript, state management, and modern web technologies.</p>
                 </div>
                 
                 <div class="agent-card fade-in">
                     <span class="agent-icon">⚙️</span>
                     <h3 class="agent-name">@backend</h3>
-                    <p class="agent-role">API & Server Specialist</p>
-                    <p class="agent-description">API design, database optimization, server architecture, and scalable backend systems.</p>
-                </div>
-                
-                <div class="agent-card fade-in">
-                    <span class="agent-icon">👤</span>
-                    <h3 class="agent-name">@ux</h3>
-                    <p class="agent-role">User Experience Specialist</p>
-                    <p class="agent-description">User interface design, accessibility compliance (WCAG 2.1), user flows, and conversion optimization.</p>
-                </div>
-                
-                <div class="agent-card fade-in">
-                    <span class="agent-icon">✅</span>
-                    <h3 class="agent-name">@review</h3>
-                    <p class="agent-role">Code Quality & Architecture</p>
-                    <p class="agent-description">Code quality assessment, architecture patterns, technical debt analysis, and best practices enforcement.</p>
+                    <p class="agent-role">Backend Engineer</p>
+                    <p class="agent-description">APIs, databases, microservices, authentication, and scalable architecture.</p>
                 </div>
                 
                 <div class="agent-card fade-in">
                     <span class="agent-icon">🧪</span>
-                    <h3 class="agent-name">@testing</h3>
-                    <p class="agent-role">Testing & QA Specialist</p>
-                    <p class="agent-description">Test strategies, automation, quality assurance, and comprehensive coverage planning.</p>
+                    <h3 class="agent-name">@qa</h3>
+                    <p class="agent-role">QA Engineer</p>
+                    <p class="agent-description">Test automation, E2E testing, unit tests, and quality assurance processes.</p>
                 </div>
                 
                 <div class="agent-card fade-in">
+                    <span class="agent-icon">🚀</span>
+                    <h3 class="agent-name">@devops</h3>
+                    <p class="agent-role">DevOps Engineer</p>
+                    <p class="agent-description">CI/CD pipelines, GitHub Actions, Docker, Kubernetes, and deployment automation.</p>
+                </div>
+                
+                <div class="agent-card fade-in">
+                    <span class="agent-icon">👁️</span>
+                    <h3 class="agent-name">@reviewer</h3>
+                    <p class="agent-role">Code Reviewer</p>
+                    <p class="agent-description">PR reviews, code quality, best practices, and architectural decisions.</p>
+                </div>
+                
+                <div class="agent-card fade-in" style="border: 2px solid var(--gallifrey-gold); position: relative;">
+                    <div style="position: absolute; top: -1px; right: -1px; background: var(--gallifrey-gold); color: white; padding: 4px 8px; font-size: 0.75rem; font-weight: 600; border-radius: 0 16px 0 16px;">GALLIFREY SECURITY</div>
                     <span class="agent-icon">🛡️</span>
                     <h3 class="agent-name">@security</h3>
-                    <p class="agent-role">Security & Auth Expert</p>
-                    <p class="agent-description">Security patterns, authentication strategies, vulnerability assessment, and secure coding practices.</p>
+                    <p class="agent-role">Security Expert</p>
+                    <p class="agent-description">OWASP compliance, vulnerability scanning, secure coding, and threat modeling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security" id="security" style="padding: 120px 0; background: linear-gradient(135deg, #1F2937 0%, #374151 100%); color: white;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title" style="color: white;">Enterprise Security Built-In</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">
+                    <strong>Security by Gallifrey, powered by Claude Code and Anthropic's Claude AI.</strong> No security expertise required – 
+                    OWASP Top 10 scanning, vulnerability detection, and enterprise compliance automatically built into every development workflow.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 60px;">
+                <div class="fade-in">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; margin-bottom: 24px; color: #F59E0B;">
+                        🔍 OWASP Top 10 Security Audit
+                    </h3>
+                    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; margin-bottom: 24px;">
+                        <div style="font-family: 'SF Mono', monospace; font-size: 0.875rem; color: #10B981;">
+                            <div style="margin-bottom: 16px; opacity: 0; animation: typewriter 0.5s ease forwards; animation-delay: 0.5s;">
+                                <span style="color: #3B82F6;">$</span> conductor scan --security --owasp --all-categories
+                            </div>
+                            <div style="opacity: 0; animation: typewriter 0.5s ease forwards; animation-delay: 1s; color: #F59E0B;">
+                                🔒 OWASP TOP 10 SECURITY SCAN
+                            </div>
+                            <div style="opacity: 0; animation: typewriter 0.5s ease forwards; animation-delay: 1.5s; color: white; margin: 12px 0;">
+                                ✅ A01 - Broken Access Control: 0 findings<br>
+                                ✅ A02 - Cryptographic Failures: 0 findings<br>
+                                ✅ A03 - Injection: 0 findings<br>
+                                ✅ A04 - Insecure Design: 0 findings<br>
+                                ✅ A05 - Security Misconfiguration: 0 findings<br>
+                                ✅ A06 - Vulnerable Components: 0 findings<br>
+                                ✅ A07 - Auth/Identity Failures: 0 findings<br>
+                                ✅ A08 - Software Integrity Failures: 0 findings<br>
+                                ✅ A09 - Security Logging Failures: 0 findings<br>
+                                ✅ A10 - Server-Side Request Forgery: 0 findings
+                            </div>
+                            <div style="opacity: 0; animation: typewriter 0.5s ease forwards; animation-delay: 2s; color: #10B981;">
+                                🏆 SECURITY SCORE: 100/100 (Gallifrey Enterprise Grade)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 600; margin-bottom: 16px; color: #F59E0B;">
+                        📊 Comprehensive Audit Types
+                    </h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; font-size: 0.875rem;">
+                            <span style="color: #F59E0B;">🛡️</span> Security Audit
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; font-size: 0.875rem;">
+                            <span style="color: #10B981;">📊</span> SEO Audit
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; font-size: 0.875rem;">
+                            <span style="color: #3B82F6;">🏆</span> Reputation Audit
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; font-size: 0.875rem;">
+                            <span style="color: #F97316;">⚖️</span> Competitor Analysis
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; font-size: 0.875rem;">
+                            <span style="color: #8B5CF6;">📈</span> Performance Audit
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; font-size: 0.875rem;">
+                            <span style="color: #06B6D4;">♿</span> Accessibility Audit
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; margin-bottom: 24px; color: #F59E0B;">
+                        🛡️ Security-Focused Agents
+                    </h3>
+                    <div style="display: grid; gap: 16px;">
+                        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2rem;">🏛️</span>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 4px; color: #F59E0B;">@security-architect</h4>
+                                <p style="font-size: 0.875rem; opacity: 0.8; margin: 0;">OWASP expertise, threat modeling, zero-trust architecture</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2rem;">🔒</span>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 4px; color: #F59E0B;">@privacy-officer</h4>
+                                <p style="font-size: 0.875rem; opacity: 0.8; margin: 0;">GDPR/CCPA compliance, privacy-by-design principles</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2rem;">📋</span>
+                            <div>
+                                <h4 style="font-weight: 600; margin-bottom: 4px; color: #F59E0B;">@compliance-auditor</h4>
+                                <p style="font-size: 0.875rem; opacity: 0.8; margin: 0;">SOC2, ISO27001, audit preparation and validation</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 24px; padding: 20px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 12px;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #F59E0B; font-weight: 500;">
+                            <strong>⚡ Built by Gallifrey:</strong> Security isn't an afterthought – it's engineered into every agent interaction, 
+                            every recommendation, and every line of code. Enterprise-grade precision meets developer productivity.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-top: 20px; padding: 16px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #10B981; font-weight: 500; text-align: center;">
+                            <strong>🏢 Gallifrey Consulting:</strong> A competent security expert consultancy creating this tool for everyday developers. 
+                            Gallifrey has many more enterprise capabilities beyond Conductor CLI.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -921,13 +1243,13 @@
         <div class="container">
             <div class="cta-content fade-in">
                 <h2>Ready to Transform Your Development Workflow?</h2>
-                <p>Join the future of AI-powered development with structured agent coordination and intelligent approvals.</p>
+                <p>Join the most intelligent AI development orchestrator with specialized agents, OWASP security built-in, and enterprise-ready controls crafted with precision by Gallifrey Consulting's security experts.</p>
                 <div class="hero-actions">
                     <a href="https://github.com/rickithadi/multi-agent-workflow" class="btn btn-white" target="_blank">
                         🚀 Get Started Now
                     </a>
-                    <a href="https://gallifrey.consulting" class="btn btn-secondary" target="_blank">
-                        💼 Consult with Gallifrey
+                    <a href="https://gallifrey.consulting" class="btn btn-secondary" target="_blank" style="background: transparent; border: 2px solid white; color: white;">
+                        🏢 Gallifrey Enterprise Services
                     </a>
                 </div>
             </div>
@@ -939,13 +1261,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>🤖 Multi-Agent CLI</h3>
+                    <h3>🎭 Conductor CLI</h3>
                     <p>
-                        Revolutionary AI-powered development CLI with multi-agent coordination and approval workflows. 
-                        Built with obsessive attention to detail and security-first engineering.
+                        AI development orchestrator with specialized agents for React, Next.js, TypeScript, and full-stack development. 
+                        Enterprise security built-in by Gallifrey Consulting's security experts, OWASP Top 10 compliance, and intelligent development workflows.
                     </p>
                     <p>
-                        <strong>Open Source</strong> • <strong>TypeScript</strong> • <strong>Security-First</strong>
+                        <strong>AI-Powered</strong> • <strong>Security Built-In</strong> • <strong>Developer-First</strong> • <strong>Enterprise Ready</strong>
                     </p>
                 </div>
                 
@@ -972,12 +1294,26 @@
             
             <div class="footer-bottom">
                 <div>
-                    <p>&copy; 2025 Multi-Agent CLI. Built with ❤️ in Melbourne.</p>
+                    <p>&copy; 2025 Conductor CLI. Built with ❤️ and obsessive attention to detail in Melbourne.</p>
+                    <p style="font-size: 0.875rem; opacity: 0.7; margin-top: 8px;">
+                        <strong>Core Developer:</strong> <a href="https://rickithadi.dev" target="_blank" style="color: var(--gallifrey-gold); text-decoration: none;">Hadi Rickit</a> • 
+                        <strong>Engineering:</strong> <a href="https://gallifrey.consulting" target="_blank" style="color: white; text-decoration: none;">Gallifrey Consulting</a>
+                    </p>
+                    <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 12px; display: flex; align-items: center; gap: 12px;">
+                        <span>Powered by</span>
+                        <a href="https://claude.ai/code" target="_blank" style="color: #F59E0B; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+                            🤖 Claude Code
+                        </a>
+                        <span style="opacity: 0.5;">•</span>
+                        <a href="https://anthropic.com" target="_blank" style="color: white; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 6px;">
+                            🧠 Anthropic
+                        </a>
+                    </p>
                 </div>
                 <div class="gallifrey-credit">
-                    <span>Crafted by</span>
-                    <a href="https://gallifrey.consulting" target="_blank" style="color: white; text-decoration: none; font-weight: 600;">
-                        Gallifrey Consulting
+                    <span>Pixel-perfect craftsmanship by</span>
+                    <a href="https://gallifrey.consulting" target="_blank" style="color: var(--gallifrey-gold); text-decoration: none; font-weight: 700; margin-left: 8px;">
+                        Gallifrey Consulting ⚡
                     </a>
                 </div>
             </div>

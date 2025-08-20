@@ -1,390 +1,507 @@
-# Multi-Agent Development CLI
+# 🦆 Conductor CLI - Rubber Ducking with AI Experts
 
-> Transform your development workflow with AI-powered agent coordination and approval workflows
+> **Your complete AI development team from PM to design to code to ship to secure** – Automatic expert consultation that actually understands your context. Native GitHub integration, specialized agents for React, Next.js, TypeScript, and full-stack development. Enterprise security built-in by Gallifrey Consulting.
 
-[![npm version](https://badge.fury.io/js/multi-agent-cli.svg)](https://badge.fury.io/js/multi-agent-cli)
+**🦆 Rubber Duck. 👥 Collaborate. 🚀 Ship with Confidence.**
+
+[![npm version](https://badge.fury.io/js/conductor-cli.svg)](https://badge.fury.io/js/conductor-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
+[![Claude Code](https://img.shields.io/badge/Powered_by-Claude_Code-orange.svg)](https://claude.ai/code)
+[![Gallifrey](https://img.shields.io/badge/Security_by-Gallifrey_Consulting-teal.svg)](https://gallifrey.consulting)
 
-A revolutionary CLI tool that brings structured multi-agent collaboration to your development process. Get recommendations backed by specialized AI agents (frontend, backend, UX, security, etc.) with built-in approval workflows before implementing changes.
+**Conductor CLI** is rubber ducking reimagined with AI experts. Talk through your problems with a complete development team that actually understands your context – from PM to design to code to ship to secure. Built with Gallifrey Consulting's security-by-design principles and powered by **Claude Code** and **Anthropic's Claude AI**.
 
-## 🚀 Quick Start
+**Perfect for**: Web developers who want automatic expert consultation, GitHub-integrated workflows, Next.js applications, React projects, TypeScript codebases, and any development team that wants enterprise-grade security without the complexity.
 
+## 🦆 **Why Rubber Ducking with AI?**
+
+Traditional rubber ducking helps you think through problems by explaining them out loud. **Conductor CLI takes this further** – you explain your problems to AI experts who actually respond with contextual advice, suggestions, and implementation guidance. It's like having a senior developer, designer, DevOps engineer, and security expert all rubber ducking with you simultaneously.
+
+**Core Developer**: [Hadi Rickit](https://rickithadi.dev) | **Engineering**: [Gallifrey Consulting](https://gallifrey.consulting)
+
+---
+
+## ⚡ **Quick Start**
+
+### **Prerequisites**
+- **Claude Code** - **Required** for AI agent orchestration
+- Node.js 18+ and npm
+
+### **Installation**
 ```bash
-# Install globally
-npm install -g multi-agent-cli
+# Step 1: Launch Claude Code with Conductor CLI context
+claude --dangerously-skip-permissions https://github.com/rickithadi/multi-agent-workflow/blob/main/README.md
 
-# Initialize in your project
-multi-agent init
+# Step 2: In Claude Code, run the multi-agent workflow commands
+conductor init
 
-# Get structured recommendations
-multi-agent recommend "Add user authentication system"
+# Get expert recommendations from specialized agents
+conductor recommend "Add authentication to my Next.js app"
 
-# Review and approve proposals
-multi-agent proposals --list
+# Monitor with beautiful terminal dashboard  
+conductor dashboard --watch
 
-# Monitor context and create checkpoints
-multi-agent checkpoint --status
-multi-agent checkpoint --create
+# Automatic security scanning (built-in Gallifrey security)
+conductor scan --security --suggestions
 ```
 
-## ✨ Key Features
+---
 
-### 🤖 **Intelligent Agent Coordination**
-- **@frontend** - React/Next.js architecture specialist
-- **@backend** - API & database expert  
-- **@ux** - User experience & accessibility specialist
-- **@review** - Code quality & architecture guardian
-- **@testing** - QA & test automation specialist
-- **@security** - Security & authentication expert
-- **@database** - Database optimization specialist
+## 👥 **Your Complete AI Development Team: PM → Ship**
 
-### 🔄 **Approval-First Workflow**
-Every significant change goes through structured review:
-1. **Multi-agent analysis** - All relevant agents provide input
-2. **Structured recommendations** - Priority, impacts, risks, dependencies
-3. **User approval required** - No changes without explicit consent
-4. **Flexible approval options** - Approve all, modify, or cherry-pick
+Conductor CLI gives you a **complete development team** that rubber ducks with you through every phase of development:
 
-### 🔧 **VSCode Integration**
-- **Agent-specific terminals** - Dedicated terminals for each specialist
-- **Workspace configuration** - Pre-configured tasks and profiles  
-- **Extension recommendations** - Curated tools for your stack
+### **🎯 Planning & Strategy**
+- **@pm** - Product Manager (requirements, user stories, roadmap planning, stakeholder communication)
+- **@design** - UX/UI Designer (wireframes, user flows, design systems, accessibility)
 
-### 📄 **Smart Checkpoint System**
-- **Context monitoring** - Automatic token usage tracking
-- **Intelligent warnings** - Alerts at 90% context usage
-- **Session preservation** - Complete context and progress saved
-- **Seamless recovery** - Resume exactly where you left off
-- **Manual checkpoints** - Create savepoints before major work
+### **💻 Development & Implementation** 
+- **@frontend** - Frontend Developer (React, Next.js, TypeScript, state management, modern web)
+- **@backend** - Backend Engineer (APIs, databases, microservices, authentication, scaling)
+- **@qa** - QA Engineer (test automation, E2E testing, unit tests, quality assurance)
 
-### 📊 **Context-Aware Intelligence**
-Automatically detects and adapts to:
-- **Framework** (Next.js, React, Vue, Express, etc.)
-- **Language** (TypeScript, JavaScript, Python, Go, etc.)
-- **Stack** (Database, auth, testing frameworks)
-- **Project patterns** (API structure, design system, etc.)
+### **🚀 Deployment & Operations**
+- **@devops** - DevOps Engineer (CI/CD pipelines, GitHub Actions, Docker, Kubernetes)
+- **@reviewer** - Code Reviewer (PR reviews, code quality, best practices, architecture)
 
-## 🎯 Core Workflow
+### **🛡️ Security & Compliance (Built-in by Gallifrey)**
+- **@security** - Security Expert (OWASP, vulnerability scanning, secure coding, threat modeling)
 
-### 1. Initialize Multi-Agent Setup
+---
 
+## ✨ **Key Features for Web Developers**
+
+### **🦆 Rubber Ducking with Expert Context**
+Talk through problems with AI that actually understands:
+1. **Explain your problem** - Describe what you're trying to build or fix
+2. **Multi-expert consultation** - Get input from PM, design, dev, DevOps, security
+3. **Contextual responses** - Agents understand your codebase, patterns, and constraints
+4. **Implementation guidance** - Step-by-step guidance from planning to deployment
+
+### **🐙 Native GitHub Integration**
+Your AI team works directly with your repository:
+- **Automatic PR reviews** - AI agents review pull requests for quality, security, and best practices
+- **Issue creation** - Generate detailed GitHub issues from conversations
+- **CI/CD automation** - Set up GitHub Actions workflows tailored to your stack
+- **Branch management** - Smart branch naming and automated commit messages
+- **Context preservation** - Full repository context across all agent interactions
+
+### **🖥️ Beautiful Terminal Dashboard**
+Real-time agent activity monitoring with blessed.js interface:
+- Agent status board showing all specialists working
+- Team consensus tracking for recommendations  
+- Detailed proposal breakdowns with expandable sections
+- GitHub integration status and workflow monitoring
+
+### **📊 Framework Intelligence**
+Automatically detects and optimizes for:
+- **Next.js** - SSR, ISR, API routes, App Router, middleware
+- **React** - Hooks, context, performance optimization, modern patterns
+- **TypeScript** - Type safety, advanced patterns, configuration
+- **Vue/Nuxt** - Composition API, SSR, performance
+- **Express/Node.js** - API design, middleware, database integration
+
+### **🛡️ Built-in Enterprise Security (Gallifrey Signature)**
+Security that just works - no security expertise required:
+- **Automatic OWASP scanning** - Finds SQL injection, XSS, auth issues automatically
+- **Secret detection** - Catches API keys, passwords, tokens before they're committed  
+- **Dependency monitoring** - Alerts on vulnerable packages with fix suggestions
+- **Security recommendations** - AI agents suggest secure coding patterns
+- **Compliance ready** - SOC2, GDPR, ISO27001 compliance built-in
+
+---
+
+## 🚀 **Usage Examples**
+
+### **🦆 Rubber Ducking Sessions**
 ```bash
-multi-agent init
+# Explain your problem to the AI team
+conductor explain "I'm having trouble with state management in my React app"
+
+# Get architectural guidance
+conductor discuss "How should I structure authentication across my microservices?"
+
+# Talk through implementation approaches
+conductor brainstorm "What's the best way to handle real-time updates in Next.js?"
 ```
 
-**What happens:**
-- 🔍 Analyzes your project structure
-- 🤖 Generates specialized agents based on your tech stack
-- 📝 Creates comprehensive `claude.md` context
-- 🔧 Sets up VSCode integration
-- ✅ Initializes approval system
-
-### 2. Request Multi-Agent Recommendations
-
+### **🐙 GitHub Integration Workflows**
 ```bash
-multi-agent recommend "Implement user dashboard with analytics"
+# Create PR with AI-generated description
+conductor github pr create --title "Add auth system" --auto-description
+
+# Get PR review from AI team
+conductor github pr review 123
+
+# Set up CI/CD pipeline
+conductor github actions setup --framework nextjs
+
+# Create issues from conversations
+conductor github issue create "Implement user dashboard" --from-discussion
 ```
 
-**Example Output:**
-```
-🔍 MULTI-AGENT RECOMMENDATION
-
-📋 Proposal: Implement user dashboard with analytics
-🎯 Type: feature
-⚡ Priority: HIGH
-
-🤖 AGENT PERSPECTIVES:
-
-@frontend - Frontend Architecture Specialist
-  💡 Recommendation: Use Next.js App Router with React Server Components
-  🧠 Reasoning: Optimal performance for data-heavy dashboard
-  📈 Impacts: User experience, Performance, SEO
-  🔗 Dependencies: Update to Next.js 14, Add chart libraries
-  ⚠️ Risks: Learning curve for team, Bundle size increase
-
-@backend - API & Server Specialist  
-  💡 Recommendation: Implement GraphQL for flexible data queries
-  🧠 Reasoning: Dashboard needs complex, nested data relationships
-  📈 Impacts: API performance, Data consistency, Caching strategy
-  🔗 Dependencies: Set up Apollo Server, Database optimization
-  ⚠️ Risks: Query complexity, N+1 problems
-
-@ux - User Experience Specialist
-  💡 Recommendation: Progressive disclosure with customizable widgets
-  🧠 Reasoning: Reduces cognitive load, improves user adoption
-  📈 Impacts: User satisfaction, Feature adoption, Support burden
-  🔗 Dependencies: User research, A/B testing setup
-  ⚠️ Risks: Development complexity, User confusion initially
-
-@security - Security Specialist
-  💡 Recommendation: Role-based access control for sensitive analytics
-  🧠 Reasoning: Different user roles need different data visibility
-  📈 Impacts: Data security, Compliance, User trust
-  🔗 Dependencies: Auth system upgrade, Audit logging
-  ⚠️ Risks: Complex permission matrix, Performance impact
-
-📊 CONSENSUS ANALYSIS:
-- Priority Agreement: High consensus (100% agree on HIGH)
-- Risk Assessment: 4 unique risks identified
-- Impact Areas: Performance, Security, User Experience, Maintainability
-
-🎯 RECOMMENDED ACTION:
-Implement in phases: Start with Next.js dashboard structure, add GraphQL API, then progressive UX enhancements with security controls.
-```
-
-### 3. Review and Approve
-
-You can then:
-- ✅ **Approve all recommendations** - Implement as proposed
-- 🔧 **Approve with modifications** - Make specific changes
-- 🔍 **Approve individual recommendations** - Cherry-pick which advice to follow
-- ❌ **Reject proposal** - Don't implement changes
-- ⏸️ **Save for later** - Store for future consideration
-
-### 4. Implementation with Context
-
-After approval, use Claude Code with the generated context:
-
+### **👥 Full Team Development Cycle**
 ```bash
-claude-code  # Now has full multi-agent context and approved plan
+# Planning phase
+conductor ask @pm "Define requirements for user authentication"
+conductor ask @design "Create user flow for login process"
+
+# Development phase  
+conductor ask @frontend "Implement login UI with React Hook Form"
+conductor ask @backend "Set up JWT authentication endpoints"
+
+# Deployment phase
+conductor ask @devops "Configure GitHub Actions for Next.js deployment"
+conductor ask @security "Review authentication implementation for OWASP compliance"
 ```
 
-## 📚 Commands Reference
-
-### Project Setup
-
+### **Security and Compliance**
 ```bash
-# Initialize multi-agent setup
-multi-agent init [options]
-  -f, --framework <framework>    Specify framework manually
-  -m, --mode <mode>             Coordination mode (subagents|external-files)
-  --no-vscode                   Skip VSCode integration
-  --force                       Overwrite existing configuration
+# Built-in security scanning
+conductor scan --security --detailed
 
-# Show current configuration
-multi-agent status
+# Security recommendations
+conductor recommend "Implement secure user authentication" --security-focus
 
-# Update configuration
-multi-agent update
+# OWASP compliance check
+conductor scan --owasp --export-report
 ```
 
-### Agent Management  
+---
 
+## 🔧 **Command Reference**
+
+### **Project Setup**
 ```bash
-# List available agents for current project
-multi-agent agents
+# Initialize with framework detection
+conductor init
 
-# Get structured recommendations
-multi-agent recommend <task> [options]
-  -t, --type <type>    Task type (feature|bugfix|refactor|optimization|security|design)
+# Initialize with specific framework
+conductor init --framework nextjs --typescript
+
+# Initialize with security profile
+conductor init --security-profile enterprise
 ```
 
-### Proposal Management
-
+### **Getting Recommendations**
 ```bash
-# List pending proposals
-multi-agent proposals --list
+# General recommendations
+conductor recommend "your development question"
 
-# Review specific proposal
-multi-agent proposals --review <id>
+# Agent-specific recommendations  
+conductor recommend "optimize database queries" --agent @backend
 
-# Create new proposal interactively
-multi-agent proposals --create
+# Priority-based recommendations
+conductor recommend "fix critical bugs" --priority high
+
+# Export recommendations
+conductor recommend "code review checklist" --export markdown
 ```
 
-### Checkpoint Management
-
+### **Dashboard and Monitoring**
 ```bash
-# Check context window usage
-multi-agent checkpoint --status
+# Launch interactive dashboard
+conductor dashboard
 
-# List available checkpoints
-multi-agent checkpoint --list
+# Watch mode for real-time updates
+conductor dashboard --watch
 
-# Create manual checkpoint
-multi-agent checkpoint --create
-
-# Restore from checkpoint
-multi-agent checkpoint --restore <id>
-
-# View checkpoint configuration
-multi-agent checkpoint --config
+# Agent-specific dashboard
+conductor dashboard --agent @frontend --detailed
 ```
 
-### Project Templates
-
+### **Security Operations**
 ```bash
-# List available templates
-multi-agent templates
+# Comprehensive security scan
+conductor scan --security --detailed
 
-# Create new project with template
-multi-agent create <projectName> [options]
-  -t, --template <template>     Project template to use
-  -m, --mode <mode>            Coordination mode
+# OWASP Top 10 scan
+conductor scan --owasp --category A01,A02,A03
+
+# Generate security report
+conductor report --security --format pdf
+
+# Security dashboard
+conductor dashboard --security --watch
 ```
 
-## 🏗️ Framework Support
+### **Project Analysis**
+```bash
+# Analyze current project
+conductor analyze --detailed
 
-### Frontend Frameworks
-- **Next.js** - App Router, Server Components, API routes
-- **React** - Hooks, Context API, performance patterns  
-- **Vue** - Composition API, Pinia, Vue Router
-- **Angular** - Modules, services, RxJS patterns
-- **Svelte** - SvelteKit, stores, actions
+# Framework detection
+conductor analyze --frameworks
 
-### Backend Frameworks  
-- **Express** - Middleware, routing, security
-- **Fastify** - Performance, plugins, validation
-- **Next.js API** - Route handlers, middleware
-- **NestJS** - Decorators, modules, dependency injection
+# Dependency analysis
+conductor analyze --dependencies --security-check
+```
 
-### Languages
-- **TypeScript** - Full type safety and IntelliSense
-- **JavaScript** - Modern ES6+ patterns
-- **Python** - FastAPI, Django, Flask support
-- **Go** - Gin, Echo, standard library patterns
+---
 
-## 🔧 Configuration
+## 📁 **Project Structure**
 
-The CLI creates several configuration files:
+After running `conductor init`, your project gets:
 
-### `claude.md` - Main Context File
-Contains project context and agent definitions for Claude Code.
+```
+your-project/
+├── .conductor/
+│   ├── config.json          # Conductor configuration
+│   ├── agents/               # Generated agent contexts
+│   │   ├── frontend.md       # @frontend agent context
+│   │   ├── backend.md        # @backend agent context
+│   │   ├── security.md       # @security agent context (Gallifrey)
+│   │   └── ...
+│   └── checkpoints/          # Session checkpoints
+├── claude.md                 # Main Claude context file
+├── .vscode/
+│   ├── tasks.json           # Agent-specific tasks
+│   └── settings.json        # Optimized workspace settings
+└── your-existing-files...
+```
 
-### `.multi-agent/approval-config.json` - Approval Settings
+---
+
+## 🎯 **Framework-Specific Guides**
+
+### **Next.js Projects**
+```bash
+# Initialize Next.js project with Conductor
+conductor init --framework nextjs
+
+# Common Next.js recommendations
+conductor recommend "implement ISR for dynamic routes"
+conductor recommend "optimize Core Web Vitals scores"
+conductor recommend "add middleware for authentication"
+```
+
+### **React Projects**
+```bash
+# React-specific initialization
+conductor init --framework react --typescript
+
+# React performance optimization
+conductor recommend "reduce re-renders in component tree"
+conductor recommend "implement code splitting with lazy loading"
+```
+
+### **Full-Stack Projects**
+```bash
+# Full-stack setup
+conductor init --framework nextjs --database postgresql
+
+# Backend recommendations
+conductor recommend "design scalable API architecture"
+conductor recommend "implement caching strategy with Redis"
+```
+
+---
+
+## 🔧 **Configuration**
+
+### **Basic Configuration**
 ```json
 {
-  "requiresApproval": {
-    "codeChanges": true,
-    "newFeatures": true,
-    "architectureChanges": true,
-    "dependencies": true,
-    "configChanges": true
+  "framework": "nextjs",
+  "language": "typescript",
+  "agents": {
+    "frontend": true,
+    "backend": true,
+    "security": true,
+    "testing": true,
+    "seo": true
   },
-  "autoApprove": {
-    "lowRiskChanges": false,
-    "documentation": false,
-    "tests": false
+  "security": {
+    "profile": "enterprise",
+    "scanOnRecommend": true,
+    "owaspCompliance": true
   }
 }
 ```
 
-### `.vscode/settings.json` - VSCode Integration
-- Terminal profiles for each agent
-- Task definitions for agent consultation
-- Extension recommendations
-- Workspace-specific settings
-
-## 🎨 Customization
-
-### Adding Custom Agents
-
-Edit `claude.md` to add specialized agents:
-
-```markdown
-### @performance - Performance Specialist
-**Expertise**: Core Web Vitals, bundle optimization, caching strategies
-**Technical Stack**: Lighthouse, Webpack, Vite, CDN configuration
-**Special Instructions**:
-- Focus on measurable performance improvements
-- Consider mobile-first optimization
-- Monitor bundle size impact
-```
-
-### Custom Approval Workflows
-
-Modify `.multi-agent/approval-config.json` to customize what requires approval:
-
+### **Advanced Configuration**
 ```json
 {
-  "requiresApproval": {
-    "codeChanges": true,
-    "newFeatures": true,
-    "dependencies": false,  // Auto-approve dependency updates
-    "tests": false         // Auto-approve test additions
+  "dashboard": {
+    "theme": "gallifrey",
+    "animations": true,
+    "showConsensus": true
+  },
+  "recommendations": {
+    "maxAgents": 7,
+    "requireApproval": true,
+    "exportFormat": "markdown"
+  },
+  "integrations": {
+    "vscode": true,
+    "git": true,
+    "claude": {
+      "model": "claude-3-sonnet",
+      "contextWindow": "managed"
+    }
   }
 }
 ```
 
-## 🚀 Advanced Usage
+---
 
-### External Collaboration Mode
+## 🔗 **VS Code Integration**
 
-For teams wanting persistent collaboration files:
+Conductor CLI provides seamless VS Code integration:
 
-```bash
-multi-agent init --mode external-files
-```
+### **Agent-Specific Terminals**
+- **@frontend Terminal** - React/Next.js focused environment
+- **@backend Terminal** - API and database tools
+- **@security Terminal** - Security testing and analysis tools
+- **@testing Terminal** - Jest, Playwright, and testing utilities
 
-Creates `./collaboration/` directory with:
-- `coordination.md` - Central coordination hub
-- `{agent}-communication.md` - Per-agent communication logs
-- `task-tracking.md` - Shared task management
-- `decision-log.md` - Architecture decision records
+### **Tasks and Commands**
+- **Conductor: Get Recommendation** - Quick recommendations in VS Code
+- **Conductor: Open Dashboard** - Launch dashboard from command palette
+- **Conductor: Security Scan** - Run security analysis on current file
+- **Conductor: Generate Agent Context** - Update agent understanding
 
-### Integration with CI/CD
+---
 
-```yaml
-# .github/workflows/multi-agent-review.yml
-name: Multi-Agent Review
-on:
-  pull_request:
-    types: [opened, synchronize]
+## 🧪 **Testing Integration**
 
-jobs:
-  multi-agent-analysis:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - name: Install Multi-Agent CLI
-        run: npm install -g multi-agent-cli
-      - name: Generate Recommendations
-        run: |
-          multi-agent init --force
-          multi-agent recommend "Review PR changes" --type review > pr-analysis.md
-      - name: Comment PR
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const fs = require('fs');
-            const analysis = fs.readFileSync('pr-analysis.md', 'utf8');
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: analysis
-            });
-```
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-### Development Setup
+Conductor CLI integrates with your testing workflow:
 
 ```bash
-git clone https://github.com/your-org/multi-agent-workflow
+# Test-focused recommendations
+conductor recommend "improve test coverage for authentication module"
+
+# Generate test cases
+conductor recommend "create unit tests for user service"
+
+# Testing best practices
+conductor recommend "implement E2E testing strategy"
+```
+
+**Supported Testing Frameworks:**
+- **Jest** - Unit and integration testing
+- **Playwright** - E2E testing and browser automation  
+- **Cypress** - E2E testing and component testing
+- **Vitest** - Fast unit testing for Vite projects
+- **React Testing Library** - React component testing
+
+---
+
+## 📊 **Performance Monitoring**
+
+### **Built-in Performance Analysis**
+- **Core Web Vitals** monitoring and optimization suggestions
+- **Bundle size analysis** with reduction recommendations
+- **Rendering performance** optimization for React/Next.js
+- **Database query optimization** suggestions
+
+### **Performance Commands**
+```bash
+# Performance analysis
+conductor analyze --performance
+
+# Core Web Vitals optimization
+conductor recommend "improve LCP and CLS scores"
+
+# Bundle optimization
+conductor recommend "reduce JavaScript bundle size"
+```
+
+---
+
+## 🛡️ **Security Features**
+
+### **Built-in Security Scanning**
+- **OWASP Top 10** vulnerability detection
+- **Secret scanning** for API keys, tokens, passwords
+- **Dependency vulnerability** analysis
+- **Code pattern analysis** for security issues
+
+### **Security Agent Capabilities**
+- **@security-architect** - OWASP expertise, threat modeling
+- **@privacy-officer** - GDPR/CCPA compliance
+- **@compliance-auditor** - SOC2, ISO27001 validation
+
+### **Security Commands**
+```bash
+# Comprehensive security scan
+conductor scan --security --detailed --export
+
+# OWASP specific scanning
+conductor scan --owasp --all-categories
+
+# Security recommendations
+conductor recommend "implement secure authentication" --security-focus
+```
+
+---
+
+## 🤝 **Contributing**
+
+We welcome contributions! Please see our [Contributing Guide](docs/CONTRIBUTING.md) for details.
+
+### **Development Setup**
+```bash
+git clone https://github.com/rickithadi/multi-agent-workflow
 cd multi-agent-workflow
 npm install
 npm run build
 npm link  # Use local version globally
+
+# Run tests
+npm test
+
+# Run security tests
+npm run test:security
 ```
-
-## 📄 License
-
-MIT © [Your Organization](LICENSE)
-
-## 🆘 Support
-
-- **Documentation**: [Full Documentation](docs/)
-- **Examples**: [Example Projects](examples/)
-- **Issues**: [GitHub Issues](https://github.com/your-org/multi-agent-workflow/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-org/multi-agent-workflow/discussions)
 
 ---
 
-**Ready to transform your development workflow?** Start with `multi-agent init` and experience structured, AI-powered development collaboration! 🚀
+## 📚 **Documentation**
+
+- **[Getting Started Guide](docs/GETTING-STARTED.md)** - Comprehensive setup and usage
+- **[API Reference](docs/API.md)** - Complete API documentation  
+- **[Examples](docs/EXAMPLES.md)** - Real-world usage examples
+- **[Security Guide](docs/SECURITY.md)** - Security features and best practices
+- **[OWASP Integration](docs/OWASP.md)** - OWASP Top 10 compliance guide
+- **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues and solutions
+
+---
+
+## 🆘 **Support**
+
+- **GitHub Issues**: [Report bugs and feature requests](https://github.com/rickithadi/multi-agent-workflow/issues)
+- **Security Issues**: [security@gallifrey.consulting](mailto:security@gallifrey.consulting)
+- **Commercial Support**: [Gallifrey Consulting](https://gallifrey.consulting)
+- **Community**: Join our discussions and share your experience
+
+---
+
+## 📄 **License**
+
+MIT © [Hadi Rickit](LICENSE) - [Gallifrey Consulting](https://gallifrey.consulting)
+
+---
+
+## 🏆 **Why Choose Conductor CLI?**
+
+✅ **Developer-First** - Built by developers, for developers  
+✅ **AI-Powered** - Powered by Claude Code and Anthropic's Claude AI  
+✅ **Security Built-In** - Enterprise security by Gallifrey, no expertise required  
+✅ **Framework Intelligent** - Understands React, Next.js, TypeScript, and more  
+✅ **Approval Workflow** - You control every implementation decision  
+✅ **Beautiful Interface** - Stunning terminal dashboard with real-time updates  
+✅ **Enterprise Ready** - OWASP compliant, SOC2 ready, audit-friendly  
+
+---
+
+**Ready to transform your development workflow?** 
+
+Start with `conductor init` and experience the future of AI-assisted development! 🚀
+
+**Built with obsessive precision and developer empathy by [Hadi Rickit](https://rickithadi.dev) and [Gallifrey Consulting](https://gallifrey.consulting) ⚡**
+
+---
+
+*Powered by [Claude Code](https://claude.ai/code) and [Anthropic](https://anthropic.com)*

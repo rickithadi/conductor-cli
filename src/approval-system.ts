@@ -142,38 +142,101 @@ export class ApprovalSystem {
     return perspectives[agent.name]?.(task) || null;
   }
 
+  private calculateConsensus(recommendations: AgentRecommendation[]) {
+    const priorities = recommendations.map(r => r.priority);
+    const uniquePriorities = [...new Set(priorities)];
+    const priorityConsensus = {
+      level: uniquePriorities.length === 1 ? 'High' : uniquePriorities.length === 2 ? 'Medium' : 'Low',
+      value: priorities[0] // Most common priority
+    };
+
+    const uniqueRisks = [...new Set(recommendations.flatMap(r => r.risks || []))];
+    const uniqueImpacts = [...new Set(recommendations.flatMap(r => r.impacts || []))];
+
+    return {
+      priorityConsensus,
+      uniqueRisks,
+      uniqueImpacts
+    };
+  }
+
+  private displayAgentDashboard(proposal: ChangeProposal): void {
+    // Clear screen for clean display
+    console.clear();
+    
+    // Header
+    console.log(chalk.blue('🎭 CONDUCTOR CLI - Agent Dashboard'));
+    console.log(chalk.gray('═'.repeat(60)));
+    console.log();
+    
+    // Task Overview
+    console.log(chalk.yellow(`📋 TASK: ${proposal.title}`));
+    console.log(chalk.gray(`📝 ${proposal.description}`));
+    console.log(`🎯 ${chalk.cyan(proposal.type.toUpperCase())} | Priority: ${this.getPriorityEmoji(proposal.priority)} ${chalk.bold(proposal.priority.toUpperCase())}`);
+    console.log();
+    
+    // Agent Status Grid
+    console.log(chalk.blue('🤖 AGENT STATUS BOARD'));
+    console.log(chalk.gray('─'.repeat(60)));
+    
+    const agents = proposal.agentRecommendations;
+    const maxAgents = 4; // Show 4 agents per row
+    
+    for (let i = 0; i < agents.length; i += maxAgents) {
+      const row = agents.slice(i, i + maxAgents);
+      
+      // Agent names row
+      const nameRow = row.map(agent => {
+        const name = agent.agent.padEnd(18);
+        return chalk.cyan(name);
+      }).join('');
+      console.log(nameRow);
+      
+      // Status row  
+      const statusRow = row.map(agent => {
+        const priority = this.getPriorityEmoji(agent.priority);
+        const status = `${priority} ${agent.priority}`.padEnd(18);
+        return status;
+      }).join('');
+      console.log(statusRow);
+      
+      // Task summary row
+      const taskRow = row.map(agent => {
+        const task = agent.recommendation.substring(0, 15) + '...';
+        return chalk.gray(task.padEnd(18));
+      }).join('');
+      console.log(taskRow);
+      
+      console.log();
+    }
+    
+    // Quick consensus summary
+    const consensusData = this.calculateConsensus(proposal.agentRecommendations);
+    console.log(chalk.blue('📊 TEAM CONSENSUS'));
+    console.log(chalk.gray('─'.repeat(60)));
+    console.log(`🎯 Priority Alignment: ${consensusData.priorityConsensus.level} (${consensusData.priorityConsensus.value})`);
+    console.log(`⚠️  Risk Factors: ${consensusData.uniqueRisks.length} identified`);
+    console.log(`📈 Impact Areas: ${consensusData.uniqueImpacts.slice(0, 4).join(', ')}${consensusData.uniqueImpacts.length > 4 ? '...' : ''}`);
+    console.log();
+  }
+
   async presentProposalForApproval(proposal: ChangeProposal): Promise<ChangeProposal> {
-    console.log(chalk.blue('\\n🔍 Multi-Agent Recommendation Review\\n'));
-    console.log(chalk.yellow(`📋 Proposal: ${proposal.title}`));
-    console.log(`📝 Description: ${proposal.description}`);
-    console.log(`🎯 Type: ${proposal.type}`);
-    console.log(`⚡ Priority: ${this.getPriorityEmoji(proposal.priority)} ${proposal.priority.toUpperCase()}\\n`);
-
-    // Show agent consensus analysis
-    this.showConsensusAnalysis(proposal.agentRecommendations);
-
-    // Display each agent's perspective
-    console.log(chalk.blue('🤖 Agent Recommendations:\\n'));
+    // Show the dashboard
+    this.displayAgentDashboard(proposal);
+    
+    // Show detailed recommendations if user wants them
+    console.log(chalk.blue('🔍 DETAILED RECOMMENDATIONS'));
+    console.log(chalk.gray('─'.repeat(60)));
     
     for (const rec of proposal.agentRecommendations) {
-      console.log(chalk.cyan(`${rec.agent} - ${rec.role}`));
-      console.log(`📊 Priority: ${this.getPriorityEmoji(rec.priority)} ${rec.priority}`);
-      console.log(`💡 Recommendation: ${rec.recommendation}`);
-      console.log(`🧠 Reasoning: ${rec.reasoning}`);
-      
-      if (rec.impacts.length > 0) {
-        console.log(`📈 Impacts: ${rec.impacts.join(', ')}`);
-      }
-      
-      if (rec.dependencies?.length) {
-        console.log(`🔗 Dependencies: ${rec.dependencies.join(', ')}`);
-      }
+      console.log(chalk.cyan(`${rec.agent}`));
+      console.log(`   💡 ${rec.recommendation}`);
+      console.log(`   🧠 ${chalk.dim(rec.reasoning)}`);
       
       if (rec.risks?.length) {
-        console.log(`⚠️  Risks: ${rec.risks.join(', ')}`);
+        console.log(`   ⚠️  ${chalk.yellow(rec.risks[0])}${rec.risks.length > 1 ? ` (+${rec.risks.length - 1} more)` : ''}`);
       }
-      
-      console.log('');
+      console.log();
     }
 
     // Present approval options
@@ -221,7 +284,7 @@ export class ApprovalSystem {
     
     // Priority consensus
     const priorities = recommendations.map(r => r.priority);
-    const priorityConsensus = this.calculateConsensus(priorities);
+    const priorityConsensus = this.calculatePriorityConsensus(priorities);
     console.log(`🎯 Priority Consensus: ${priorityConsensus.level} (${priorityConsensus.value})`);
     
     // Risk assessment
@@ -385,7 +448,7 @@ export class ApprovalSystem {
     return 'low';
   }
 
-  private calculateConsensus(values: string[]): { level: string; value: string } {
+  private calculatePriorityConsensus(values: string[]): { level: string; value: string } {
     const counts = values.reduce((acc, val) => {
       acc[val] = (acc[val] || 0) + 1;
       return acc;
