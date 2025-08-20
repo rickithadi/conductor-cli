@@ -65,7 +65,7 @@ export class VSCodeIntegration {
     const baseProfiles = {
       'Multi-Agent Assistant': {
         path: '/bin/bash',
-        args: ['-l'],
+        args: ['-l', '-c', this.generateCoordinatorWelcome()],
         env: {
           'MULTI_AGENT_MODE': 'coordinator',
           'CLAUDE_CONTEXT': 'multi-agent-team'
@@ -81,7 +81,7 @@ export class VSCodeIntegration {
       const profileName = `${agent.name} - ${agent.role}`;
       agentProfiles[profileName] = {
         path: '/bin/bash',
-        args: ['-l'],
+        args: ['-l', '-c', this.generateAgentWelcome(agent)],
         env: {
           'MULTI_AGENT_MODE': 'specialized',
           'AGENT_NAME': agent.name,
@@ -131,6 +131,65 @@ export class VSCodeIntegration {
     return iconMap[agentName] || 'terminal';
   }
 
+  private generateCoordinatorWelcome(): string {
+    return `
+echo "🤖 Multi-Agent Development Assistant"
+echo "====================================="
+echo ""
+echo "Welcome to your multi-agent development environment!"
+echo ""
+echo "This terminal coordinates between specialized AI agents:"
+echo "• @frontend - Frontend architecture & components"
+echo "• @backend  - API design & server logic"
+echo "• @ux       - User experience & accessibility"
+echo "• @review   - Code quality & best practices"
+echo "• @testing  - Quality assurance & testing"
+echo "• @security - Security & authentication"
+echo "• @database - Data modeling & optimization"
+echo ""
+echo "💡 Usage:"
+echo "  claude-code                    # Start with full team context"
+echo "  multi-agent recommend <task>   # Get multi-agent recommendations"
+echo "  multi-agent proposals --list   # Review pending proposals"
+echo "  multi-agent checkpoint --status # Check context usage"
+echo ""
+echo "🔧 Use Cmd+Shift+P → Terminal: Create New Terminal → Choose specific agent"
+echo ""
+exec $SHELL
+    `.trim();
+  }
+
+  private generateAgentWelcome(agent: SubagentDefinition): string {
+    const expertise = agent.expertise.slice(0, 4).join(', ');
+    const stack = agent.technicalStack.slice(0, 4).join(', ');
+    
+    return `
+echo "🎯 ${agent.name} - ${agent.role}"
+echo "==============================================="
+echo ""
+echo "👋 Hello! I'm ${agent.name}, your ${agent.role.toLowerCase()}."
+echo ""
+echo "🔍 My expertise:"
+echo "  ${expertise}${agent.expertise.length > 4 ? ', ...' : ''}"
+echo ""
+echo "🛠️  Technical stack I work with:"
+echo "  ${stack}${agent.technicalStack.length > 4 ? ', ...' : ''}"
+echo ""
+${agent.specialInstructions && agent.specialInstructions.length > 0 ? 
+  `echo "📋 Special focus areas:"
+${agent.specialInstructions.slice(0, 3).map(instruction => `echo "  • ${instruction}"`).join('\necho ""\n')}
+echo ""` : ''}
+echo "💬 How to work with me:"
+echo "  claude-code --agent ${agent.name.replace('@', '')}  # Start specialized session"
+echo "  multi-agent recommend <task>           # Get my input on tasks"
+echo ""
+echo "🤝 I work best when collaborating with the full team!"
+echo "   Use 'multi-agent recommend' for comprehensive analysis."
+echo ""
+exec $SHELL
+    `.trim();
+  }
+
   async createAgentTasks(subagents: SubagentDefinition[]): Promise<void> {
     const tasksPath = path.join(this.projectPath, '.vscode', 'tasks.json');
     
@@ -152,22 +211,32 @@ export class VSCodeIntegration {
           problemMatcher: []
         },
         ...subagents.map(agent => ({
-          label: `Consult ${agent.name}`,
+          label: `💬 Consult ${agent.name} - ${agent.role}`,
           type: 'shell',
           command: 'echo',
           args: [
-            `Consulting ${agent.name} - ${agent.role}`,
+            `🎯 Starting specialized consultation with ${agent.name}`,
+            '&&',
+            'echo',
+            `"Role: ${agent.role}"`,
+            '&&',
+            'echo',
+            `"Expertise: ${agent.expertise.slice(0, 3).join(', ')}"`,
+            '&&',
+            'echo',
+            '"Starting Claude Code with agent context..."',
             '&&',
             'claude-code',
             '--agent',
-            agent.name
+            agent.name.replace('@', '')
           ],
           group: 'build',
           presentation: {
             echo: true,
             reveal: 'always',
             focus: true,
-            panel: 'new'
+            panel: 'new',
+            showReuseMessage: false
           },
           problemMatcher: []
         }))
@@ -283,7 +352,7 @@ export class VSCodeIntegration {
     const workspace = {
       folders: [
         {
-          name: 'Project Root',
+          name: '🤖 Multi-Agent Project',
           path: '.'
         }
       ],
@@ -291,6 +360,9 @@ export class VSCodeIntegration {
         'terminal.integrated.defaultProfile.osx': 'Multi-Agent Assistant',
         'terminal.integrated.defaultProfile.linux': 'Multi-Agent Assistant',
         'terminal.integrated.defaultProfile.windows': 'Multi-Agent Assistant',
+        'terminal.integrated.tabs.showActions': 'always',
+        'terminal.integrated.tabs.showActiveTerminal': 'always',
+        'terminal.integrated.tabs.enabled': true,
         'files.exclude': {
           '**/node_modules': true,
           '**/dist': true,
@@ -303,7 +375,9 @@ export class VSCodeIntegration {
       },
       extensions: {
         recommendations: [
-          'anthropic.claude-code'
+          'anthropic.claude-code',
+          'ms-vscode.vscode-typescript-next',
+          'bradlc.vscode-tailwindcss'
         ]
       }
     };

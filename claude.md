@@ -220,3 +220,39 @@ Before completing any significant implementation:
 2. **Testing**: Ensure test coverage for new functionality
 3. **Linting**: Run `npm run lint` if available
 4. **Build Check**: Verify `npm run build` succeeds
+
+### 📄 Context Management & Checkpoints
+
+This project includes an intelligent checkpoint system to handle context window limits:
+
+#### Automatic Monitoring
+- **Token tracking**: Context usage is monitored automatically
+- **Warning at 90%**: You'll be notified when context approaches limits
+- **Critical at 95%**: Emergency checkpoint creation is triggered
+
+#### Checkpoint Commands
+- `multi-agent checkpoint --status` - Check current context usage
+- `multi-agent checkpoint --create` - Create manual checkpoint
+- `multi-agent checkpoint --list` - View available checkpoints
+- `multi-agent checkpoint --restore <id>` - Restore previous session
+
+#### When Context Fills Up
+1. **Automatic checkpoint creation** preserves:
+   - Current project context and active agents
+   - Tasks completed, in progress, and pending
+   - Key decisions made and important context
+   - Approval history and recent proposals
+   - Next steps and any warnings
+
+2. **Session recovery** provides:
+   - Human-readable checkpoint summary
+   - Structured restart context for Claude Code
+   - Continuity across context window resets
+
+#### Best Practices
+- Create manual checkpoints before major work sessions
+- Review checkpoint status regularly with `--status`
+- Use descriptive focus and task descriptions for better recovery
+- Keep important context and decisions well-documented
+
+**Note**: If you notice context approaching limits, proactively create a checkpoint to ensure smooth continuation of work.

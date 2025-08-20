@@ -19,102 +19,152 @@
       "problemMatcher": []
     },
     {
-      "label": "Consult @frontend",
+      "label": "💬 Consult @frontend - Frontend Architecture Specialist",
       "type": "shell",
       "command": "echo",
       "args": [
-        "Consulting @frontend - Frontend Architecture Specialist",
+        "🎯 Starting specialized consultation with @frontend",
+        "&&",
+        "echo",
+        "\"Role: Frontend Architecture Specialist\"",
+        "&&",
+        "echo",
+        "\"Expertise: Component architecture, State management, Performance optimization\"",
+        "&&",
+        "echo",
+        "\"Starting Claude Code with agent context...\"",
         "&&",
         "claude-code",
         "--agent",
-        "@frontend"
+        "frontend"
       ],
       "group": "build",
       "presentation": {
         "echo": true,
         "reveal": "always",
         "focus": true,
-        "panel": "new"
+        "panel": "new",
+        "showReuseMessage": false
       },
       "problemMatcher": []
     },
     {
-      "label": "Consult @backend",
+      "label": "💬 Consult @backend - API & Server Specialist",
       "type": "shell",
       "command": "echo",
       "args": [
-        "Consulting @backend - API & Server Specialist",
+        "🎯 Starting specialized consultation with @backend",
+        "&&",
+        "echo",
+        "\"Role: API & Server Specialist\"",
+        "&&",
+        "echo",
+        "\"Expertise: API design, Database optimization, Security patterns\"",
+        "&&",
+        "echo",
+        "\"Starting Claude Code with agent context...\"",
         "&&",
         "claude-code",
         "--agent",
-        "@backend"
+        "backend"
       ],
       "group": "build",
       "presentation": {
         "echo": true,
         "reveal": "always",
         "focus": true,
-        "panel": "new"
+        "panel": "new",
+        "showReuseMessage": false
       },
       "problemMatcher": []
     },
     {
-      "label": "Consult @ux",
+      "label": "💬 Consult @ux - User Experience Specialist",
       "type": "shell",
       "command": "echo",
       "args": [
-        "Consulting @ux - User Experience Specialist",
+        "🎯 Starting specialized consultation with @ux",
+        "&&",
+        "echo",
+        "\"Role: User Experience Specialist\"",
+        "&&",
+        "echo",
+        "\"Expertise: User interface design, Accessibility compliance, User flow optimization\"",
+        "&&",
+        "echo",
+        "\"Starting Claude Code with agent context...\"",
         "&&",
         "claude-code",
         "--agent",
-        "@ux"
+        "ux"
       ],
       "group": "build",
       "presentation": {
         "echo": true,
         "reveal": "always",
         "focus": true,
-        "panel": "new"
+        "panel": "new",
+        "showReuseMessage": false
       },
       "problemMatcher": []
     },
     {
-      "label": "Consult @review",
+      "label": "💬 Consult @review - Code Quality & Architecture Specialist",
       "type": "shell",
       "command": "echo",
       "args": [
-        "Consulting @review - Code Quality & Architecture Specialist",
+        "🎯 Starting specialized consultation with @review",
+        "&&",
+        "echo",
+        "\"Role: Code Quality & Architecture Specialist\"",
+        "&&",
+        "echo",
+        "\"Expertise: Code quality assessment, Architecture patterns, Technical debt analysis\"",
+        "&&",
+        "echo",
+        "\"Starting Claude Code with agent context...\"",
         "&&",
         "claude-code",
         "--agent",
-        "@review"
+        "review"
       ],
       "group": "build",
       "presentation": {
         "echo": true,
         "reveal": "always",
         "focus": true,
-        "panel": "new"
+        "panel": "new",
+        "showReuseMessage": false
       },
       "problemMatcher": []
     },
     {
-      "label": "Consult @testing",
+      "label": "💬 Consult @testing - Testing & Quality Assurance Specialist",
       "type": "shell",
       "command": "echo",
       "args": [
-        "Consulting @testing - Testing & Quality Assurance Specialist",
+        "🎯 Starting specialized consultation with @testing",
+        "&&",
+        "echo",
+        "\"Role: Testing & Quality Assurance Specialist\"",
+        "&&",
+        "echo",
+        "\"Expertise: Test strategy design, Unit testing patterns, Integration testing\"",
+        "&&",
+        "echo",
+        "\"Starting Claude Code with agent context...\"",
         "&&",
         "claude-code",
         "--agent",
-        "@testing"
+        "testing"
       ],
       "group": "build",
       "presentation": {
         "echo": true,
         "reveal": "always",
         "focus": true,
-        "panel": "new"
+        "panel": "new",
+        "showReuseMessage": false
       },
       "problemMatcher": []
     }

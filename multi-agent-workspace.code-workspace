@@ -1,7 +1,7 @@
 {
   "folders": [
     {
-      "name": "Project Root",
+      "name": "🤖 Multi-Agent Project",
       "path": "."
     }
   ],
@@ -9,6 +9,9 @@
     "terminal.integrated.defaultProfile.osx": "Multi-Agent Assistant",
     "terminal.integrated.defaultProfile.linux": "Multi-Agent Assistant",
     "terminal.integrated.defaultProfile.windows": "Multi-Agent Assistant",
+    "terminal.integrated.tabs.showActions": "always",
+    "terminal.integrated.tabs.showActiveTerminal": "always",
+    "terminal.integrated.tabs.enabled": true,
     "files.exclude": {
       "**/node_modules": true,
       "**/dist": true,
@@ -21,7 +24,9 @@
   },
   "extensions": {
     "recommendations": [
-      "anthropic.claude-code"
+      "anthropic.claude-code",
+      "ms-vscode.vscode-typescript-next",
+      "bradlc.vscode-tailwindcss"
     ]
   }
 }
