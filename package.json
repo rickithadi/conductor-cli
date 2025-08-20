@@ -21,6 +21,8 @@
     "test:performance": "node tests/performance/benchmark.js",
     "test:claude-integration": "jest --testPathPattern=claude-integration --timeout=30000",
     "test:all": "npm run test:unit && npm run test:integration && npm run test:e2e",
+    "test:ci": "jest --testPathPattern=unit --coverage=false --passWithNoTests --maxWorkers=2",
+    "test:recordings": "jest --testPathPattern=terminal-recordings --passWithNoTests --coverage=false",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "start": "node dist/enhanced-cli.js",
@@ -66,7 +68,7 @@
     "url": "https://github.com/rickithadi/multi-agent-workflow/issues"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "files": [
     "dist",

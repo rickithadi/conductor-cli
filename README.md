@@ -1,20 +1,22 @@
 # 🦆 Conductor CLI 
-### *Rubber Ducking That Actually Responds! 🦆🚂*
-#### *All Aboard the Complete AI Development Choo Choo Train! 🚂✨*
+### *Simple Rubber Ducking That Actually Responds! 🦆🚂*
+#### *A Lightweight AI Development Assistant (Alpha) 🚂✨*
 
-**Transform your development workflow with rubber ducking that gives you real answers**
+> **⚠️ Alpha Status:** Conductor CLI is an early-stage, lightweight alternative to complex AI orchestration frameworks like [Claude Flow](https://github.com/ruvnet/claude-flow). We're focused on simplicity and ease of use rather than advanced features.
+
+**A beginner-friendly CLI tool for rubber duck programming with AI assistance**
 
 ---
 
 ```
-    🦆🚂 Welcome to Conductor CLI - Complete AI Development Choo Choo Train!
+    🦆🚂 Welcome to Conductor CLI - Simple AI Development Assistant!
     ════════════════════════════════════════════════════════════════════════
 
-              🦆💬     Your AI Development Team     🚂🤖
+              🦆💬     Lightweight AI Helpers     🚂🤖
            
-              PM → Design → Code → Ship → Secure → Choo Choo! 🚂
+              Ask → Think → Debug → Review → Learn! 🚂
             ═══════════════════════════════════════════════════════
-               🦆 Rubber Duck Programming + 🚂 AI Express Service!
+               🦆 Rubber Duck Programming + 🚂 Basic AI Coordination
     
     ┌─────────────────────────────────────────────────────────────────────┐
     │  🦆🚂 All Aboard! Rubber Duck Express Commands:                     │
@@ -28,50 +30,66 @@
     └─────────────────────────────────────────────────────────────────────┘
 ```
 
-## 🚂 Quick Start - All Aboard in 30 Seconds!
+## 🚂 Quick Start - Simple Setup in 30 Seconds!
+
+> **⚠️ Alpha Release:** This is early-stage software. Expect bugs and missing features!
 
 ```bash
-# 🎫 Get your ticket for the AI Express!
+# 🎫 Install the lightweight AI helper
 npm install -g conductor-cli
 
-# 🚂 All aboard! Set up your choo choo train
+# 🚂 Set up basic configuration  
 conductor init
 
-# 🚂💨 Choo choo! Launch the AI development express
+# 🚂💨 Start your simple AI assistant
 conductor launch
 
-# 🦆🚂 Start rubber ducking with your AI train crew!
-conductor ask "analyze my React component performance"
-conductor ask @frontend "optimize this user interface" 
-conductor ask @security "review this authentication flow"
+# 🦆🚂 Begin rubber duck programming with basic AI help!
+conductor ask "how do I optimize this React component?"
+conductor ask @frontend "what's wrong with this CSS?" 
+conductor ask @security "is this code secure?"
 ```
 
-## 🦆🚂 What Makes Conductor Special?
+## 🦆🚂 Why Choose Conductor? (Honest Take)
 
-### 🎯 **Rubber Ducking That Actually Responds** - Choo Choo Express Integration! 🚂
-- **No more ugly `--continue` flags!** ✨ 
-- **One command to rule them all**: `conductor launch` 🚂💨
-- **Automatic context generation** for your entire project
-- **All AI train crew pre-briefed** and ready to help! 🎫
+### 🎯 **Simple Rubber Ducking** - No Complex Setup! 🚂
+- **Lightweight alternative** to heavyweight frameworks like Claude Flow
+- **Easy to understand** - perfect for beginners or simple projects
+- **Quick setup** - no neural networks or complex configuration
+- **Just works** - focused on core rubber duck programming! 🦆
 
-### 🚂 **Your Complete AI Development Choo Choo Train** - Specialized Programming Partners
+### 🚂 **Your Basic AI Helper Team** - Simple But Effective
 
-| 🚂 **Train Car** | 🦆 **Agent** | 🎯 **Specialization** | 🛠️ **Expertise** |
+| 🚂 **Helper** | 🦆 **Agent** | 🎯 **What They Do** | 🛠️ **Reality Check** |
 |-----------|------------|------------------|-------------------|
-| 🚂 **Engine** | 🧠 **@pm** | Product Manager | Powers the whole train: planning, user stories, roadmap |
-| 🎨 **Passenger** | 🎨 **@design** | UX/UI Designer | Premium experience: UX/UI, accessibility, user flows |
-| ⚛️ **Tech Car** | ⚛️ **@frontend** | Frontend Expert | User interface magic: React, Next.js, TypeScript |
-| ⚙️ **Freight** | ⚙️ **@backend** | Backend Expert | Heavy lifting: APIs, databases, server architecture |
-| 🧪 **Lab Car** | 🧪 **@qa** | QA Engineer | Quality control: testing strategies, quality assurance |
-| 🚀 **Rocket** | 🚀 **@devops** | DevOps Engineer | Launch systems: CI/CD, deployment, infrastructure |
-| 👁️ **Observation** | 👁️ **@reviewer** | Code Reviewer | Quality inspector: code quality, architecture patterns |
-| 🛡️ **Security** | 🛡️ **@security** | Security Expert | Caboose protection: OWASP compliance, vulnerability scanning |
+| 🧠 **@pm** | Product Manager | Basic planning help | Simple project organization |
+| 🎨 **@design** | UX/UI Designer | Design suggestions | Basic UX principles |
+| ⚛️ **@frontend** | Frontend Helper | React/JS guidance | Common patterns & fixes |
+| ⚙️ **@backend** | Backend Helper | API & server advice | Standard backend practices |
+| 🧪 **@qa** | Testing Helper | Testing suggestions | Basic testing strategies |
+| 🚀 **@devops** | Deploy Helper | Deployment tips | Simple CI/CD guidance |
+| 👁️ **@reviewer** | Code Helper | Code review basics | Style & best practices |
+| 🛡️ **@security** | Security Helper | Security reminders | Common vulnerability checks |
 
-### 🦆🚂 **Rubber Duck Programming Express** - Your Problems, Solved Together on the Choo Choo Train!
-- **Team consensus on complex decisions** 🚂💨
-- **Multiple expert perspectives** from every train car 🎫
-- **Context-aware responses** tailored to your project journey 🛤️
-- **Real-time collaboration** between AI specialists - Choo choo! 🚂
+### 🦆🚂 **Honest About What We Provide**
+- **Basic rubber duck conversations** with AI assistance 🦆
+- **Simple multi-perspective responses** from different helpers 🚂
+- **No advanced neural networks** or complex orchestration 
+- **Just good old-fashioned programming help** - but with AI! ✨
+
+### 🤔 **When to Use Conductor vs Advanced Frameworks**
+
+**Use Conductor CLI if you want:**
+- 🎯 Simple rubber duck programming with AI
+- ⚡ Quick setup without complex configuration  
+- 🦆 Beginner-friendly development assistance
+- 🚂 Lightweight tool that just works
+
+**Consider [Claude Flow](https://github.com/ruvnet/claude-flow) if you need:**
+- 🧠 Advanced neural orchestration
+- 🔄 Persistent memory across sessions
+- 🌊 Sophisticated workflow automation  
+- 🎭 Complex multi-agent coordination
 
 ## 🦆🚂 The Complete AI Development Choo Choo Train Workflow
 
