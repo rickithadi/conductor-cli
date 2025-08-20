@@ -59,13 +59,13 @@
   ],
   "author": "Hadi Rickit <team@gallifreyconsulting.com> (https://rickithadi.dev)",
   "license": "ISC",
-  "homepage": "https://github.com/rickithadi/multi-agent-workflow#readme",
+  "homepage": "https://github.com/rickithadi/conductor-cli#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rickithadi/multi-agent-workflow.git"
+    "url": "https://github.com/rickithadi/conductor-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/rickithadi/multi-agent-workflow/issues"
+    "url": "https://github.com/rickithadi/conductor-cli/issues"
   },
   "engines": {
     "node": ">=18.0.0"
