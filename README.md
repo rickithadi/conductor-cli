@@ -21,6 +21,10 @@ multi-agent recommend "Add user authentication system"
 
 # Review and approve proposals
 multi-agent proposals --list
+
+# Monitor context and create checkpoints
+multi-agent checkpoint --status
+multi-agent checkpoint --create
 ```
 
 ## ✨ Key Features
@@ -45,6 +49,13 @@ Every significant change goes through structured review:
 - **Agent-specific terminals** - Dedicated terminals for each specialist
 - **Workspace configuration** - Pre-configured tasks and profiles  
 - **Extension recommendations** - Curated tools for your stack
+
+### 📄 **Smart Checkpoint System**
+- **Context monitoring** - Automatic token usage tracking
+- **Intelligent warnings** - Alerts at 90% context usage
+- **Session preservation** - Complete context and progress saved
+- **Seamless recovery** - Resume exactly where you left off
+- **Manual checkpoints** - Create savepoints before major work
 
 ### 📊 **Context-Aware Intelligence**
 Automatically detects and adapts to:
@@ -179,6 +190,25 @@ multi-agent proposals --review <id>
 
 # Create new proposal interactively
 multi-agent proposals --create
+```
+
+### Checkpoint Management
+
+```bash
+# Check context window usage
+multi-agent checkpoint --status
+
+# List available checkpoints
+multi-agent checkpoint --list
+
+# Create manual checkpoint
+multi-agent checkpoint --create
+
+# Restore from checkpoint
+multi-agent checkpoint --restore <id>
+
+# View checkpoint configuration
+multi-agent checkpoint --config
 ```
 
 ### Project Templates
