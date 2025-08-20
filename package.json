@@ -1,24 +1,40 @@
 {
-  "name": "multi-agent-cli",
+  "name": "conductor-cli",
   "version": "1.0.0",
-  "description": "Multi-agent development CLI with subagent coordination",
+  "description": "🦆 Rubber ducking with AI experts - Your complete development team from PM to ship to secure",
   "main": "dist/index.js",
   "bin": {
+    "conductor": "dist/enhanced-cli.js",
     "multi-agent": "dist/cli.js"
   },
   "scripts": {
     "build": "tsc",
-    "dev": "tsx src/cli.ts",
+    "dev": "tsx src/enhanced-cli.ts",
+    "dev:legacy": "tsx src/cli.ts",
     "test": "jest",
     "lint": "eslint src/**/*.ts",
-    "start": "node dist/cli.js",
-    "serve": "http-server . -p 3000 -o --cors"
+    "start": "node dist/enhanced-cli.js",
+    "start:legacy": "node dist/cli.js",
+    "serve": "http-server . -p 3000 -o --cors",
+    "dashboard": "tsx src/enhanced-cli.ts dashboard",
+    "init": "tsx src/enhanced-cli.ts init",
+    "quick-start": "tsx src/enhanced-cli.ts init --quick"
   },
   "keywords": [
     "cli",
+    "ai-development",
+    "rubber-ducking",
+    "claude-code",
     "multi-agent",
-    "claude",
-    "development"
+    "developer-tools",
+    "github-integration",
+    "react-development",
+    "nextjs-tools",
+    "typescript-assistant",
+    "security-scanning",
+    "devops-automation",
+    "code-review",
+    "pair-programming"
   ],
   "author": "",
   "license": "ISC",

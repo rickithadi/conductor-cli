@@ -48,7 +48,7 @@ conductor scan --security --suggestions
 
 ---
 
-## 👥 **Your Complete AI Development Team: PM → Ship**
+## 👥 **Your Complete AI Development Team: PM → Ship → Market**
 
 Conductor CLI gives you a **complete development team** that rubber ducks with you through every phase of development:
 
@@ -64,6 +64,9 @@ Conductor CLI gives you a **complete development team** that rubber ducks with y
 ### **🚀 Deployment & Operations**
 - **@devops** - DevOps Engineer (CI/CD pipelines, GitHub Actions, Docker, Kubernetes)
 - **@reviewer** - Code Reviewer (PR reviews, code quality, best practices, architecture)
+
+### **📈 Marketing & Growth (Powered by Gallifrey Consulting)**
+- **@seo** - SEO & Digital Marketing Strategist (technical SEO, content strategy, conversion optimization, digital footprint management, competitive intelligence)
 
 ### **🛡️ Security & Compliance (Built-in by Gallifrey)**
 - **@security** - Security Expert (OWASP, vulnerability scanning, secure coding, threat modeling)
@@ -151,9 +154,28 @@ conductor ask @design "Create user flow for login process"
 conductor ask @frontend "Implement login UI with React Hook Form"
 conductor ask @backend "Set up JWT authentication endpoints"
 
+# Marketing & Launch phase
+conductor ask @seo "Optimize landing page for conversion and search ranking"
+conductor ask @seo "Create content strategy for product launch"
+
 # Deployment phase
 conductor ask @devops "Configure GitHub Actions for Next.js deployment"
 conductor ask @security "Review authentication implementation for OWASP compliance"
+```
+
+### **📈 Marketing & SEO Workflows**
+```bash
+# SEO optimization and strategy
+conductor ask @seo "Analyze Core Web Vitals and technical SEO issues"
+conductor ask @seo "Create content marketing strategy for developer audience"
+
+# Digital marketing campaigns
+conductor ask @seo "Plan product launch campaign with conversion funnels"
+conductor ask @seo "Audit competitor SEO strategies and find opportunities"
+
+# Brand and reputation management
+conductor ask @seo "Analyze digital footprint and online reputation"
+conductor ask @seo "Create social media content calendar for technical product"
 ```
 
 ### **Security and Compliance**
