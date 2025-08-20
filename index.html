@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Agent CLI - AI-Powered Development Workflows | Gallifrey Consulting</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Transform your development workflow with AI-powered agent coordination. Multi-Agent CLI brings structured collaboration, approval workflows, and intelligent checkpoints to your projects. Built by Gallifrey Consulting.">
+    <meta name="keywords" content="multi-agent AI, development CLI, AI development tools, workflow automation, agent coordination, development productivity, TypeScript CLI, AI consulting, Gallifrey Consulting, Hadi Rickit">
+    <meta name="author" content="Hadi Rickit - Gallifrey Consulting">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Multi-Agent CLI - AI-Powered Development Workflows">
+    <meta property="og:description" content="Revolutionary CLI tool that brings structured multi-agent collaboration to your development process with built-in approval workflows.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rickithadi.github.io/multi-agent-workflow">
+    <meta property="og:image" content="https://rickithadi.github.io/multi-agent-workflow/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Multi-Agent CLI - AI-Powered Development Workflows">
+    <meta name="twitter:description" content="Transform development with AI agents, approval workflows, and intelligent checkpoints.">
+    <meta name="twitter:image" content="https://rickithadi.github.io/multi-agent-workflow/og-image.png">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Multi-Agent CLI",
+        "description": "AI-powered development CLI with multi-agent coordination and approval workflows",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Linux, Windows",
+        "author": {
+            "@type": "Person",
+            "name": "Hadi Rickit",
+            "url": "https://rickithadi.dev"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gallifrey Consulting",
+            "url": "https://gallifrey.consulting"
+        },
+        "downloadUrl": "https://github.com/rickithadi/multi-agent-workflow",
+        "softwareVersion": "1.0.0",
+        "programmingLanguage": "TypeScript"
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🤖%3C/text%3E%3C/svg%3E">
+    
+    <style>
+        :root {
+            /* Gallifrey Consulting Brand Colors */
+            --primary-teal: #2D5A87;
+            --primary-charcoal: #1F2937;
+            --accent-teal: #3B82F6;
+            --light-gray: #F8FAFC;
+            --stone-gray: #64748B;
+            --white: #FFFFFF;
+            --black: #0F172A;
+            
+            /* Typography */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Source Sans Pro', sans-serif;
+            
+            /* Spacing */
+            --container-max-width: 1200px;
+            --section-padding: 120px 0;
+            --content-padding: 0 24px;
+            
+            /* Animations */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--primary-charcoal);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: var(--content-padding);
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(100, 116, 139, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--primary-teal);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-weight: 500;
+            color: var(--stone-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-teal);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-teal);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232D5A87' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--primary-charcoal);
+        }
+        
+        .hero-text .highlight {
+            background: linear-gradient(120deg, var(--primary-teal), var(--accent-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.375rem;
+            font-weight: 300;
+            color: var(--stone-gray);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--stone-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-teal));
+            color: var(--white);
+            box-shadow: 0 10px 40px rgba(45, 90, 135, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 50px rgba(45, 90, 135, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-teal);
+            border-color: var(--primary-teal);
+            box-shadow: 0 4px 20px rgba(45, 90, 135, 0.1);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-teal);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 90, 135, 0.3);
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .terminal-window {
+            background: var(--primary-charcoal);
+            border-radius: 16px;
+            box-shadow: 0 25px 80px rgba(15, 23, 42, 0.3);
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: var(--transition);
+        }
+        
+        .terminal-window:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+        
+        .terminal-header {
+            background: rgba(100, 116, 139, 0.1);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.1);
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-red { background: #EF4444; }
+        .dot-yellow { background: #F59E0B; }
+        .dot-green { background: #10B981; }
+        
+        .terminal-title {
+            color: var(--stone-gray);
+            font-size: 0.875rem;
+            margin-left: 12px;
+        }
+        
+        .terminal-content {
+            padding: 24px;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+            font-size: 0.875rem;
+            line-height: 1.8;
+            color: #10B981;
+            background: var(--primary-charcoal);
+        }
+        
+        .terminal-line {
+            margin-bottom: 8px;
+            opacity: 0;
+            animation: typewriter 0.5s ease forwards;
+        }
+        
+        .terminal-line:nth-child(1) { animation-delay: 0.5s; }
+        .terminal-line:nth-child(2) { animation-delay: 1s; }
+        .terminal-line:nth-child(3) { animation-delay: 1.5s; }
+        .terminal-line:nth-child(4) { animation-delay: 2s; }
+        .terminal-line:nth-child(5) { animation-delay: 2.5s; }
+        
+        @keyframes typewriter {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .prompt { color: var(--accent-teal); }
+        .output { color: var(--white); }
+        .success { color: #10B981; }
+        .warning { color: #F59E0B; }
+        
+        /* Features Section */
+        .features {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-charcoal);
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--stone-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            border: 1px solid rgba(100, 116, 139, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-teal), var(--accent-teal));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(45, 90, 135, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+        
+        .feature-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--primary-charcoal);
+        }
+        
+        .feature-description {
+            color: var(--stone-gray);
+            line-height: 1.7;
+        }
+        
+        /* Agents Section */
+        .agents {
+            padding: var(--section-padding);
+            background: var(--light-gray);
+        }
+        
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .agent-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(100, 116, 139, 0.1);
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(45, 90, 135, 0.1);
+        }
+        
+        .agent-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .agent-name {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-teal);
+            margin-bottom: 8px;
+        }
+        
+        .agent-role {
+            font-size: 0.875rem;
+            color: var(--stone-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+        
+        .agent-description {
+            color: var(--stone-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-teal) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        .cta p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta .btn {
+            font-size: 1.125rem;
+            padding: 20px 40px;
+        }
+        
+        .btn-white {
+            background: var(--white);
+            color: var(--primary-teal);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-charcoal);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-brand h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+        
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .footer-links h4 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            line-height: 1.8;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .gallifrey-credit {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0.8;
+        }
+        
+        .gallifrey-credit img {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 60px;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero-actions {
+                justify-content: center;
+            }
+            
+            .terminal-window {
+                transform: none;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Loading animations */
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                🤖 Multi-Agent CLI
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#agents">Agents</a></li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="https://gallifrey.consulting" target="_blank">Gallifrey</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        Transform Development with
+                        <span class="highlight">AI Agent Coordination</span>
+                    </h1>
+                    <p class="subtitle">
+                        Revolutionary CLI that brings structured multi-agent collaboration to your workflow. 
+                        Get recommendations backed by specialized AI agents with built-in approval workflows.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">7+</div>
+                            <div class="stat-label">Specialized Agents</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Context Efficiency</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">User Approval</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="https://github.com/rickithadi/multi-agent-workflow" class="btn btn-primary" target="_blank">
+                            🚀 Get Started
+                        </a>
+                        <a href="#features" class="btn btn-secondary">
+                            📖 Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                            <div class="terminal-title">Multi-Agent CLI</div>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="terminal-line"><span class="prompt">$</span> multi-agent init</div>
+                            <div class="terminal-line"><span class="success">✅ Generated Agents:</span></div>
+                            <div class="terminal-line"><span class="output">   🎯 @frontend - Frontend Specialist</span></div>
+                            <div class="terminal-line"><span class="output">   🔧 @backend - API & Server Expert</span></div>
+                            <div class="terminal-line"><span class="success">🚀 Multi-agent setup complete!</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Pixel-Perfect Development Workflows</h2>
+                <p class="section-subtitle">
+                    Built with Gallifrey Consulting's obsessive attention to detail and security-first engineering
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🔄</span>
+                    <h3 class="feature-title">Approval-First Workflow</h3>
+                    <p class="feature-description">
+                        Every significant change goes through structured review. Multi-agent analysis with priority, 
+                        impacts, risks, and dependencies. No implementation without explicit user consent.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🤖</span>
+                    <h3 class="feature-title">Intelligent Agent Coordination</h3>
+                    <p class="feature-description">
+                        Seven specialized AI agents (@frontend, @backend, @ux, @review, @testing, @security, @database) 
+                        provide expert perspectives on every decision.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">📄</span>
+                    <h3 class="feature-title">Smart Checkpoint System</h3>
+                    <p class="feature-description">
+                        Automatic context monitoring with intelligent warnings at 90% usage. Complete session 
+                        preservation and seamless recovery across context window resets.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🔧</span>
+                    <h3 class="feature-title">VSCode Integration</h3>
+                    <p class="feature-description">
+                        Agent-specific terminals with personalized welcome messages, pre-configured tasks, 
+                        and workspace settings optimized for multi-agent workflows.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">📊</span>
+                    <h3 class="feature-title">Context-Aware Intelligence</h3>
+                    <p class="feature-description">
+                        Automatically detects Next.js, React, Vue, Express, and more. Generates specialized 
+                        agents based on your tech stack and project patterns.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🎯</span>
+                    <h3 class="feature-title">Security-First Design</h3>
+                    <p class="feature-description">
+                        Built with Gallifrey Consulting's security-first principles. No external dependencies 
+                        for sensitive operations, complete local control, and audit trails.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section class="agents" id="agents">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Meet Your AI Development Team</h2>
+                <p class="section-subtitle">
+                    Specialized agents that understand your domain and provide expert recommendations
+                </p>
+            </div>
+            
+            <div class="agents-grid">
+                <div class="agent-card fade-in">
+                    <span class="agent-icon">🎨</span>
+                    <h3 class="agent-name">@frontend</h3>
+                    <p class="agent-role">Frontend Architecture Specialist</p>
+                    <p class="agent-description">React/Next.js patterns, component architecture, performance optimization, and modern frontend best practices.</p>
+                </div>
+                
+                <div class="agent-card fade-in">
+                    <span class="agent-icon">⚙️</span>
+                    <h3 class="agent-name">@backend</h3>
+                    <p class="agent-role">API & Server Specialist</p>
+                    <p class="agent-description">API design, database optimization, server architecture, and scalable backend systems.</p>
+                </div>
+                
+                <div class="agent-card fade-in">
+                    <span class="agent-icon">👤</span>
+                    <h3 class="agent-name">@ux</h3>
+                    <p class="agent-role">User Experience Specialist</p>
+                    <p class="agent-description">User interface design, accessibility compliance (WCAG 2.1), user flows, and conversion optimization.</p>
+                </div>
+                
+                <div class="agent-card fade-in">
+                    <span class="agent-icon">✅</span>
+                    <h3 class="agent-name">@review</h3>
+                    <p class="agent-role">Code Quality & Architecture</p>
+                    <p class="agent-description">Code quality assessment, architecture patterns, technical debt analysis, and best practices enforcement.</p>
+                </div>
+                
+                <div class="agent-card fade-in">
+                    <span class="agent-icon">🧪</span>
+                    <h3 class="agent-name">@testing</h3>
+                    <p class="agent-role">Testing & QA Specialist</p>
+                    <p class="agent-description">Test strategies, automation, quality assurance, and comprehensive coverage planning.</p>
+                </div>
+                
+                <div class="agent-card fade-in">
+                    <span class="agent-icon">🛡️</span>
+                    <h3 class="agent-name">@security</h3>
+                    <p class="agent-role">Security & Auth Expert</p>
+                    <p class="agent-description">Security patterns, authentication strategies, vulnerability assessment, and secure coding practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Transform Your Development Workflow?</h2>
+                <p>Join the future of AI-powered development with structured agent coordination and intelligent approvals.</p>
+                <div class="hero-actions">
+                    <a href="https://github.com/rickithadi/multi-agent-workflow" class="btn btn-white" target="_blank">
+                        🚀 Get Started Now
+                    </a>
+                    <a href="https://gallifrey.consulting" class="btn btn-secondary" target="_blank">
+                        💼 Consult with Gallifrey
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>🤖 Multi-Agent CLI</h3>
+                    <p>
+                        Revolutionary AI-powered development CLI with multi-agent coordination and approval workflows. 
+                        Built with obsessive attention to detail and security-first engineering.
+                    </p>
+                    <p>
+                        <strong>Open Source</strong> • <strong>TypeScript</strong> • <strong>Security-First</strong>
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/rickithadi/multi-agent-workflow" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/rickithadi/multi-agent-workflow/blob/main/README.md" target="_blank">Documentation</a></li>
+                        <li><a href="https://github.com/rickithadi/multi-agent-workflow/blob/main/docs/EXAMPLES.md" target="_blank">Examples</a></li>
+                        <li><a href="https://github.com/rickithadi/multi-agent-workflow/blob/main/docs/API.md" target="_blank">API Reference</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://gallifrey.consulting" target="_blank">Gallifrey Consulting</a></li>
+                        <li><a href="https://rickithadi.dev" target="_blank">Hadi Rickit</a></li>
+                        <li><a href="https://github.com/rickithadi" target="_blank">GitHub Profile</a></li>
+                        <li><a href="https://linkedin.com/in/hadirickit" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    <p>&copy; 2025 Multi-Agent CLI. Built with ❤️ in Melbourne.</p>
+                </div>
+                <div class="gallifrey-credit">
+                    <span>Crafted by</span>
+                    <a href="https://gallifrey.consulting" target="_blank" style="color: white; text-decoration: none; font-weight: 600;">
+                        Gallifrey Consulting
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('.nav').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navigation background on scroll
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.backdropFilter = 'blur(20px)';
+                nav.style.boxShadow = '0 4px 20px rgba(45, 90, 135, 0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Terminal typing animation enhancement
+        const terminalLines = document.querySelectorAll('.terminal-line');
+        terminalLines.forEach((line, index) => {
+            setTimeout(() => {
+                line.style.opacity = '1';
+            }, (index + 1) * 500);
+        });
+
+        // Add loading animation to CTA button
+        document.querySelectorAll('.btn-primary').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.href.includes('github.com')) {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '⏳ Opening GitHub<span class="loading-dots"></span>';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 2000);
+                }
+            });
+        });
+
+        // Add interactive features for feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-8px) scale(1)';
+            });
+        });
+
+        // Add click tracking for analytics (placeholder)
+        document.querySelectorAll('a[href*="github.com"], a[href*="gallifrey.consulting"], a[href*="rickithadi.dev"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Analytics tracking would go here
+                console.log('Link clicked:', this.href);
+            });
+        });
+    </script>
+</body>
+</html>
