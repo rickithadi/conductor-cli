@@ -52,7 +52,7 @@ aegis scan --owasp --category A01,A02,A03 --compliance-check
 // Example patterns detected by Aegis scanner:
 
 // ❌ CRITICAL: API Key Hardcoding
-const apiKey = "sk_live_4eC39HqLyjWDarjtT1zdp7dc"; // DETECTED
+const apiKey = "sk_live_XXXXXXXXXXXXXXXXXXXXXXXX"; // DETECTED
 
 // ❌ CRITICAL: JWT Secret in Code
 const jwtSecret = "super_secret_jwt_signing_key_123"; // DETECTED
