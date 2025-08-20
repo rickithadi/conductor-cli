@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Validate commit message format
+# Supports: type(scope): description [#issue]
+# Examples:
+#   feat: add seamless Claude integration
+#   fix(cli): resolve launch command timeout
+#   test(e2e): add onboarding flow validation
+#   docs: update README with new features
+
+commit_regex='^(feat|fix|docs|test|refactor|perf|chore|ci)(\(.+\))?: .{1,50}'
+
+if ! grep -qE "$commit_regex" "$1"; then
+    echo "❌ Invalid commit message format!"
+    echo ""
+    echo "📋 Required format: type(scope): description"
+    echo ""
+    echo "✅ Valid types: feat, fix, docs, test, refactor, perf, chore, ci"
+    echo "✅ Examples:"
+    echo "   feat: add seamless Claude integration"
+    echo "   fix(cli): resolve launch command timeout"
+    echo "   test(e2e): add onboarding flow validation"
+    echo ""
+    echo "🔗 Current message:"
+    cat "$1"
+    echo ""
+    exit 1
+fi
+
+echo "✅ Commit message format is valid"
