@@ -388,8 +388,8 @@ export class AgentOrchestrator extends EventEmitter {
     const readyAgents = Array.from(this.agents.values()).filter(a => a.status === 'ready');
     const totalAgents = this.agents.size;
 
-    console.log(chalk.green(`✅ ${readyAgents.length}/${totalAgents} agents online and ready`));
-    console.log(chalk.blue(`🎯 Average confidence: ${Math.round(readyAgents.reduce((acc, a) => acc + a.confidence, 0) / readyAgents.length * 100)}%`));
+    console.log(chalk.green(`${readyAgents.length}/${totalAgents} agents online and ready`));
+    console.log(chalk.blue(`Average confidence: ${Math.round(readyAgents.reduce((acc, a) => acc + a.confidence, 0) / readyAgents.length * 100)}%`));
 
     console.log(chalk.yellow('\n👥 Agent Lineup:'));
     readyAgents
@@ -403,7 +403,7 @@ export class AgentOrchestrator extends EventEmitter {
         );
       });
 
-    console.log(chalk.gray('\n💡 Usage:'));
+    console.log(chalk.gray('\nUsage:'));
     console.log(chalk.white('   conductor ask "your question"           ') + chalk.gray('- Consult full team'));
     console.log(chalk.white('   conductor ask @frontend "optimize UI"   ') + chalk.gray('- Specific agent'));
     console.log(chalk.white('   conductor review --staged               ') + chalk.gray('- Multi-agent review'));
@@ -431,7 +431,7 @@ export class AgentOrchestrator extends EventEmitter {
     this.emit('consultationRequest', request);
 
     // Simulate consultation process
-    console.log(chalk.cyan('\n🦆 CONSULTING AI DEVELOPMENT TEAM'));
+    console.log(chalk.cyan('\nCONSULTING AI DEVELOPMENT TEAM'));
     console.log(chalk.gray(`Query: ${query}`));
     console.log(chalk.gray(`Agents: ${relevantAgents.join(', ')}`));
 
@@ -531,7 +531,7 @@ export class AgentOrchestrator extends EventEmitter {
   }
 
   private async handleAgentResponse(agentName: string, response: any): Promise<void> {
-    console.log(chalk.green(`✅ Response from ${agentName}`));
+    console.log(chalk.green(`Response from ${agentName}`));
   }
 
   getAgentStatus(agentName?: string): any {

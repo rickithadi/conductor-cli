@@ -44,7 +44,7 @@ export class SmartDashboard {
   private async createFullDashboard(options: DashboardOptions): Promise<void> {
     this.screen = blessed.screen({
       smartCSR: true,
-      title: '🎭 Conductor CLI - AI Team Dashboard',
+      title: 'Conductor CLI - AI Team Dashboard',
       fullUnicode: true,
       cursor: {
         artificial: true,
@@ -117,7 +117,7 @@ export class SmartDashboard {
       width: '60%' as any,
       height: '60%' as any,
       border: { type: 'line', fg: 'green' } as any,
-      label: ' 📊 Team Consensus & Recommendations ',
+      label: ' Team Consensus & Recommendations ',
       scrollable: true,
       alwaysScroll: true,
       tags: true,
@@ -197,7 +197,7 @@ export class SmartDashboard {
       left: 0,
       width: '100%' as any,
       height: 1,
-      content: ' 🎭 Conductor CLI - Minimal Dashboard ',
+      content: ' Conductor CLI - Minimal Dashboard ',
       style: {
         fg: 'white',
         bg: 'blue'
@@ -322,7 +322,7 @@ export class SmartDashboard {
     const activeAgents = 5; // This would come from actual agent status
     const totalAgents = 8;
     
-    return `{center}🎭 CONDUCTOR CLI - AI TEAM DASHBOARD | Active: ${activeAgents}/${totalAgents} | ${timestamp}{/center}`;
+    return `{center}CONDUCTOR CLI - AI TEAM DASHBOARD | Active: ${activeAgents}/${totalAgents} | ${timestamp}{/center}`;
   }
 
   private getAgentPanelContent(): string {
@@ -363,7 +363,7 @@ export class SmartDashboard {
   }
 
   private getConsensusPanelContent(): string {
-    let content = '{center}{bold}📊 TEAM CONSENSUS{/bold}{/center}\n\n';
+    let content = '{center}{bold}TEAM CONSENSUS{/bold}{/center}\n\n';
     
     const consensusLevel = 87;
     const priority = 'high';
@@ -371,7 +371,7 @@ export class SmartDashboard {
     content += `{center}Level: {green-fg}${consensusLevel}%{/green-fg}{/center}\n`;
     content += `{center}Priority: {yellow-fg}${priority.toUpperCase()}{/yellow-fg}{/center}\n\n`;
     
-    content += '{green-fg}✅ Team Agreements:{/green-fg}\n';
+    content += '{green-fg}Team Agreements:{/green-fg}\n';
     content += '• Security implementation approved\n';
     content += '• Component architecture solid\n';
     content += '• Performance meets requirements\n\n';
@@ -380,12 +380,12 @@ export class SmartDashboard {
     content += '• Consider state management alternatives\n';
     content += '• Database indexing needs review\n\n';
     
-    content += '{bold}🎯 ACTIVE RECOMMENDATIONS{/bold}\n';
+    content += '{bold}ACTIVE RECOMMENDATIONS{/bold}\n';
     content += '─'.repeat(30) + '\n';
     
     this.recommendations.slice(0, 5).forEach((rec, index) => {
       const priorityIcon = this.getPriorityIcon(rec.priority);
-      const statusIcon = rec.status === 'pending' ? '⏳' : rec.status === 'approved' ? '✅' : '❌';
+      const statusIcon = rec.status === 'pending' ? '[PENDING]' : rec.status === 'approved' ? '[APPROVED]' : '[REJECTED]';
       
       content += `${priorityIcon} ${statusIcon} ${rec.title}\n`;
       content += `   {gray-fg}by ${rec.agent} - ${rec.priority}{/gray-fg}\n`;
@@ -396,15 +396,15 @@ export class SmartDashboard {
 
   private getStatusBarContent(): string {
     const timestamp = new Date().toLocaleString();
-    return ` 🎭 Conductor | ${timestamp} | Press 'h' for help, 'q' to quit, 'r' to refresh `;
+    return ` Conductor | ${timestamp} | Press 'h' for help, 'q' to quit, 'r' to refresh `;
   }
 
   private getMinimalStatusContent(): string {
-    let content = '{center}{bold}🎭 AI TEAM STATUS{/bold}{/center}\n\n';
+    let content = '{center}{bold}AI TEAM STATUS{/bold}{/center}\n\n';
     
     content += '👥 Agents: 5/8 active\n';
-    content += '📊 Consensus: 87%\n';
-    content += '🎯 Priority: HIGH\n';
+    content += 'Consensus: 87%\n';
+    content += 'Priority: HIGH\n';
     content += '⚡ Recommendations: 3 pending\n\n';
     
     content += 'Recent Activity:\n';
@@ -428,7 +428,7 @@ export class SmartDashboard {
       width: '60%' as any,
       height: '70%' as any,
       border: { type: 'line', fg: 'yellow' } as any,
-      label: ' 📚 Conductor CLI Dashboard Help ',
+      label: ' Conductor CLI Dashboard Help ',
       content: this.getHelpContent(),
       scrollable: true,
       tags: true,
@@ -450,7 +450,7 @@ export class SmartDashboard {
 
   private getHelpContent(): string {
     return `
-{center}{bold}🎭 CONDUCTOR CLI DASHBOARD{/bold}{/center}
+{center}{bold}CONDUCTOR CLI DASHBOARD{/bold}{/center}
 
 {yellow-fg}Keyboard Shortcuts:{/yellow-fg}
 • q, Ctrl+C    - Quit dashboard
@@ -470,8 +470,8 @@ export class SmartDashboard {
 {yellow-fg}Status Icons:{/yellow-fg}
 • ⚫ Idle       - Agent waiting for tasks
 • 🤔 Thinking   - Agent processing request
-• 🔍 Analyzing  - Agent reviewing code/data
-• ✅ Ready      - Agent completed task
+• Analyzing  - Agent reviewing code/data
+• Ready      - Agent completed task
 • ❌ Error      - Agent encountered issue
 
 {yellow-fg}Priority Levels:{/yellow-fg}
@@ -482,7 +482,7 @@ export class SmartDashboard {
 
 {yellow-fg}Activity Log Levels:{/yellow-fg}
 • ℹ️ Info       - General information
-• ✅ Success    - Successful operations
+• Success    - Successful operations
 • ⚠️ Warning    - Potential issues
 • ❌ Error      - Failed operations
 
@@ -595,8 +595,8 @@ Press any key to close this help...
     const icons = {
       idle: '⚫',
       thinking: '🤔',
-      analyzing: '🔍',
-      ready: '✅',
+      analyzing: '[ANALYZING]',
+      ready: '[READY]',
       error: '❌'
     };
     return icons[status as keyof typeof icons] || '❓';
@@ -626,7 +626,7 @@ Press any key to close this help...
   private getLogIcon(level: ActivityLogEntry['level']): string {
     const icons = {
       info: 'ℹ️',
-      success: '✅',
+      success: '[SUCCESS]',
       warning: '⚠️',
       error: '❌'
     };

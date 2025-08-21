@@ -45,15 +45,15 @@ export class EnhancedLaunch {
 
   private async showWelcomeAnimation(): Promise<void> {
     const frames = [
-      '🦆 Welcome to Conductor CLI...',
-      '🤖 Assembling your AI development team...',
-      '🎭 Orchestrating expert consultation...',
-      '⚡ Ready to transform your development workflow!'
+      'Welcome to Conductor CLI...',
+      'Assembling your AI development team...',
+      'Orchestrating expert consultation...',
+      'Ready to transform your development workflow!'
     ];
 
     console.clear();
     console.log(chalk.cyan.bold('\n' + '='.repeat(60)));
-    console.log(chalk.cyan.bold('  🦆 CONDUCTOR CLI - RUBBER DUCKING WITH AI EXPERTS'));
+    console.log(chalk.cyan.bold('  CONDUCTOR CLI - PROFESSIONAL AI DEVELOPMENT PLATFORM'));
     console.log(chalk.cyan.bold('='.repeat(60) + '\n'));
 
     for (let i = 0; i < frames.length; i++) {
@@ -73,12 +73,12 @@ export class EnhancedLaunch {
       }
     }
 
-    console.log(chalk.green('\n✨ Ready to get started!\n'));
+    console.log(chalk.green('\nReady to get started!\n'));
     await this.sleep(1000);
   }
 
   private async interactiveSetup(options: LaunchOptions): Promise<void> {
-    this.statusIndicator.info('🔍 Scanning your project...');
+    this.statusIndicator.info('Scanning your project...');
     
     const contextScanner = new ContextScanner();
     const projectContext = await contextScanner.scanProject(this.projectPath);
@@ -90,73 +90,73 @@ export class EnhancedLaunch {
       {
         type: 'list',
         name: 'projectType',
-        message: '🎯 What kind of project are you working on?',
+        message: 'What kind of project are you working on?',
         choices: [
-          { name: '🚀 Next.js App (Full-stack)', value: 'nextjs' },
-          { name: '⚛️ React SPA', value: 'react' },
-          { name: '🌐 Vue.js Application', value: 'vue' },
-          { name: '🔧 Node.js API Service', value: 'nodejs' },
-          { name: '📚 TypeScript Library', value: 'library' },
-          { name: '🤔 Let me describe it...', value: 'custom' }
+          { name: 'Next.js App (Full-stack)', value: 'nextjs' },
+          { name: 'React SPA', value: 'react' },
+          { name: 'Vue.js Application', value: 'vue' },
+          { name: 'Node.js API Service', value: 'nodejs' },
+          { name: 'TypeScript Library', value: 'library' },
+          { name: 'Let me describe it...', value: 'custom' }
         ],
         default: projectContext.framework || 'nextjs'
       },
       {
         type: 'input',
         name: 'customDescription',
-        message: '📝 Please describe your project:',
+        message: 'Please describe your project:',
         when: (answers) => answers.projectType === 'custom',
         validate: (input) => input.trim().length > 0 || 'Please provide a description'
       },
       {
         type: 'list',
         name: 'primaryGoal',
-        message: '🎯 What\'s your main goal today?',
+        message: 'What\'s your main goal today?',
         choices: [
-          { name: '🚀 Start a new feature', value: 'feature' },
-          { name: '🐛 Debug and fix issues', value: 'debug' },
-          { name: '🔍 Code review and optimization', value: 'review' },
-          { name: '🦆 Rubber duck a complex problem', value: 'duck' },
-          { name: '🛡️ Security audit and improvements', value: 'security' },
-          { name: '📚 Learn and understand codebase', value: 'learn' }
+          { name: 'Start a new feature', value: 'feature' },
+          { name: 'Debug and fix issues', value: 'debug' },
+          { name: 'Code review and optimization', value: 'review' },
+          { name: 'Professional consultation on complex problem', value: 'consultation' },
+          { name: 'Security audit and improvements', value: 'security' },
+          { name: 'Learn and understand codebase', value: 'learn' }
         ]
       },
       {
         type: 'checkbox',
         name: 'enabledAgents',
-        message: '👥 Which AI experts do you want in your team?',
+        message: 'Which AI specialists do you want in your team?',
         choices: [
-          { name: '📋 @pm - Product Manager (requirements, planning)', value: 'pm', checked: true },
-          { name: '🎨 @design - UX/UI Designer (user flows, interfaces)', value: 'design', checked: true },
-          { name: '⚛️ @frontend - Frontend Developer (React, Next.js)', value: 'frontend', checked: true },
-          { name: '⚙️ @backend - Backend Engineer (APIs, databases)', value: 'backend', checked: projectContext.hasAPI },
-          { name: '🧪 @qa - QA Engineer (testing, quality)', value: 'qa', checked: projectContext.hasTesting },
-          { name: '🚀 @devops - DevOps Engineer (CI/CD, deployment)', value: 'devops', checked: false },
-          { name: '👁️ @reviewer - Code Reviewer (quality, patterns)', value: 'reviewer', checked: true },
-          { name: '🛡️ @security - Security Expert (OWASP, compliance)', value: 'security', checked: true }
+          { name: '@pm - Product Manager (requirements, planning)', value: 'pm', checked: true },
+          { name: '@design - UX/UI Designer (user flows, interfaces)', value: 'design', checked: true },
+          { name: '@frontend - Frontend Developer (React, Next.js)', value: 'frontend', checked: true },
+          { name: '@backend - Backend Engineer (APIs, databases)', value: 'backend', checked: projectContext.hasAPI },
+          { name: '@qa - QA Engineer (testing, quality)', value: 'qa', checked: projectContext.hasTesting },
+          { name: '@devops - DevOps Engineer (CI/CD, deployment)', value: 'devops', checked: false },
+          { name: '@reviewer - Code Reviewer (quality, patterns)', value: 'reviewer', checked: true },
+          { name: '@security - Security Expert (OWASP, compliance)', value: 'security', checked: true }
         ],
         validate: (choices) => choices.length > 0 || 'Please select at least one agent'
       },
       {
         type: 'confirm',
         name: 'enableVSCodeIntegration',
-        message: '🔧 Enable VS Code integration with agent-specific terminals?',
+        message: 'Enable VS Code integration with agent-specific terminals?',
         default: true
       },
       {
         type: 'confirm',
         name: 'enableDashboard',
-        message: '📊 Enable live dashboard for real-time agent monitoring?',
+        message: 'Enable live dashboard for real-time agent monitoring?',
         default: true
       },
       {
         type: 'list',
         name: 'experienceLevel',
-        message: '🎓 What\'s your experience level with AI-assisted development?',
+        message: 'What\'s your experience level with AI-assisted development?',
         choices: [
-          { name: '🌱 New to AI development tools', value: 'novice' },
-          { name: '🌿 Some experience with AI tools', value: 'intermediate' },
-          { name: '🌳 Very experienced with AI development', value: 'expert' }
+          { name: 'New to AI development tools', value: 'novice' },
+          { name: 'Some experience with AI tools', value: 'intermediate' },
+          { name: 'Very experienced with AI development', value: 'expert' }
         ],
         default: 'intermediate'
       }
@@ -167,7 +167,7 @@ export class EnhancedLaunch {
   }
 
   private async quickSetup(): Promise<void> {
-    this.statusIndicator.start('⚡ Quick setup in progress...');
+    this.statusIndicator.start('Quick setup in progress...');
     
     const contextScanner = new ContextScanner();
     const projectContext = await contextScanner.scanProject(this.projectPath);
@@ -191,7 +191,7 @@ export class EnhancedLaunch {
   }
 
   private async generateConfiguration(answers: any, projectContext: any): Promise<void> {
-    this.statusIndicator.start('🔧 Generating AI team configuration...');
+    this.statusIndicator.start('Generating AI team configuration...');
 
     // Create .conductor directory
     const configDir = path.join(this.projectPath, '.conductor');
@@ -267,7 +267,7 @@ export class EnhancedLaunch {
   }
 
   private async finalizeSetup(): Promise<void> {
-    this.statusIndicator.start('🎯 Finalizing setup...');
+    this.statusIndicator.start('Finalizing setup...');
 
     // Create helpful scripts
     const scriptsDir = path.join(this.projectPath, '.conductor', 'scripts');
@@ -276,8 +276,8 @@ export class EnhancedLaunch {
     // Claude Code launch script
     const launchScript = `#!/bin/bash
 # Conductor CLI Launch Script
-echo "🦆 Launching Conductor CLI with Claude Code..."
-echo "📋 Loading project context and AI agents..."
+echo "Launching Conductor CLI with Claude Code..."
+echo "Loading project context and AI agents..."
 
 # Check if Claude Code is available
 if ! command -v claude &> /dev/null; then
@@ -294,11 +294,11 @@ claude --project-path="$(pwd)" --load-context=".conductor/conductor.config.json"
     await fs.chmod(path.join(scriptsDir, 'launch.sh'), '755');
 
     // Create helpful README
-    const readmeContent = `# 🦆 Conductor CLI Setup Complete!
+    const readmeContent = `# Conductor CLI Setup Complete!
 
-Your AI development team is ready to help you rubber duck through any problem.
+Your AI development team is ready to help you with professional consultation on any problem.
 
-## 🚀 Quick Start Commands
+## Quick Start Commands
 
 \`\`\`bash
 # Ask your AI team anything
@@ -307,7 +307,7 @@ conductor ask "How should I structure my auth flow?"
 # Get expert code review
 conductor review --staged
 
-# Rubber duck a complex problem
+# Professional consultation on a complex problem
 conductor duck "My React state isn't updating properly"
 
 # Launch live dashboard
@@ -317,24 +317,24 @@ conductor dashboard
 conductor ship "user-authentication" --security-scan
 \`\`\`
 
-## 👥 Your AI Team
+## Your AI Team
 
 Your configured agents are ready to help:
-- 📋 **@pm** - Product planning and requirements
-- 🎨 **@design** - UX/UI design and user flows  
-- ⚛️ **@frontend** - React/Next.js development
-- ⚙️ **@backend** - API and database architecture
-- 🧪 **@qa** - Testing and quality assurance
-- 🚀 **@devops** - CI/CD and deployment
-- 👁️ **@reviewer** - Code review and best practices
-- 🛡️ **@security** - Security and compliance
+- **@pm** - Product planning and requirements
+- **@design** - UX/UI design and user flows  
+- **@frontend** - React/Next.js development
+- **@backend** - API and database architecture
+- **@qa** - Testing and quality assurance
+- **@devops** - CI/CD and deployment
+- **@reviewer** - Code review and best practices
+- **@security** - Security and compliance
 
-## 🔧 Configuration
+## Configuration
 
 Your team configuration is stored in \`.conductor/conductor.config.json\`.
 You can always run \`conductor config --edit\` to modify it.
 
-Happy rubber ducking! 🦆✨
+Happy professional consultation!
 `;
 
     await fs.writeFile(path.join(this.projectPath, '.conductor', 'README.md'), readmeContent);
@@ -343,24 +343,24 @@ Happy rubber ducking! 🦆✨
   }
 
   private async showSuccessMessage(): Promise<void> {
-    console.log('\n' + chalk.green('🎉 SUCCESS! Your AI development team is ready!'));
-    console.log(chalk.cyan('\n📋 What you can do now:'));
+    console.log('\n' + chalk.green('SUCCESS! Your AI development team is ready!'));
+    console.log(chalk.cyan('\nWhat you can do now:'));
     
     const suggestions = [
-      '🦆 conductor ask "explain my project structure"',
-      '🔍 conductor review --help',
-      '📊 conductor dashboard',
-      '🤔 conductor duck "help me plan my next feature"',
-      '🚀 conductor ship --help'
+      'conductor ask "explain my project structure"',
+      'conductor review --help',
+      'conductor dashboard',
+      'conductor consult "help me plan my next feature"',
+      'conductor ship --help'
     ];
 
     suggestions.forEach(suggestion => {
       console.log(chalk.yellow('  • ') + chalk.white(suggestion));
     });
 
-    console.log(chalk.cyan('\n💡 Pro tip: Run ') + chalk.bold.white('conductor dashboard') + chalk.cyan(' for a live view of your AI team!'));
-    console.log(chalk.gray('\n📚 Full documentation: ') + chalk.underline.blue('.conductor/README.md'));
-    console.log(chalk.green('\n✨ Happy rubber ducking with your AI experts! 🦆'));
+    console.log(chalk.cyan('\nPro tip: Run ') + chalk.bold.white('conductor dashboard') + chalk.cyan(' for a live view of your AI team!'));
+    console.log(chalk.gray('\nFull documentation: ') + chalk.underline.blue('.conductor/README.md'));
+    console.log(chalk.green('\nHappy professional consultation with your AI experts!'));
   }
 
   private sleep(ms: number): Promise<void> {

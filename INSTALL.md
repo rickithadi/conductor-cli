@@ -1,8 +1,8 @@
-# 🚀 Conductor CLI - Installation & Quick Start Guide
+# Conductor CLI - Installation & Quick Start Guide
 
 > **Transform your development workflow with AI experts** - From PM to ship to secure, all in one command.
 
-## ⚡ Quick Installation (Recommended)
+## Quick Installation (Recommended)
 
 ### Option 1: NPX One-Liner (Zero Setup)
 ```bash
@@ -33,14 +33,14 @@ npm install conductor-cli --save-dev
   "scripts": {
     "conductor": "conductor",
     "ai-team": "conductor dashboard",
-    "duck": "conductor ask"
+    "consult": "conductor ask"
   }
 }
 ```
 
 ---
 
-## 🦆 Your First Rubber Duck Session
+## Your First Professional Consultation Session
 
 After installation, try these natural language commands:
 
@@ -54,8 +54,8 @@ conductor explain "My state management is getting messy"
 # Get expert code review
 conductor review --staged
 
-# Rubber duck with context
-conductor duck "Why isn't my useEffect working?"
+# Professional consultation with context
+conductor consult "Why isn't my useEffect working?"
 
 # Launch live AI team dashboard
 conductor dashboard
@@ -63,7 +63,7 @@ conductor dashboard
 
 ---
 
-## 🎭 Enhanced Launch Experience
+## Enhanced Launch Experience
 
 ### Before (Clunky):
 ```bash
@@ -84,7 +84,7 @@ conductor ask "help me plan this feature"
 
 ---
 
-## 📊 Visual Feedback & Status Indicators
+## Visual Feedback & Status Indicators
 
 ### Live Dashboard
 ```bash
@@ -103,17 +103,17 @@ conductor dashboard --focus @frontend
 # All commands now show beautiful progress indicators:
 
 $ conductor ask "optimize my database queries"
-🦆 Rubber ducking with AI experts...
+Consulting with AI experts...
    📋 @pm - Analyzing requirements ████████░░ 80%
    ⚙️ @backend - Database review   ██████████ 100% ✓
    🛡️ @security - Security check   ███████░░░ 70%
-✅ Expert consultation complete!
+Expert consultation complete!
 ```
 
 ### Persistent Status Bar
 When active, Conductor shows a non-intrusive status bar:
 ```
-[🎭 Conductor Active] ~/project $ 
+[Conductor Active] ~/project $ 
 ```
 
 ---
@@ -127,13 +127,13 @@ When active, Conductor shows a non-intrusive status bar:
 | `multi-agent recommend` | `conductor ask` | Natural conversation |
 | `multi-agent status` | `conductor health` | Quick team status |
 | Complex flags | `conductor explain --simple` | User-friendly options |
-| No context | `conductor duck "problem"` | Rubber ducking focus |
+| No context | `conductor consult "problem"` | Professional consultation focus |
 
 ### Smart Aliases:
 ```bash
 # These all work:
 conductor ask "question"
-conductor duck "question"        # Rubber ducking alias
+conductor consult "question"     # Professional consultation
 conductor explain "topic"
 conductor review
 conductor audit                  # Review alias  
@@ -151,11 +151,11 @@ conductor init
 ```
 
 Walks you through:
-- ✅ Project type detection
-- ✅ AI team selection (@pm, @design, @frontend, etc.)
-- ✅ VS Code integration setup
-- ✅ Dashboard preferences
-- ✅ Experience level adaptation
+- Project type detection
+- AI team selection (@pm, @design, @frontend, etc.)
+- VS Code integration setup
+- Dashboard preferences
+- Experience level adaptation
 
 ### Configuration Files:
 ```
@@ -169,13 +169,13 @@ Walks you through:
 
 ---
 
-## 🎯 VS Code Integration
+## VS Code Integration
 
 ### Automatic Setup:
-- ✅ Agent-specific terminals pre-configured
-- ✅ Command palette integration
-- ✅ Status bar indicators
-- ✅ Launch buttons in sidebar
+- Agent-specific terminals pre-configured
+- Command palette integration
+- Status bar indicators
+- Launch buttons in sidebar
 
 ### Manual Setup (Optional):
 ```json
@@ -189,7 +189,7 @@ Walks you through:
 
 ---
 
-## 🚀 What's Different?
+## What's Different?
 
 ### Launch Experience:
 - **Before**: Complex Claude Code flags and URLs
@@ -197,7 +197,7 @@ Walks you through:
 
 ### Command Interface:
 - **Before**: Technical flags and complex syntax
-- **After**: Natural language commands (`ask`, `explain`, `duck`)
+- **After**: Natural language commands (`ask`, `explain`, `consult`)
 
 ### Visual Feedback:
 - **Before**: No indication of AI activity
@@ -252,8 +252,8 @@ conductor dashboard
 # When things go wrong:
 ❌ Command failed: Invalid project structure
 
-💡 Try running: conductor ask "help fix my project setup"
-💡 Or run: conductor init --reset
+Try running: conductor ask "help fix my project setup"
+Or run: conductor init --reset
 ```
 
 ---
@@ -266,15 +266,15 @@ After installation, your terminal will show:
 🎉 SUCCESS! Your AI development team is ready!
 
 📋 What you can do now:
-  • 🦆 conductor ask "explain my project structure"
-  • 🔍 conductor review --help  
-  • 📊 conductor dashboard
-  • 🤔 conductor duck "help me plan my next feature"
-  • 🚀 conductor ship --help
+  • conductor ask "explain my project structure"
+  • conductor review --help  
+  • conductor dashboard
+  • conductor consult "help me plan my next feature"
+  • conductor ship --help
 
-💡 Pro tip: Run conductor dashboard for a live view of your AI team!
+Pro tip: Run conductor dashboard for a live view of your AI team!
 
-✨ Happy rubber ducking with your AI experts! 🦆
+Happy professional consultation with your AI experts!
 ```
 
 ---
@@ -287,4 +287,4 @@ After installation, your terminal will show:
 4. **Plan features**: `conductor ask @pm "define user stories for auth"`
 5. **Ship with confidence**: `conductor ship "my-feature" --security-scan`
 
-Your complete AI development team is ready to rubber duck through any challenge! 🦆🎭✨
+Your complete AI development team is ready for professional consultation on any challenge!

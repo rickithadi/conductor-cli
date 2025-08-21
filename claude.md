@@ -91,57 +91,57 @@ For any significant changes (code modifications, new features, architecture chan
 **Before implementing any changes**, present a structured recommendation that includes:
 
 ```
-🔍 MULTI-AGENT RECOMMENDATION
+MULTI-AGENT RECOMMENDATION
 
 📋 Proposal: [Title]
 📝 Description: [What needs to be done]
-🎯 Type: [feature/bugfix/refactor/optimization/security/design]
+Type: [feature/bugfix/refactor/optimization/security/design]
 ⚡ Overall Priority: [Based on agent consensus]
 
-🤖 AGENT PERSPECTIVES:
+AGENT PERSPECTIVES:
 
 @frontend - Frontend Architecture Specialist
-  💡 Recommendation: [Specific recommendation]
-  🧠 Reasoning: [Why this approach]
+  Recommendation: [Specific recommendation]
+  Reasoning: [Why this approach]
   📈 Impacts: [User experience, performance, etc.]
   🔗 Dependencies: [What needs to happen first]
   ⚠️ Risks: [Potential issues]
 
 @backend - API & Server Specialist  
-  💡 Recommendation: [Specific recommendation]
-  🧠 Reasoning: [Why this approach]
+  Recommendation: [Specific recommendation]
+  Reasoning: [Why this approach]
   📈 Impacts: [Security, performance, scalability]
   🔗 Dependencies: [Database changes, etc.]
   ⚠️ Risks: [Potential issues]
 
 @ux - User Experience Specialist
-  💡 Recommendation: [Specific recommendation]
-  🧠 Reasoning: [Why this approach]
+  Recommendation: [Specific recommendation]
+  Reasoning: [Why this approach]
   📈 Impacts: [Usability, accessibility, conversion]
   🔗 Dependencies: [Design updates, user testing]
   ⚠️ Risks: [User confusion, learning curve]
 
 @review - Code Quality & Architecture
-  💡 Recommendation: [Specific recommendation]
-  🧠 Reasoning: [Why this approach]
+  Recommendation: [Specific recommendation]
+  Reasoning: [Why this approach]
   📈 Impacts: [Code quality, maintainability, tech debt]
   🔗 Dependencies: [Testing, documentation]
   ⚠️ Risks: [Complexity, breaking changes]
 
-📊 CONSENSUS ANALYSIS:
+CONSENSUS ANALYSIS:
 - Priority Agreement: [High/Medium/Low consensus on priority]
 - Risk Assessment: [X unique risks identified]
 - Impact Areas: [All affected domains]
 
-🎯 RECOMMENDED ACTION:
+RECOMMENDED ACTION:
 [Synthesized recommendation based on all agent input]
 ```
 
 #### 4. User Decision Process
 Wait for user approval before proceeding. Users can:
-- ✅ **Approve all recommendations** - Implement as proposed
+- **Approve all recommendations** - Implement as proposed
 - 🔧 **Approve with modifications** - User provides specific changes
-- 🔍 **Approve individual recommendations** - Cherry-pick which agents' advice to follow
+- **Approve individual recommendations** - Cherry-pick which agents' advice to follow
 - ❌ **Reject proposal** - Don't implement the changes
 - ⏸️ **Save for later** - Store for future consideration
 

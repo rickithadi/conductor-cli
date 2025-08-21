@@ -129,7 +129,7 @@ program
   });
 
 async function runSecurityScan(options: any): Promise<void> {
-  console.log(chalk.blue('🔒 AEGIS SECURITY SCAN'));
+  console.log(chalk.blue('AEGIS SECURITY SCAN'));
   console.log(chalk.gray('═'.repeat(50)));
   
   try {
@@ -142,7 +142,7 @@ async function runSecurityScan(options: any): Promise<void> {
     
     if (options.detailed) {
       const reportPath = await scanner.generateDetailedReport(result, options.output);
-      console.log(chalk.green(`📄 Detailed report: ${reportPath}`));
+      console.log(chalk.green(`Detailed report: ${reportPath}`));
     }
   } catch (error) {
     console.error(chalk.red('Security scan failed:'), error);
@@ -150,17 +150,17 @@ async function runSecurityScan(options: any): Promise<void> {
 }
 
 async function runSecurityAudit(options: any): Promise<void> {
-  console.log(chalk.blue('🛡️ AEGIS SECURITY AUDIT'));
+  console.log(chalk.blue('AEGIS SECURITY AUDIT'));
   console.log(chalk.gray('═'.repeat(50)));
   
   try {
     const scanner = new SecurityScanner();
     const result = await scanner.scanProject();
     
-    console.log(`📊 Security Score: ${calculateSecurityScore(result)}/100`);
+    console.log(`Security Score: ${calculateSecurityScore(result)}/100`);
     
     if (options.compliance) {
-      console.log(`🏛️ Compliance Framework: ${options.compliance.toUpperCase()}`);
+      console.log(`Compliance Framework: ${options.compliance.toUpperCase()}`);
       // Add compliance-specific checks here
     }
     
@@ -185,15 +185,15 @@ async function initializeProject(options: any): Promise<void> {
   const projectPath = process.cwd();
   const mode: CoordinationMode = options.mode === 'external-files' ? 'external-files' : 'subagents';
 
-  console.log(chalk.blue('🔍 Analyzing project structure...'));
+  console.log(chalk.blue('Analyzing project structure...'));
   
   // Scan project context
   const scanner = new ContextScanner(projectPath);
   const projectContext = await scanner.scan();
 
   // Display detected information
-  console.log(chalk.green('✅ Project Analysis Complete'));
-  console.log(chalk.yellow('📊 Detected Configuration:'));
+  console.log(chalk.green('Project Analysis Complete'));
+  console.log(chalk.yellow('Detected Configuration:'));
   console.log(`   Framework: ${chalk.cyan(projectContext.framework)}`);
   console.log(`   Language: ${chalk.cyan(projectContext.language)}`);
   console.log(`   Package Manager: ${chalk.cyan(projectContext.packageManager)}`);
@@ -211,11 +211,11 @@ async function initializeProject(options: any): Promise<void> {
   }
 
   // Generate subagents
-  console.log(chalk.blue('🤖 Generating specialized agents...'));
+  console.log(chalk.blue('Generating specialized agents...'));
   const subagentGenerator = new SubagentGenerator(projectContext);
   const subagents = subagentGenerator.generateSubagents();
 
-  console.log(chalk.green('✅ Generated Agents:'));
+  console.log(chalk.green('Generated Agents:'));
   subagents.forEach(agent => {
     console.log(`   ${chalk.cyan(agent.name)} - ${agent.role}`);
   });
@@ -241,18 +241,18 @@ async function initializeProject(options: any): Promise<void> {
   // Initialize approval system
   const approvalSystem = new ApprovalSystem(projectPath);
   await approvalSystem.initializeApprovalSystem();
-  console.log(chalk.green('✅ Approval system initialized'));
+  console.log(chalk.green('Approval system initialized'));
 
   // Initialize checkpoint system
   const checkpointSystem = new CheckpointSystem(projectPath);
   await checkpointSystem.initialize();
-  console.log(chalk.green('✅ Checkpoint system initialized'));
+  console.log(chalk.green('Checkpoint system initialized'));
 
   // Generate Claude context
   console.log(chalk.blue('📝 Generating Claude context...'));
   const claudeGenerator = new ClaudeGenerator(projectContext, subagents, mode);
   await claudeGenerator.writeClaudeFile();
-  console.log(chalk.green('✅ Generated: claude.md'));
+  console.log(chalk.green('Generated: claude.md'));
 
   // Setup VSCode integration
   if (options.vscode !== false) {
@@ -261,7 +261,7 @@ async function initializeProject(options: any): Promise<void> {
     await vscodeIntegration.setupTerminalProfiles(subagents);
     await vscodeIntegration.generateVSCodeExtensions();
     await vscodeIntegration.createWorkspaceSettings();
-    console.log(chalk.green('✅ VSCode integration configured'));
+    console.log(chalk.green('VSCode integration configured'));
   }
 
   // Setup external collaboration mode if requested
@@ -269,11 +269,11 @@ async function initializeProject(options: any): Promise<void> {
     console.log(chalk.blue('📁 Setting up external collaboration files...'));
     const collaboration = new ExternalCollaborationMode(projectPath, projectContext);
     await collaboration.setupCollaborationFiles(subagents);
-    console.log(chalk.green('✅ Collaboration files created'));
+    console.log(chalk.green('Collaboration files created'));
   }
 
   // Display completion message
-  console.log(chalk.green('\n🚀 Multi-agent setup complete!'));
+  console.log(chalk.green('\nMulti-agent setup complete!'));
   console.log(chalk.yellow('\n📋 Next steps:'));
   console.log('   1. Run \'claude-code\' to start with your specialized team');
   console.log('   2. Use agent-specific terminals in VSCode for specialized consultation');
@@ -288,11 +288,11 @@ async function showStatus(): Promise<void> {
   const vscodeDir = path.join(projectPath, '.vscode');
   const approvalDir = path.join(projectPath, '.multi-agent');
 
-  console.log(chalk.blue('📊 Multi-Agent Configuration Status\n'));
+  console.log(chalk.blue('Multi-Agent Configuration Status\n'));
 
   // Check Claude context file
   if (await fs.pathExists(claudeFile)) {
-    console.log(chalk.green('✅ Claude context: claude.md'));
+    console.log(chalk.green('Claude context: claude.md'));
     
     // Try to detect mode from file content
     const content = await fs.readFile(claudeFile, 'utf8');
@@ -308,7 +308,7 @@ async function showStatus(): Promise<void> {
 
   // Check approval system
   if (await fs.pathExists(approvalDir)) {
-    console.log(chalk.green('✅ Approval system configured'));
+    console.log(chalk.green('Approval system configured'));
     
     const approvalSystem = new ApprovalSystem(projectPath);
     const proposals = await approvalSystem.listPendingProposals();
@@ -325,10 +325,10 @@ async function showStatus(): Promise<void> {
     const tasksFile = path.join(vscodeDir, 'tasks.json');
     
     if (await fs.pathExists(settingsFile)) {
-      console.log(chalk.green('✅ VSCode terminal profiles configured'));
+      console.log(chalk.green('VSCode terminal profiles configured'));
     }
     if (await fs.pathExists(tasksFile)) {
-      console.log(chalk.green('✅ VSCode tasks configured'));
+      console.log(chalk.green('VSCode tasks configured'));
     }
   } else {
     console.log(chalk.yellow('⚠️  No VSCode integration found'));
@@ -356,7 +356,7 @@ async function listAgents(): Promise<void> {
     const subagentGenerator = new SubagentGenerator(projectContext);
     const subagents = subagentGenerator.generateSubagents();
 
-    console.log(chalk.blue('🤖 Available Agents for Current Project\n'));
+    console.log(chalk.blue('Available Agents for Current Project\n'));
     
     subagents.forEach(agent => {
       console.log(chalk.cyan(`${agent.name} - ${agent.role}`));
@@ -379,7 +379,7 @@ async function updateConfiguration(): Promise<void> {
   };
   
   await initializeProject(options);
-  console.log(chalk.green('✅ Configuration updated'));
+  console.log(chalk.green('Configuration updated'));
 }
 
 async function listTemplates(): Promise<void> {
@@ -461,7 +461,7 @@ async function createProject(projectName: string, options: any): Promise<void> {
   
   await initializeProject(initOptions);
   
-  console.log(chalk.green(`\n✅ Project ${projectName} created successfully!`));
+  console.log(chalk.green(`\nProject ${projectName} created successfully!`));
   console.log(chalk.yellow('Next steps:'));
   console.log(`   cd ${projectName}`);
   console.log('   claude-code');
@@ -483,10 +483,10 @@ async function manageProposals(options: any): Promise<void> {
     proposals.forEach(proposal => {
       console.log(chalk.cyan(`${proposal.id}`));
       console.log(`   📋 ${proposal.title}`);
-      console.log(`   🎯 Type: ${proposal.type}`);
+      console.log(`   Type: ${proposal.type}`);
       console.log(`   ⚡ Priority: ${proposal.priority}`);
       console.log(`   📅 Created: ${new Date(proposal.createdAt).toLocaleDateString()}`);
-      console.log(`   🤖 Agents: ${proposal.agentRecommendations.length} recommendations`);
+      console.log(`   Agents: ${proposal.agentRecommendations.length} recommendations`);
       console.log('');
     });
     
@@ -543,7 +543,7 @@ async function manageProposals(options: any): Promise<void> {
       agentRecommendations
     );
     
-    console.log(chalk.green(`✅ Proposal created: ${proposal.id}`));
+    console.log(chalk.green(`Proposal created: ${proposal.id}`));
     
     const { reviewNow } = await inquirer.prompt([
       {
@@ -561,7 +561,7 @@ async function manageProposals(options: any): Promise<void> {
 }
 
 async function getRecommendations(task: string, options: any): Promise<void> {
-  console.log(chalk.blue(`🔍 Getting multi-agent recommendations for: ${task}\n`));
+  console.log(chalk.blue(`Getting multi-agent recommendations for: ${task}\n`));
   
   try {
     const scanner = new ContextScanner();
@@ -606,7 +606,7 @@ async function manageCheckpoints(options: any): Promise<void> {
   if (options.status) {
     const status = await checkpointSystem.getContextWindowStatus();
     
-    console.log(chalk.blue('📊 Context Window Status\n'));
+    console.log(chalk.blue('Context Window Status\n'));
     console.log(`Usage: ${Math.round(status.utilization * 100)}%`);
     console.log(`Tokens Used: ${status.tokensUsed.toLocaleString()}`);
     console.log(`Tokens Remaining: ${status.tokensRemaining.toLocaleString()}`);
@@ -633,16 +633,16 @@ async function manageCheckpoints(options: any): Promise<void> {
       return;
     }
 
-    console.log(chalk.blue('📄 Available Checkpoints\n'));
+    console.log(chalk.blue('Available Checkpoints\n'));
     checkpoints.forEach(cp => {
       const age = Math.round((Date.now() - new Date(cp.timestamp).getTime()) / (1000 * 60 * 60));
       const utilization = Math.round(cp.contextWindowUtilization * 100);
       
       console.log(chalk.cyan(`${cp.id}`));
       console.log(`   📅 Created: ${new Date(cp.timestamp).toLocaleString()} (${age}h ago)`);
-      console.log(`   📊 Context: ${utilization}% utilized`);
-      console.log(`   🎯 Focus: ${cp.currentSession.currentFocus || 'No focus set'}`);
-      console.log(`   ✅ Tasks: ${cp.currentSession.tasksCompleted.length} completed, ${cp.currentSession.tasksInProgress.length} in progress`);
+      console.log(`   Context: ${utilization}% utilized`);
+      console.log(`   Focus: ${cp.currentSession.currentFocus || 'No focus set'}`);
+      console.log(`   Tasks: ${cp.currentSession.tasksCompleted.length} completed, ${cp.currentSession.tasksInProgress.length} in progress`);
       console.log('');
     });
     
@@ -654,14 +654,14 @@ async function manageCheckpoints(options: any): Promise<void> {
     const checkpoint = await checkpointSystem.restoreCheckpoint(options.restore);
     
     if (checkpoint) {
-      console.log(chalk.green('\n✅ Checkpoint restored successfully!'));
+      console.log(chalk.green('\nCheckpoint restored successfully!'));
       console.log(chalk.blue('\n📋 Session Summary:'));
       console.log(`   Project: ${checkpoint.projectContext.framework} (${checkpoint.projectContext.language})`);
       console.log(`   Agents: ${checkpoint.activeAgents.length} active`);
       console.log(`   Focus: ${checkpoint.currentSession.currentFocus || 'None'}`);
       
       if (checkpoint.nextSteps.length > 0) {
-        console.log(chalk.yellow('\n🎯 Next Steps:'));
+        console.log(chalk.yellow('\nNext Steps:'));
         checkpoint.nextSteps.forEach(step => console.log(`   - ${step}`));
       }
       
@@ -717,7 +717,7 @@ async function manageCheckpoints(options: any): Promise<void> {
         []
       );
       
-      console.log(chalk.green('✅ Manual checkpoint created successfully!'));
+      console.log(chalk.green('Manual checkpoint created successfully!'));
       console.log(chalk.cyan(`   Checkpoint ID: ${checkpoint.id}`));
       
     } catch (error) {
