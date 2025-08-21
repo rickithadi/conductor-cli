@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conductor CLI - Terminal Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .demo-container {
+            width: 100%;
+            max-width: 900px;
+            background: #0a0e27;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #1e2139;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff5f57;
+        }
+
+        .terminal-button:nth-child(2) {
+            background: #ffbd2e;
+        }
+
+        .terminal-button:nth-child(3) {
+            background: #28ca42;
+        }
+
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: #8892b0;
+            font-size: 13px;
+        }
+
+        .terminal-body {
+            padding: 24px;
+            min-height: 500px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #e6f1ff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .command-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .prompt {
+            color: #64ffda;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .command {
+            color: #ffffff;
+            position: relative;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background: #64ffda;
+            animation: blink 1s infinite;
+            margin-left: 2px;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .output {
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        .output-header {
+            color: #bd93f9;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .agent-response {
+            padding: 12px;
+            background: rgba(98, 114, 164, 0.1);
+            border-left: 3px solid #64ffda;
+            margin: 8px 0;
+            border-radius: 4px;
+        }
+
+        .agent-name {
+            color: #8be9fd;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .agent-text {
+            color: #f8f8f2;
+            line-height: 1.5;
+        }
+
+        .status-line {
+            color: #50fa7b;
+            margin: 8px 0;
+        }
+
+        .error-line {
+            color: #ff5555;
+        }
+
+        .warning-line {
+            color: #ffb86c;
+        }
+
+        .info-line {
+            color: #8be9fd;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: rgba(100, 255, 218, 0.2);
+            border-radius: 2px;
+            margin: 12px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #64ffda;
+            width: 0;
+            animation: progress 2s ease-out forwards;
+        }
+
+        @keyframes progress {
+            to { width: 100%; }
+        }
+
+        .code-block {
+            background: rgba(40, 42, 54, 0.6);
+            padding: 12px;
+            border-radius: 6px;
+            margin: 8px 0;
+            font-family: 'Fira Code', monospace;
+            overflow-x: auto;
+        }
+
+        .keyword { color: #ff79c6; }
+        .string { color: #f1fa8c; }
+        .function { color: #50fa7b; }
+        .comment { color: #6272a4; }
+        
+        /* Animation delays */
+        .delay-1 { animation-delay: 1s; }
+        .delay-2 { animation-delay: 2s; }
+        .delay-3 { animation-delay: 3s; }
+        .delay-4 { animation-delay: 4s; }
+        .delay-5 { animation-delay: 5s; }
+        .delay-6 { animation-delay: 6s; }
+        .delay-7 { animation-delay: 7s; }
+        .delay-8 { animation-delay: 8s; }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="terminal-header">
+            <div class="terminal-button"></div>
+            <div class="terminal-button"></div>
+            <div class="terminal-button"></div>
+            <div class="terminal-title">conductor-cli ~ AI Development Team</div>
+        </div>
+        <div class="terminal-body" id="terminal">
+            <!-- Terminal content will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        const terminal = document.getElementById('terminal');
+        
+        const demoSequence = [
+            {
+                type: 'command',
+                prompt: '❯',
+                text: 'conductor init',
+                delay: 500
+            },
+            {
+                type: 'output',
+                content: `<div class="status-line">✓ Initializing AI development team...</div>
+<div class="info-line">→ Scanning project structure...</div>
+<div class="info-line">→ Detecting Next.js 14 with TypeScript</div>
+<div class="info-line">→ Loading specialized agents...</div>
+<div class="progress-bar"><div class="progress-fill"></div></div>
+<div class="status-line">✓ AI team ready with 6 specialized agents</div>`,
+                delay: 1000
+            },
+            {
+                type: 'command',
+                prompt: '❯',
+                text: 'conductor ask "implement user authentication with JWT"',
+                delay: 2000
+            },
+            {
+                type: 'output',
+                content: `<div class="output-header">Consulting AI development team...</div>
+<div class="agent-response delay-1">
+    <div class="agent-name">@architect</div>
+    <div class="agent-text">I'll design a secure JWT authentication system with refresh tokens, proper session management, and middleware protection.</div>
+</div>
+<div class="agent-response delay-2">
+    <div class="agent-name">@security</div>
+    <div class="agent-text">Implementing OWASP best practices: secure token storage, CSRF protection, rate limiting, and proper password hashing with bcrypt.</div>
+</div>
+<div class="agent-response delay-3">
+    <div class="agent-name">@backend</div>
+    <div class="agent-text">Setting up API routes: /api/auth/login, /api/auth/refresh, /api/auth/logout with proper error handling and validation.</div>
+</div>`,
+                delay: 1500
+            },
+            {
+                type: 'command',
+                prompt: '❯',
+                text: 'conductor swarm --mode=implement',
+                delay: 4000
+            },
+            {
+                type: 'output',
+                content: `<div class="output-header">🐝 Hive-mind coordination activated</div>
+<div class="info-line">→ Queen coordinating 5 worker agents</div>
+<div class="info-line">→ Parallel task execution started</div>
+
+<div class="code-block delay-1">
+<span class="comment">// src/lib/auth.ts</span>
+<span class="keyword">import</span> jwt <span class="keyword">from</span> <span class="string">'jsonwebtoken'</span>;
+<span class="keyword">import</span> bcrypt <span class="keyword">from</span> <span class="string">'bcryptjs'</span>;
+
+<span class="keyword">export const</span> <span class="function">generateTokens</span> = (userId: string) => {
+  <span class="keyword">const</span> accessToken = jwt.sign(
+    { userId, type: <span class="string">'access'</span> },
+    process.env.JWT_SECRET,
+    { expiresIn: <span class="string">'15m'</span> }
+  );
+  <span class="keyword">return</span> { accessToken, refreshToken };
+}</div>
+
+<div class="status-line delay-2">✓ Created authentication middleware</div>
+<div class="status-line delay-3">✓ Set up database schemas</div>
+<div class="status-line delay-4">✓ Implemented API endpoints</div>
+<div class="status-line delay-5">✓ Added security headers</div>`,
+                delay: 1500
+            },
+            {
+                type: 'command',
+                prompt: '❯',
+                text: 'conductor test --coverage',
+                delay: 7000
+            },
+            {
+                type: 'output',
+                content: `<div class="output-header">Running test suite with AI verification...</div>
+<div class="agent-response delay-1">
+    <div class="agent-name">@qa</div>
+    <div class="agent-text">Executing 47 test cases across auth module...</div>
+</div>
+<pre class="delay-2">
+  PASS  src/auth/auth.test.ts
+  PASS  src/middleware/security.test.ts
+  PASS  src/api/endpoints.test.ts
+  
+  Test Suites: 3 passed, 3 total
+  Tests:       47 passed, 47 total
+  Coverage:    94% statements, 91% branches
+</pre>
+<div class="status-line delay-3">✓ All tests passing with 94% coverage</div>`,
+                delay: 1500
+            },
+            {
+                type: 'command',
+                prompt: '❯',
+                text: 'conductor deploy --review',
+                delay: 9000
+            },
+            {
+                type: 'output',
+                content: `<div class="output-header">Pre-deployment review by AI team:</div>
+<div class="agent-response delay-1">
+    <div class="agent-name">@security</div>
+    <div class="agent-text">✓ No vulnerabilities detected • OWASP compliant</div>
+</div>
+<div class="agent-response delay-2">
+    <div class="agent-name">@performance</div>
+    <div class="agent-text">✓ API response time &lt; 100ms • Optimized queries</div>
+</div>
+<div class="agent-response delay-3">
+    <div class="agent-name">@reviewer</div>
+    <div class="agent-text">✓ Code quality score: A • Ready for production</div>
+</div>
+<div class="status-line delay-4">🚀 Deployment confidence: 98%</div>`,
+                delay: 1500
+            }
+        ];
+
+        function typeText(element, text, callback) {
+            let index = 0;
+            const cursor = document.createElement('span');
+            cursor.className = 'typing-cursor';
+            element.appendChild(cursor);
+            
+            function type() {
+                if (index < text.length) {
+                    cursor.insertAdjacentText('beforebegin', text[index]);
+                    index++;
+                    setTimeout(type, 50 + Math.random() * 50);
+                } else {
+                    cursor.remove();
+                    if (callback) callback();
+                }
+            }
+            type();
+        }
+
+        function addCommand(prompt, text, callback) {
+            const line = document.createElement('div');
+            line.className = 'command-line';
+            line.innerHTML = `<span class="prompt">${prompt}</span><span class="command"></span>`;
+            terminal.appendChild(line);
+            
+            setTimeout(() => {
+                line.style.opacity = '1';
+                typeText(line.querySelector('.command'), text, callback);
+            }, 100);
+        }
+
+        function addOutput(content, callback) {
+            const output = document.createElement('div');
+            output.className = 'output';
+            output.innerHTML = content;
+            terminal.appendChild(output);
+            
+            setTimeout(() => {
+                output.style.opacity = '1';
+                if (callback) setTimeout(callback, 500);
+            }, 100);
+        }
+
+        function runDemo() {
+            terminal.innerHTML = '';
+            let index = 0;
+            
+            function nextStep() {
+                if (index < demoSequence.length) {
+                    const step = demoSequence[index];
+                    index++;
+                    
+                    setTimeout(() => {
+                        if (step.type === 'command') {
+                            addCommand(step.prompt, step.text, () => {
+                                setTimeout(nextStep, 500);
+                            });
+                        } else if (step.type === 'output') {
+                            addOutput(step.content, nextStep);
+                        }
+                    }, step.delay);
+                } else {
+                    // Restart demo after a pause
+                    setTimeout(runDemo, 3000);
+                }
+            }
+            
+            nextStep();
+        }
+
+        // Start the demo
+        runDemo();
+    </script>
+</body>
+</html>

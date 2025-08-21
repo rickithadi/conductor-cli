@@ -3,341 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🦆 Conductor CLI - Lightweight AI Development Assistant | Gallifrey Consulting</title>
+    <title>Conductor CLI - AI Development Team for Your Terminal</title>
     
-    <!-- Enhanced SEO Meta Tags -->
-    <meta name="description" content="Lightweight AI development assistant for multi-agent coordination. Streamlined alternative to complex frameworks like Claude Flow. Focused on essential development assistance. 🦆">
-    <meta name="keywords" content="rubber duck programming, AI development team, rubber ducking AI, Claude Code integration, multi-agent development, conductor CLI, programming conversation, development workflow automation, Gallifrey Consulting">
-    <meta name="author" content="Hadi Rickit - Gallifrey Consulting">
+    <meta name="description" content="AI-powered development assistant with specialized agents. Like having senior developers, architects, and QA engineers on your team. Built on Claude Flow's enterprise orchestration.">
+    <meta name="keywords" content="AI development, developer tools, Claude Flow, multi-agent system, terminal tools, automation, TypeScript, React, Next.js">
     
-    <!-- Enhanced Open Graph -->
-    <meta property="og:title" content="🦆 Conductor CLI - Lightweight AI Development Assistant">
-    <meta property="og:description" content="Streamlined alternative to complex AI orchestration frameworks. Multi-agent development assistance focused on essential functionality without heavy infrastructure.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rickithadi.github.io/conductor-cli">
-    <meta property="og:image" content="https://rickithadi.github.io/conductor-cli/og-image.png">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="🦆 Conductor CLI - Lightweight AI Development Assistant">
-    <meta name="twitter:description" content="Streamlined multi-agent AI coordination. Lightweight alternative to complex frameworks like Claude Flow. Essential development assistance without the overhead.">
-    <meta name="twitter:image" content="https://rickithadi.github.io/conductor-cli/og-image.png">
-    
-    <!-- Enhanced Schema.org -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Conductor CLI - Rubber Duck Programming",
-        "description": "Rubber ducking that actually responds! Complete AI development team with specialized agents. Transform programming conversations into real solutions with seamless Claude Code integration for React, Next.js, and TypeScript projects.",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "macOS, Linux, Windows",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Hadi Rickit",
-            "url": "https://rickithadi.dev"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Gallifrey Consulting",
-            "url": "https://gallifrey.consulting"
-        },
-        "downloadUrl": "https://github.com/rickithadi/conductor-cli",
-        "softwareVersion": "1.0.0",
-        "programmingLanguage": "TypeScript",
-        "featureList": [
-            "AI Development Orchestra",
-            "Seamless Claude Code Integration",
-            "Train Conductor Workflow Management", 
-            "Rubber Duck Problem Solving",
-            "Multi-Agent Coordination",
-            "Enterprise Audit Capabilities",
-            "GitHub Workflow Integration",
-            "React/Next.js Specialization", 
-            "Security Scanning (OWASP)",
-            "Real-time Agent Dashboard",
-            "TypeScript Support"
-        ]
-    }
-    </script>
-    
-    <!-- Fonts - Optimized Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: 'Inter';
-            font-display: swap;
-        }
-    </style>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎭%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            /* Enhanced Typography-First Design System */
-            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, monospace;
-            
-            /* Professional Color System */
-            --gray-50: #FAFBFC;
-            --gray-100: #F4F6F8;
-            --gray-200: #E6EAEE;
-            --gray-300: #D1D9E0;
-            --gray-400: #9BA4AF;
-            --gray-500: #6C7785;
-            --gray-600: #4A5568;
-            --gray-700: #2D3748;
-            --gray-800: #1A202C;
-            --gray-900: #171923;
-            
-            /* Signature Accent Colors */
-            --primary-blue: #3B82F6;
-            --primary-green: #10B981;
-            --accent-purple: #8B5CF6;
-            --accent-amber: #F59E0B;
-            --accent-red: #EF4444;
-            --gallifrey-gold: #F59E0B;
-            
-            /* Enhanced Typography Scale */
-            --text-xs: 0.75rem;      /* 12px */
-            --text-sm: 0.875rem;     /* 14px */
-            --text-base: 1rem;       /* 16px */
-            --text-lg: 1.125rem;     /* 18px */
-            --text-xl: 1.25rem;      /* 20px */
-            --text-2xl: 1.5rem;      /* 24px */
-            --text-3xl: 1.875rem;    /* 30px */
-            --text-4xl: 2.25rem;     /* 36px */
-            --text-5xl: 3rem;        /* 48px */
-            --text-6xl: 3.75rem;     /* 60px */
-            --text-7xl: 4.5rem;      /* 72px */
-            
-            /* Precise Spacing System */
-            --space-1: 0.25rem;      /* 4px */
-            --space-2: 0.5rem;       /* 8px */
-            --space-3: 0.75rem;      /* 12px */
-            --space-4: 1rem;         /* 16px */
-            --space-6: 1.5rem;       /* 24px */
-            --space-8: 2rem;         /* 32px */
-            --space-12: 3rem;        /* 48px */
-            --space-16: 4rem;        /* 64px */
-            --space-20: 5rem;        /* 80px */
-            --space-24: 6rem;        /* 96px */
-            --space-32: 8rem;        /* 128px */
-            --space-40: 10rem;       /* 160px */
-            
-            /* Professional Typography Settings */
-            --letter-tighter: -0.05em;
-            --letter-tight: -0.025em;
-            --letter-normal: 0em;
-            --letter-wide: 0.025em;
-            --letter-wider: 0.05em;
-            --letter-widest: 0.1em;
-            
-            --leading-none: 1;
-            --leading-tight: 1.25;
-            --leading-normal: 1.5;
-            --leading-relaxed: 1.625;
-            
-            /* Smooth Animation System */
-            --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
-            --ease-in-out: cubic-bezier(0.4, 0, 0.6, 1);
-            --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            --duration-200: 200ms;
-            --duration-300: 300ms;
-            --duration-500: 500ms;
-            --duration-700: 700ms;
-            
-            /* GPU Acceleration */
-            --gpu-acceleration: translate3d(0, 0, 0);
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        html {
-            scroll-behavior: smooth;
-            font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5a67d8;
+            --secondary: #764ba2;
+            --dark: #0a0e27;
+            --dark-lighter: #1e2139;
+            --text: #e6f1ff;
+            --text-muted: #8892b0;
+            --accent: #64ffda;
+            --accent-alt: #bd93f9;
         }
-        
+
         body {
-            font-family: var(--font-primary);
-            font-size: var(--text-base);
-            line-height: var(--leading-normal);
-            color: var(--gray-800);
-            background: var(--gray-50);
-            letter-spacing: var(--letter-tight);
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        
-        /* Enhanced Typography System */
-        .text-display {
-            font-size: var(--text-6xl);
-            font-weight: 900;
-            line-height: var(--leading-none);
-            letter-spacing: var(--letter-tighter);
-        }
-        
-        .text-headline {
-            font-size: var(--text-4xl);
-            font-weight: 800;
-            line-height: var(--leading-tight);
-            letter-spacing: var(--letter-tight);
-        }
-        
-        .text-title {
-            font-size: var(--text-2xl);
-            font-weight: 700;
-            line-height: var(--leading-tight);
-            letter-spacing: var(--letter-tight);
-        }
-        
-        .text-body {
-            font-size: var(--text-lg);
-            font-weight: 400;
-            line-height: var(--leading-relaxed);
-            letter-spacing: var(--letter-normal);
-            color: var(--gray-700); /* Improved contrast */
-        }
-        
-        .text-caption {
-            font-size: var(--text-sm);
-            font-weight: 500;
-            line-height: var(--leading-normal);
-            letter-spacing: var(--letter-wide);
-            text-transform: uppercase;
-        }
-        
-        .text-mono {
-            font-family: var(--font-mono);
-            font-weight: 500;
-            letter-spacing: var(--letter-normal);
-        }
-        
-        /* Underline Accents */
-        .underline-accent {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .underline-accent::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
-            border-radius: 2px;
-        }
-        
-        .underline-accent-gold::after {
-            background: linear-gradient(90deg, var(--gallifrey-gold), var(--accent-red));
-        }
-        
-        /* Layout System */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-6);
-        }
-        
-        .section {
-            padding: var(--space-32) 0;
-        }
-        
-        .section-sm {
-            padding: var(--space-20) 0;
-        }
-        
-        /* Enhanced Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(250, 251, 252, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--gray-200);
-            z-index: 50;
-            transition: all var(--duration-300) var(--ease-out);
-        }
-        
-        .nav.scrolled {
-            background: rgba(250, 251, 252, 0.95);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--space-4) var(--space-6);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .nav-logo {
-            font-size: var(--text-xl);
-            font-weight: 800;
-            letter-spacing: var(--letter-tight);
-            color: var(--gray-900);
-            text-decoration: none;
-            transition: color var(--duration-200) var(--ease-out);
-        }
-        
-        .nav-logo:hover {
-            color: var(--primary-blue);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: var(--space-8);
-            list-style: none;
-        }
-        
-        .nav-links a {
-            font-weight: 500;
-            color: var(--gray-700); /* Improved contrast */
-            text-decoration: none;
-            letter-spacing: var(--letter-tight);
-            transition: color var(--duration-200) var(--ease-out);
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: var(--gray-900);
-        }
-        
-        .nav-links a:focus {
-            outline: 2px solid var(--primary-blue);
-            outline-offset: 4px;
-            border-radius: 4px;
-        }
-        
-        /* Hero Section - Typography-First */
+
+        /* Hero Section */
         .hero {
             min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             display: flex;
             align-items: center;
-            padding-top: var(--space-20);
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+            justify-content: center;
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -345,1441 +57,571 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233B82F6' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            animation: float 30s ease-in-out infinite;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            25% { transform: translateY(-5px) translateX(5px); }
-            50% { transform: translateY(-10px) translateX(-5px); }
-            75% { transform: translateY(-5px) translateX(-10px); }
-        }
-        
+
         .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
             text-align: center;
-            position: relative;
-            z-index: 2;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 900px;
         }
-        
-        .hero-badge {
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: var(--space-2);
-            padding: var(--space-3) var(--space-6);
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid var(--gray-200);
-            border-radius: 50px;
-            font-size: var(--text-sm);
-            font-weight: 600;
-            color: var(--gray-700);
-            letter-spacing: var(--letter-wide);
-            text-transform: uppercase;
-            margin-bottom: var(--space-8);
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
-        
-        .hero-title {
-            margin-bottom: var(--space-6);
-            color: var(--gray-900);
-            animation: slideInUp var(--duration-700) var(--ease-out);
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
         }
-        
-        .hero-subtitle {
-            max-width: 700px;
-            margin: 0 auto var(--space-12);
-            color: var(--gray-700); /* Improved contrast */
-            animation: slideInUp var(--duration-700) var(--ease-out) 0.1s both;
-        }
-        
-        .hero-stats {
+
+        /* Terminal Demo Section */
+        .demo-section {
+            background: var(--dark);
+            padding: 4rem 2rem;
+            min-height: 100vh;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: var(--space-16);
-            margin-bottom: var(--space-12);
-            animation: slideInUp var(--duration-700) var(--ease-out) 0.2s both;
         }
-        
-        .stat {
+
+        .demo-wrapper {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .section-header {
             text-align: center;
+            margin-bottom: 3rem;
         }
-        
-        .stat-number {
-            font-size: var(--text-4xl);
-            font-weight: 900;
-            color: var(--gray-900);
-            letter-spacing: var(--letter-tighter);
-            margin-bottom: var(--space-2);
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-alt) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-        .stat-label {
-            font-size: var(--text-sm);
-            font-weight: 600;
-            color: var(--gray-600);
-            letter-spacing: var(--letter-widest);
-            text-transform: uppercase;
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
         }
-        
-        .hero-actions {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-4);
-            margin-bottom: var(--space-12);
-            animation: slideInUp var(--duration-700) var(--ease-out) 0.3s both;
-        }
-        
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* GitHub Stars Badge */
-        .github-stats {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-3);
-            margin-top: var(--space-6);
-            animation: slideInUp var(--duration-700) var(--ease-out) 0.4s both;
-        }
-        
-        .github-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            padding: var(--space-2) var(--space-4);
-            background: var(--gray-900);
-            color: white;
-            border-radius: 50px;
-            font-size: var(--text-sm);
-            font-weight: 500;
-            text-decoration: none;
-            transition: transform var(--duration-200) var(--ease-out);
-        }
-        
-        .github-badge:hover {
-            transform: translateY(-2px);
-        }
-        
-        /* Enhanced Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            padding: var(--space-4) var(--space-8);
-            font-weight: 600;
-            letter-spacing: var(--letter-tight);
-            text-decoration: none;
+
+        /* Terminal Animation */
+        .terminal-container {
+            background: var(--dark-lighter);
             border-radius: 12px;
-            transition: all var(--duration-300) var(--ease-out);
-            border: 2px solid transparent;
-            font-size: var(--text-base);
-            cursor: pointer;
-            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             overflow: hidden;
-            will-change: transform;
-            transform: var(--gpu-acceleration);
-            min-height: 48px; /* Improved touch target */
+            border: 1px solid rgba(100, 255, 218, 0.1);
         }
-        
-        .btn:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gray-900), var(--gray-700));
-            color: white;
-            border-color: var(--gray-900);
-            box-shadow: 0 4px 12px rgba(23, 25, 35, 0.15);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(23, 25, 35, 0.25);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.9);
-            color: var(--gray-700);
-            border-color: var(--gray-300);
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            border-color: var(--gray-400);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Combined Capabilities Section */
-        .capabilities {
-            background: linear-gradient(180deg, white 0%, var(--gray-50) 100%);
-            position: relative;
-        }
-        
-        .capabilities-header {
-            text-align: center;
-            margin-bottom: var(--space-24);
-        }
-        
-        .capabilities-title {
-            margin-bottom: var(--space-6);
-            position: relative;
-        }
-        
-        .capabilities-subtitle {
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--gray-700);
-        }
-        
-        .capabilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: clamp(2rem, 5vw, 5rem);
-            margin-bottom: var(--space-24);
-        }
-        
-        /* Enhanced Agents Section */
-        .agents-section h3,
-        .audits-section h3 {
-            font-size: var(--text-3xl);
-            font-weight: 800;
-            margin-bottom: var(--space-4);
-            color: var(--gray-900);
-            letter-spacing: var(--letter-tight);
-            position: relative;
-        }
-        
-        .section-underline {
-            height: 4px;
-            width: 80px;
-            border-radius: 2px;
-            margin-bottom: var(--space-8);
-        }
-        
-        .agents-section .section-underline {
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
-        }
-        
-        .audits-section .section-underline {
-            background: linear-gradient(90deg, var(--gallifrey-gold), var(--accent-red));
-        }
-        
-        .agents-list {
-            display: grid;
-            gap: var(--space-6);
-        }
-        
-        .agent-item,
-        .audit-item {
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: var(--space-6);
-            transition: all var(--duration-300) var(--ease-out);
-            position: relative;
-            will-change: transform;
-            transform: var(--gpu-acceleration);
-            backdrop-filter: blur(10px);
-        }
-        
-        .agent-item {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-4);
-        }
-        
-        .agent-item:hover,
-        .audit-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--gray-300);
-            background: white;
-        }
-        
-        .agent-item:focus-within,
-        .audit-item:focus-within {
-            outline: 2px solid var(--primary-blue);
-            outline-offset: 2px;
-        }
-        
-        /* SVG Icon System */
-        .agent-icon,
-        .audit-icon {
-            font-size: var(--text-2xl);
-            line-height: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background: var(--gray-100);
-            border-radius: 12px;
-            transition: all var(--duration-200) var(--ease-out);
-        }
-        
-        .agent-item:hover .agent-icon,
-        .audit-item:hover .audit-icon {
-            transform: scale(1.1);
-            background: var(--gray-200);
-        }
-        
-        .agent-content h4,
-        .audit-content h4 {
-            font-size: var(--text-lg);
-            font-weight: 700;
-            margin-bottom: var(--space-2);
-            color: var(--gray-900);
-            letter-spacing: var(--letter-tight);
-        }
-        
-        .agent-role,
-        .audit-type {
-            font-size: var(--text-sm);
-            font-weight: 600;
-            color: var(--gray-600);
-            letter-spacing: var(--letter-wide);
-            text-transform: uppercase;
-            margin-bottom: var(--space-3);
-        }
-        
-        .agent-description,
-        .audit-description {
-            font-size: var(--text-sm);
-            color: var(--gray-700);
-            line-height: var(--leading-relaxed);
-        }
-        
-        /* Special Agent Highlights */
-        .agent-gallifrey {
-            border-color: var(--gallifrey-gold);
-            background: rgba(245, 158, 11, 0.03);
-        }
-        
-        .agent-gallifrey .agent-role {
-            color: var(--gallifrey-gold);
-        }
-        
-        /* Audits Grid */
-        .audits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-4);
-        }
-        
-        .audit-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-4);
-            padding: var(--space-4) var(--space-6);
-        }
-        
-        .audit-icon {
-            width: 40px;
-            height: 40px;
-            font-size: var(--text-lg);
-        }
-        
-        /* Terminal Demo Enhancement */
-        .terminal-demo {
-            background: var(--gray-900);
-            border-radius: 20px;
-            overflow: hidden;
-            margin-top: var(--space-16);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--gray-800);
-        }
-        
+
         .terminal-header {
-            padding: var(--space-4) var(--space-6);
-            background: linear-gradient(135deg, var(--gray-800), var(--gray-700));
+            background: #1a1d35;
+            padding: 12px 16px;
             display: flex;
             align-items: center;
-            gap: var(--space-2);
-            border-bottom: 1px solid var(--gray-700);
+            gap: 8px;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
         }
-        
-        .terminal-dot {
+
+        .terminal-button {
             width: 12px;
             height: 12px;
             border-radius: 50%;
         }
-        
-        .dot-red { background: var(--accent-red); }
-        .dot-amber { background: var(--gallifrey-gold); }
-        .dot-green { background: var(--primary-green); }
-        
+
+        .terminal-button.red { background: #ff5f57; }
+        .terminal-button.yellow { background: #ffbd2e; }
+        .terminal-button.green { background: #28ca42; }
+
         .terminal-title {
-            margin-left: var(--space-4);
-            font-size: var(--text-sm);
-            color: var(--gray-300);
-            font-weight: 500;
+            flex: 1;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-family: 'JetBrains Mono', monospace;
         }
-        
-        .terminal-content {
-            padding: var(--space-8);
-            font-family: var(--font-mono);
-            font-size: var(--text-sm);
-            line-height: var(--leading-relaxed);
-            color: var(--primary-green);
-            background: var(--gray-900);
+
+        .terminal-body {
+            padding: 2rem;
+            min-height: 500px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text);
+            position: relative;
         }
-        
-        .terminal-line {
-            margin-bottom: var(--space-2);
+
+        .command-line {
+            margin-bottom: 1rem;
             opacity: 0;
-            animation: typeIn 0.6s ease forwards;
+            animation: fadeInUp 0.5s forwards;
         }
-        
-        .terminal-line:nth-child(1) { animation-delay: 0.5s; }
-        .terminal-line:nth-child(2) { animation-delay: 1s; }
-        .terminal-line:nth-child(3) { animation-delay: 1.5s; }
-        .terminal-line:nth-child(4) { animation-delay: 2s; }
-        .terminal-line:nth-child(5) { animation-delay: 2.5s; }
-        .terminal-line:nth-child(6) { animation-delay: 3s; }
-        
-        @keyframes typeIn {
-            to { opacity: 1; }
-        }
-        
-        .prompt { color: var(--primary-blue); font-weight: 600; }
-        .output { color: var(--gray-300); }
-        .success { color: var(--primary-green); font-weight: 600; }
-        .audit-result { color: var(--gallifrey-gold); }
-        
-        /* Terminal Recordings Enhancement */
-        .terminal-recordings {
-            margin-top: var(--space-20);
-        }
-        
-        .recordings-header {
-            text-align: center;
-            margin-bottom: var(--space-12);
-        }
-        
-        .recordings-header h3 {
-            font-size: var(--text-3xl);
-            font-weight: 700;
-            margin-bottom: var(--space-4);
-            color: var(--gray-900);
-        }
-        
-        .recordings-header p {
-            color: var(--gray-600);
-            font-size: var(--text-lg);
-        }
-        
-        .recording-tabs {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-2);
-            margin-bottom: var(--space-8);
-            flex-wrap: wrap;
-        }
-        
-        .tab-btn {
-            padding: var(--space-3) var(--space-6);
-            background: var(--gray-100);
-            border: 2px solid transparent;
-            border-radius: var(--space-3);
+
+        .prompt {
+            color: var(--accent);
             font-weight: 600;
-            font-size: var(--text-sm);
-            color: var(--gray-600);
-            cursor: pointer;
-            transition: all var(--transition-base);
+            margin-right: 8px;
         }
-        
-        .tab-btn:hover {
-            background: var(--gray-200);
-            color: var(--gray-800);
-        }
-        
-        .tab-btn.active {
-            background: var(--primary-green);
-            color: white;
-            border-color: var(--primary-green);
-        }
-        
-        .recording-content {
-            position: relative;
-        }
-        
-        .recording-panel {
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .recording-panel.active {
-            display: block;
-        }
-        
-        .recording-info {
-            text-align: center;
-            margin-bottom: var(--space-6);
-        }
-        
-        .recording-info h4 {
-            font-size: var(--text-xl);
-            font-weight: 600;
-            margin-bottom: var(--space-2);
-            color: var(--gray-900);
-        }
-        
-        .recording-info p {
-            color: var(--gray-600);
-            font-size: var(--text-base);
-        }
-        
-        .terminal-window {
-            background: var(--gray-900);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
-            border: 1px solid var(--gray-700);
-            max-width: 100%;
-        }
-        
-        .recording-placeholder {
-            background: var(--gray-900);
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .recording-placeholder img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0 0 16px 16px;
-        }
-        
-        .fallback-demo {
-            width: 100%;
-            padding: var(--space-8);
-        }
-        
-        .fallback-demo .terminal-content {
-            background: transparent;
-            padding: 0;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @media (max-width: 768px) {
-            .recording-tabs {
-                justify-content: center;
-                gap: var(--space-1);
-            }
-            
-            .tab-btn {
-                padding: var(--space-2) var(--space-4);
-                font-size: var(--text-xs);
-            }
-            
-            .terminal-window {
-                margin: 0 var(--space-4);
-            }
-        }
-        
-        /* CTA Section Enhancement */
-        .cta {
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .cta-title {
-            font-size: var(--text-5xl);
-            font-weight: 900;
-            margin-bottom: var(--space-6);
-            letter-spacing: var(--letter-tighter);
-            background: linear-gradient(135deg, white, var(--gray-300));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .cta-subtitle {
-            font-size: var(--text-xl);
-            color: var(--gray-300);
-            margin-bottom: var(--space-8);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: var(--leading-relaxed);
-        }
-        
-        .cta-actions {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-4);
-            margin-bottom: var(--space-8);
-        }
-        
-        .btn-white {
-            background: white;
-            color: var(--gray-900);
-            border-color: white;
-        }
-        
-        .btn-white:hover {
-            background: var(--gray-100);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn-outline:hover {
-            border-color: white;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        .cta-note {
-            font-size: var(--text-sm);
-            color: var(--gray-400);
-            font-family: var(--font-mono);
-        }
-        
-        /* Footer Enhancement */
-        .footer {
-            background: var(--gray-900);
-            color: var(--gray-400);
-            text-align: center;
-            padding: var(--space-16) 0 var(--space-8);
-            border-top: 1px solid var(--gray-800);
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-8);
-            margin-bottom: var(--space-8);
-        }
-        
-        .footer-links a {
-            color: var(--gray-400);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color var(--duration-200) var(--ease-out);
-            padding: var(--space-2);
-        }
-        
-        .footer-links a:hover {
+
+        .command {
             color: white;
         }
-        
-        .footer-links a:focus {
-            outline: 2px solid var(--primary-blue);
-            outline-offset: 4px;
-            border-radius: 4px;
+
+        .typing-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background: var(--accent);
+            animation: blink 1s infinite;
+            margin-left: 2px;
+            vertical-align: text-bottom;
         }
-        
-        .footer-credit {
-            margin-top: var(--space-6);
-            padding-top: var(--space-6);
-            border-top: 1px solid var(--gray-800);
-            font-size: var(--text-sm);
-            color: var(--gray-500);
-            line-height: var(--leading-relaxed);
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
         }
-        
-        .footer-credit a {
-            color: var(--gallifrey-gold);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        /* Responsive Design Enhancements */
-        @media (max-width: 768px) {
-            .text-display { font-size: var(--text-4xl); }
-            .text-headline { font-size: var(--text-2xl); }
-            
-            .hero-stats {
-                flex-direction: column;
-                gap: var(--space-8);
-            }
-            
-            .capabilities-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-16);
-            }
-            
-            .audits-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .cta-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            :root {
-                --space-32: 4rem;
-                --space-24: 3rem;
-            }
-            
-            .container {
-                padding: 0 var(--space-4);
-            }
-            
-            .text-display { font-size: var(--text-3xl); }
-            .cta-title { font-size: var(--text-3xl); }
-        }
-        
-        /* Accessibility Improvements */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-        
-        /* Enhanced Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
+
         @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
-        /* Intersection Observer Enhancement */
-        .animate-on-scroll {
+
+        .output {
+            margin-bottom: 1.5rem;
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            animation: fadeInUp 0.5s forwards;
         }
-        
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
+
+        .agent-response {
+            background: rgba(100, 255, 218, 0.05);
+            border-left: 3px solid var(--accent);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
         }
+
+        .agent-name {
+            color: var(--accent-alt);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .status-line {
+            color: #50fa7b;
+            margin: 0.5rem 0;
+        }
+
+        .info-line {
+            color: #8be9fd;
+            margin: 0.5rem 0;
+        }
+
+        .code-block {
+            background: rgba(40, 42, 54, 0.5);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .keyword { color: #ff79c6; }
+        .string { color: #f1fa8c; }
+        .function { color: #50fa7b; }
+        .comment { color: #6272a4; }
+
+        /* Features Section */
+        .features-section {
+            background: linear-gradient(180deg, var(--dark) 0%, #0f1221 100%);
+            padding: 6rem 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(30, 33, 57, 0.5);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .feature-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-lighter);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .terminal-body {
+                padding: 1rem;
+                font-size: 12px;
+            }
+        }
+
+        /* Animation delays */
+        .delay-1 { animation-delay: 0.5s; }
+        .delay-2 { animation-delay: 1s; }
+        .delay-3 { animation-delay: 1.5s; }
+        .delay-4 { animation-delay: 2s; }
+        .delay-5 { animation-delay: 2.5s; }
+        .delay-6 { animation-delay: 3s; }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav" id="navbar">
-        <div class="nav-inner">
-            <a href="#" class="nav-logo" aria-label="Conductor CLI Home">
-                🦆 Conductor
-            </a>
-            <ul class="nav-links">
-                <li><a href="#capabilities">🦆 Team</a></li>
-                <li><a href="https://gallifrey.consulting" target="_blank" rel="noopener">✨ Gallifrey</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span>🦆</span> Lightweight AI Assistant
-                </div>
-                
-                <h1 class="text-display hero-title">
-                    <span class="underline-accent">Conductor CLI</span><br>
-                    Multi-Agent AI Development Assistance
-                </h1>
-                
-                <p class="text-body hero-subtitle">
-                    <strong>Streamlined alternative</strong> to complex AI orchestration frameworks. 
-                    Focused on <strong>essential multi-agent coordination</strong> without the overhead of neural networks or heavy infrastructure. 
-                    Get <strong>practical development assistance</strong> from specialized AI agents.
-                </p>
-                
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">⚡</div>
-                        <div class="stat-label">Lightweight</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">🎯</div>
-                        <div class="stat-label">Focused</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">🤖</div>
-                        <div class="stat-label">8 AI Agents</div>
-                    </div>
-                </div>
-                
-                <div class="hero-actions">
-                    <a href="#capabilities" class="btn btn-primary" aria-describedby="demo-description">
-                        Get Started
-                    </a>
-                    <a href="https://github.com/rickithadi/conductor-cli" class="btn btn-secondary" target="_blank" rel="noopener">
-                        View on GitHub
-                    </a>
-                </div>
-                
-                <div class="github-stats">
-                    <a href="https://github.com/rickithadi/conductor-cli" class="github-badge" target="_blank" rel="noopener" aria-label="View project on GitHub">
-                        <span>🎫</span> Board the Express
-                    </a>
-                    <span class="text-mono" style="font-size: var(--text-sm); color: var(--gray-600);">
-                        🚂 Free Express Ticket!
-                    </span>
-                </div>
-                
-                <p class="text-mono" style="font-size: var(--text-sm); color: var(--gray-600); margin-top: var(--space-6);" id="demo-description">
-                    <code style="background: rgba(255,255,255,0.8); padding: var(--space-1) var(--space-3); border-radius: 6px; backdrop-filter: blur(10px);">
-                        🚂 conductor launch  # Choo choo! 🦆
-                    </code>
-                </p>
+        <div class="hero-content">
+            <h1>Your AI Development Team</h1>
+            <p class="tagline">
+                Specialized AI agents working together in your terminal.<br>
+                Like having senior developers on speed dial.
+            </p>
+            <div class="cta-buttons">
+                <a href="#demo" class="btn btn-primary">
+                    <span>See it in action</span>
+                    <span>↓</span>
+                </a>
+                <a href="https://github.com/rickithadi/conductor-cli" class="btn btn-secondary">
+                    <span>Get Started</span>
+                    <span>→</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Combined Capabilities Section -->
-    <section class="capabilities section" id="capabilities">
-        <div class="container">
-            <div class="capabilities-header animate-on-scroll">
-                <h2 class="text-headline capabilities-title">
-                    <span class="underline-accent">🦆 Your AI Programming Team</span><br>
-                    💬 Rubber Ducking That Actually Responds
-                </h2>
-                <p class="text-body capabilities-subtitle">
-                    Meet your <strong>9 specialized AI programming partners</strong> ready for real conversations. 
-                    From <strong>product planning (@pm)</strong> to <strong>security auditing (@security)</strong>, each agent brings deep expertise. 
-                    <strong>Transform your programming questions</strong> into actionable solutions.
+    <!-- Terminal Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="demo-wrapper">
+            <div class="section-header">
+                <h2 class="section-title">Watch Your AI Team in Action</h2>
+                <p class="section-subtitle">Real-time coordination between specialized agents</p>
+            </div>
+            
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-button red"></div>
+                    <div class="terminal-button yellow"></div>
+                    <div class="terminal-button green"></div>
+                    <div class="terminal-title">conductor-cli ~ AI Development Team</div>
+                </div>
+                <div class="terminal-body" id="terminal">
+                    <!-- Terminal animation content -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3 class="feature-title">Hive-Mind Coordination</h3>
+                <p class="feature-description">
+                    87 MCP tools working together. Queen-led architecture coordinates specialized agents for complex tasks.
                 </p>
             </div>
             
-            <div class="capabilities-grid">
-                <!-- AI Development Team -->
-                <div class="agents-section animate-on-scroll">
-                    <h3>🦆 Your Programming Partners</h3>
-                    <div class="section-underline"></div>
-                    
-                    <div class="agents-list">
-                        <div class="agent-item" tabindex="0">
-                            <div class="agent-icon">🧠</div>
-                            <div class="agent-content">
-                                <h4>@pm</h4>
-                                <div class="agent-role">Product Manager • Planning Partner</div>
-                                <div class="agent-description">Requirements gathering, user stories, roadmaps, and strategic product decisions</div>
-                            </div>
-                        </div>
-                        
-                        <div class="agent-item" tabindex="0">
-                            <div class="agent-icon">🎨</div>
-                            <div class="agent-content">
-                                <h4>@design</h4>
-                                <div class="agent-role">UX/UI Designer • User Experience Expert</div>
-                                <div class="agent-description">Design systems, accessibility compliance, user experience optimization</div>
-                            </div>
-                        </div>
-                        
-                        <div class="agent-item" tabindex="0">
-                            <div class="agent-icon">⚛️</div>
-                            <div class="agent-content">
-                                <h4>@frontend</h4>
-                                <div class="agent-role">Frontend Developer • React Specialist</div>
-                                <div class="agent-description">React, Next.js, TypeScript, performance optimization, and user interfaces</div>
-                            </div>
-                        </div>
-                        
-                        <div class="agent-item" tabindex="0">
-                            <div class="agent-icon">⚙️</div>
-                            <div class="agent-content">
-                                <h4>@backend</h4>
-                                <div class="agent-role">Backend Engineer • Server Architecture Expert</div>
-                                <div class="agent-description">APIs, databases, microservices, scalable architecture, and data management</div>
-                            </div>
-                        </div>
-                        
-                        <div class="agent-item" tabindex="0">
-                            <div class="agent-icon">🧪</div>
-                            <div class="agent-content">
-                                <h4>@qa</h4>
-                                <div class="agent-role">QA Engineer • Testing Specialist</div>
-                                <div class="agent-description">Test automation, E2E testing, quality assurance processes, and bug hunting</div>
-                            </div>
-                        </div>
-                        
-                        <div class="agent-item" tabindex="0">
-                            <div class="agent-icon">🚀</div>
-                            <div class="agent-content">
-                                <h4>@devops</h4>
-                                <div class="agent-role">DevOps Engineer • Deployment Expert</div>
-                                <div class="agent-description">CI/CD pipelines, GitHub Actions, deployment automation, and infrastructure</div>
-                            </div>
-                        </div>
-                        
-                        <div class="agent-item" tabindex="0">
-                            <div class="agent-icon">👁️</div>
-                            <div class="agent-content">
-                                <h4>@reviewer</h4>
-                                <div class="agent-role">Code Reviewer • Quality Guardian</div>
-                                <div class="agent-description">Pull request reviews, code quality analysis, and architectural decisions</div>
-                            </div>
-                        </div>
-                        
-                        <div class="agent-item agent-gallifrey" tabindex="0">
-                            <div class="agent-icon">📈</div>
-                            <div class="agent-content">
-                                <h4>@seo</h4>
-                                <div class="agent-role">SEO & Digital Marketing Expert • Gallifrey Powered</div>
-                                <div class="agent-description">Technical SEO, content strategy, digital footprint analysis, and marketing optimization</div>
-                            </div>
-                        </div>
-                        
-                        <div class="agent-item agent-gallifrey" tabindex="0">
-                            <div class="agent-icon">🛡️</div>
-                            <div class="agent-content">
-                                <h4>@security</h4>
-                                <div class="agent-role">Security Expert • Protection Specialist • Gallifrey Powered</div>
-                                <div class="agent-description">OWASP compliance, threat modeling, security auditing, and vulnerability assessment</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Enterprise Audit Presets -->
-                <div class="audits-section animate-on-scroll">
-                    <h3><span class="underline-accent-gold">🦆 Express Service Menu</span><br>Rubber Duck Specialties</h3>
-                    <div class="section-underline"></div>
-                    <p style="font-size: var(--text-sm); color: var(--gray-600); margin-bottom: var(--space-8); line-height: var(--leading-relaxed);">
-                        <strong>Order from the conductor's menu!</strong> Request any service from your AI train crew using <strong>Gallifrey's proven methodologies</strong>. 
-                        Simply ask: <code style="background: var(--gray-100); padding: 2px 6px; border-radius: 4px;">"@security conduct a security audit"</code> or <code style="background: var(--gray-100); padding: 2px 6px; border-radius: 4px;">"conductor ask 'help me debug this'"</code>
-                    </p>
-                    
-                    <div class="audits-grid">
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">🛡️</div>
-                            <div class="audit-content">
-                                <h4>Security Audit</h4>
-                                <div class="audit-type">OWASP • SOC2 • ISO27001</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">📈</div>
-                            <div class="audit-content">
-                                <h4>SEO & Marketing</h4>
-                                <div class="audit-type">Technical SEO • Content Strategy</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">🏆</div>
-                            <div class="audit-content">
-                                <h4>Brand Reputation</h4>
-                                <div class="audit-type">Digital Footprint • Sentiment</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">⚖️</div>
-                            <div class="audit-content">
-                                <h4>Competitive Intelligence</h4>
-                                <div class="audit-type">Market Analysis • Gap Assessment</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">⚡</div>
-                            <div class="audit-content">
-                                <h4>Performance Audit</h4>
-                                <div class="audit-type">Core Web Vitals • Speed Optimization</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">♿</div>
-                            <div class="audit-content">
-                                <h4>Accessibility Compliance</h4>
-                                <div class="audit-type">WCAG 2.1 AA • Inclusive Design</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">📱</div>
-                            <div class="audit-content">
-                                <h4>UX/UI Design Review</h4>
-                                <div class="audit-type">Design Systems • Usability</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">📊</div>
-                            <div class="audit-content">
-                                <h4>Conversion Optimization</h4>
-                                <div class="audit-type">Funnel Analysis • A/B Testing</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">🏗️</div>
-                            <div class="audit-content">
-                                <h4>Technical Architecture</h4>
-                                <div class="audit-type">Code Quality • Scalability</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">💰</div>
-                            <div class="audit-content">
-                                <h4>Business Intelligence</h4>
-                                <div class="audit-type">ROI Analysis • KPI Tracking</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">🔒</div>
-                            <div class="audit-content">
-                                <h4>Privacy Compliance</h4>
-                                <div class="audit-type">GDPR • CCPA • PIPEDA</div>
-                            </div>
-                        </div>
-                        
-                        <div class="audit-item" tabindex="0">
-                            <div class="audit-icon">📝</div>
-                            <div class="audit-content">
-                                <h4>Content Strategy</h4>
-                                <div class="audit-type">Quality Assessment • Gap Analysis</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3 class="feature-title">Specialized Agents</h3>
+                <p class="feature-description">
+                    Architect, Coder, Researcher, QA, Security - each agent brings deep expertise to your project.
+                </p>
             </div>
             
-            <!-- Enhanced Terminal Recordings Section -->
-            <div class="terminal-recordings animate-on-scroll">
-                <div class="recordings-header">
-                    <h3>🎬 See the AI Express in Action</h3>
-                    <p>Live terminal recordings showing real Conductor CLI workflows</p>
-                </div>
-                
-                <!-- Recording Tabs -->
-                <div class="recording-tabs">
-                    <button class="tab-btn active" data-target="quick-start">⚡ Quick Start</button>
-                    <button class="tab-btn" data-target="rubber-duck">🦆 Rubber Duck</button>
-                    <button class="tab-btn" data-target="dashboard">📊 Dashboard</button>
-                    <button class="tab-btn" data-target="full-demo">🚂 Full Demo</button>
-                </div>
-                
-                <!-- Recording Content -->
-                <div class="recording-content">
-                    <!-- Quick Start Demo -->
-                    <div id="quick-start" class="recording-panel active">
-                        <div class="recording-info">
-                            <h4>🚂🦆 30-Second Quick Start</h4>
-                            <p>From zero to AI Express in 30 seconds - see the magic happen!</p>
-                        </div>
-                        <div class="terminal-window">
-                            <div class="terminal-header">
-                                <div class="terminal-dot dot-red"></div>
-                                <div class="terminal-dot dot-amber"></div>
-                                <div class="terminal-dot dot-green"></div>
-                                <div class="terminal-title">🚂 Quick Start Terminal</div>
-                            </div>
-                            <div class="recording-placeholder">
-                                <img src="recordings/output/quick-start.gif" 
-                                     alt="Quick Start Demo - Conductor CLI initialization and launch" 
-                                     loading="lazy"
-                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <div class="fallback-demo" style="display: none;">
-                                    <div class="terminal-content">
-                                        <div class="terminal-line"><span class="prompt">🚂$</span> conductor init --quick</div>
-                                        <div class="terminal-line"><span class="success">✅ Quick setup complete! 🎫</span></div>
-                                        <div class="terminal-line"><span class="prompt">🚂$</span> conductor launch</div>
-                                        <div class="terminal-line"><span class="success">🚂💨 AI Express launched! All aboard!</span></div>
-                                        <div class="terminal-line"><span class="prompt">🚂$</span> conductor ask "help me optimize this code"</div>
-                                        <div class="terminal-line"><span class="success">🦆 AI team analyzing... 🎯 Expert recommendations ready!</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Rubber Duck Demo -->
-                    <div id="rubber-duck" class="recording-panel">
-                        <div class="recording-info">
-                            <h4>🦆 Rubber Duck Programming Express</h4>
-                            <p>Watch AI experts respond to real development questions with team consensus!</p>
-                        </div>
-                        <div class="terminal-window">
-                            <div class="terminal-header">
-                                <div class="terminal-dot dot-red"></div>
-                                <div class="terminal-dot dot-amber"></div>
-                                <div class="terminal-dot dot-green"></div>
-                                <div class="terminal-title">🦆 Rubber Duck Session</div>
-                            </div>
-                            <div class="recording-placeholder">
-                                <img src="recordings/output/rubber-duck-demo.gif" 
-                                     alt="Rubber Duck Demo - AI team consultation and expert responses" 
-                                     loading="lazy"
-                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <div class="fallback-demo" style="display: none;">
-                                    <div class="terminal-content">
-                                        <div class="terminal-line"><span class="prompt">🦆$</span> conductor ask "I'm stuck on React performance"</div>
-                                        <div class="terminal-line"><span class="output">🎭 Consulting AI Team...</span></div>
-                                        <div class="terminal-line"><span class="success">🦆 @frontend: Use React.memo for optimization</span></div>
-                                        <div class="terminal-line"><span class="success">👁️ @reviewer: Consider useCallback patterns</span></div>
-                                        <div class="terminal-line"><span class="success">📊 Team Consensus (94% confidence): 4 recommendations</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Dashboard Demo -->
-                    <div id="dashboard" class="recording-panel">
-                        <div class="recording-info">
-                            <h4>📊 Live AI Team Orchestra</h4>
-                            <p>Real-time monitoring of your 8-agent development team with confidence scores!</p>
-                        </div>
-                        <div class="terminal-window">
-                            <div class="terminal-header">
-                                <div class="terminal-dot dot-red"></div>
-                                <div class="terminal-dot dot-amber"></div>
-                                <div class="terminal-dot dot-green"></div>
-                                <div class="terminal-title">📊 AI Team Dashboard</div>
-                            </div>
-                            <div class="recording-placeholder">
-                                <img src="recordings/output/dashboard-demo.gif" 
-                                     alt="Dashboard Demo - Live AI team monitoring and status" 
-                                     loading="lazy"
-                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <div class="fallback-demo" style="display: none;">
-                                    <div class="terminal-content">
-                                        <div class="terminal-line"><span class="output">🎭 AI DEVELOPMENT TEAM ORCHESTRA</span></div>
-                                        <div class="terminal-line"><span class="success">✅ 8/8 agents online • 🎯 Average confidence: 94%</span></div>
-                                        <div class="terminal-line"><span class="output">🚂 @pm: ██████████ 96% 🎫</span></div>
-                                        <div class="terminal-line"><span class="output">⚛️ @frontend: ██████████ 98% ⚛️</span></div>
-                                        <div class="terminal-line"><span class="output">🛡️ @security: ██████████ 99% 🛡️</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Full Demo -->
-                    <div id="full-demo" class="recording-panel">
-                        <div class="recording-info">
-                            <h4>🚂 Complete AI Development Journey</h4>
-                            <p>Full workflow from init to production deployment with AI team guidance!</p>
-                        </div>
-                        <div class="terminal-window">
-                            <div class="terminal-header">
-                                <div class="terminal-dot dot-red"></div>
-                                <div class="terminal-dot dot-amber"></div>
-                                <div class="terminal-dot dot-green"></div>
-                                <div class="terminal-title">🚂 Complete AI Express Journey</div>
-                            </div>
-                            <div class="recording-placeholder">
-                                <img src="recordings/output/conductor-demo.gif" 
-                                     alt="Full Demo - Complete Conductor CLI workflow from start to deployment" 
-                                     loading="lazy"
-                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <div class="fallback-demo" style="display: none;">
-                                    <div class="terminal-content">
-                                        <div class="terminal-line"><span class="prompt">🚂$</span> conductor init && conductor launch</div>
-                                        <div class="terminal-line"><span class="success">🚂💨 AI Express ready! All aboard!</span></div>
-                                        <div class="terminal-line"><span class="prompt">🚂$</span> conductor ask "analyze React performance"</div>
-                                        <div class="terminal-line"><span class="prompt">🚂$</span> conductor review --staged</div>
-                                        <div class="terminal-line"><span class="prompt">🚂$</span> conductor ship "feature" --security-scan</div>
-                                        <div class="terminal-line"><span class="success">🎉 All aboard for production! 🚂🦆</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Enhanced CTA Section -->
-    <section class="cta section">
-        <div class="container">
-            <div class="cta-content animate-on-scroll">
-                <h2 class="cta-title">🎫 Ready to Board the AI Express?</h2>
-                <p class="cta-subtitle">
-                    <strong>All aboard!</strong> Get your ticket to the AI Express development experience. 
-                    Your complete orchestra of 9 specialized agents plus rubber ducking that actually responds—powered by train conductor precision and proven methodologies.
+            <div class="feature-card">
+                <div class="feature-icon">💾</div>
+                <h3 class="feature-title">Persistent Memory</h3>
+                <p class="feature-description">
+                    SQLite-based memory system. Your AI team remembers context across sessions.
                 </p>
-                
-                <div class="cta-actions">
-                    <a href="https://github.com/rickithadi/multi-agent-workflow" class="btn btn-white" target="_blank" rel="noopener">
-                        🎫 Get Express Ticket
-                    </a>
-                    <a href="https://gallifrey.consulting" class="btn btn-outline" target="_blank" rel="noopener">
-                        🚂 Enterprise Station
-                    </a>
-                </div>
-                
-                <div class="cta-note text-mono">
-                    <span class="sr-only">Technical details: </span>
-                    🎭 Conductor Precision • 🚂 AI Express Technology • 🦆 Rubber Duck Expertise
-                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Parallel Execution</h3>
+                <p class="feature-description">
+                    Swarm intelligence enables parallel task execution. Get more done, faster.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Enterprise Security</h3>
+                <p class="feature-description">
+                    OWASP compliance, vulnerability scanning, and security-first architecture reviews.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title">Production Ready</h3>
+                <p class="feature-description">
+                    Comprehensive testing, performance monitoring, and deployment confidence metrics.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Footer -->
-    <footer class="footer">
-        <div class="container">
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
             <div class="footer-links">
-                <a href="https://github.com/rickithadi/multi-agent-workflow" target="_blank" rel="noopener">GitHub Repository</a>
-                <a href="https://gallifrey.consulting" target="_blank" rel="noopener">Gallifrey Consulting</a>
-                <a href="https://rickithadi.dev" target="_blank" rel="noopener">Hadi Rickit</a>
-                <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>
+                <a href="https://github.com/rickithadi/conductor-cli">GitHub</a>
+                <a href="https://github.com/rickithadi/conductor-cli#readme">Documentation</a>
+                <a href="https://github.com/rickithadi/conductor-cli/issues">Support</a>
+                <a href="https://gallifreyconsulting.com">Gallifrey Consulting</a>
             </div>
-            
-            <div class="footer-credit">
-                🎭 Built with conductor precision and obsessive attention to typography, accessibility, and performance in Melbourne 🚂<br><br>
-                <strong>🎼 Chief Conductor:</strong> <a href="https://rickithadi.dev" target="_blank" rel="noopener">Hadi Rickit</a> • 
-                <strong>🚂 Enterprise Railway:</strong> <a href="https://gallifrey.consulting" target="_blank" rel="noopener">Gallifrey Consulting</a><br>
-                <strong>🦆 AI Express Engine:</strong> <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code by Anthropic</a>
-            </div>
+            <p style="color: var(--text-muted); margin-top: 1rem;">
+                Built with Claude Flow's enterprise orchestration platform
+            </p>
         </div>
     </footer>
 
     <script>
-        // Enhanced smooth scrolling with accessibility
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const navHeight = document.querySelector('.nav').offsetHeight;
-                    const targetPosition = target.offsetTop - navHeight - 20;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Focus management for accessibility
-                    target.setAttribute('tabindex', '-1');
-                    target.focus();
-                }
-            });
-        });
-
-        // Enhanced navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        let lastScrollY = window.scrollY;
-
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-            
-            if (currentScrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        // Terminal animation script
+        const terminal = document.getElementById('terminal');
+        
+        const commands = [
+            {
+                cmd: 'conductor init',
+                output: `<div class="status-line">✓ Initializing AI development team...</div>
+<div class="info-line">→ Detecting project: Next.js 14 + TypeScript</div>
+<div class="info-line">→ Loading specialized agents...</div>
+<div class="status-line">✓ 6 agents ready</div>`
+            },
+            {
+                cmd: 'conductor ask "how do I add authentication?"',
+                output: `<div class="agent-response">
+    <div class="agent-name">@architect</div>
+    <div>I'll design a JWT-based auth system with refresh tokens and secure session management.</div>
+</div>
+<div class="agent-response">
+    <div class="agent-name">@security</div>
+    <div>Implementing OWASP best practices: bcrypt hashing, CSRF protection, rate limiting.</div>
+</div>
+<div class="agent-response">
+    <div class="agent-name">@coder</div>
+    <div>Creating /api/auth routes with proper middleware and error handling.</div>
+</div>`
+            },
+            {
+                cmd: 'conductor swarm --implement',
+                output: `<div class="info-line">🐝 Activating hive-mind coordination...</div>
+<div class="code-block">
+<span class="comment">// Creating auth middleware...</span>
+<span class="keyword">export const</span> <span class="function">authenticate</span> = async (req, res, next) => {
+  <span class="keyword">const</span> token = req.headers.authorization;
+  <span class="comment">// Verify JWT and attach user to request</span>
+  <span class="keyword">const</span> user = await verifyToken(token);
+  req.user = user;
+  next();
+}</div>
+<div class="status-line">✓ Authentication system implemented</div>
+<div class="status-line">✓ 47 tests passing • 94% coverage</div>`
             }
-            
-            lastScrollY = currentScrollY;
-        });
+        ];
 
-        // Enhanced Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        let cmdIndex = 0;
+        let charIndex = 0;
+        let isTyping = false;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('animate-on-scroll')) {
-                        entry.target.classList.add('visible');
-                    }
-                    if (entry.target.classList.contains('fade-in')) {
-                        entry.target.style.animationDelay = '0.2s';
-                        entry.target.classList.add('fade-in');
-                    }
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animatable elements
-        document.querySelectorAll('.animate-on-scroll, .fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Enhanced button interactions with loading states
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                if (this.href && this.href.includes('github.com')) {
-                    const originalText = this.innerHTML;
-                    this.innerHTML = '⏳ Opening GitHub...';
-                    this.style.opacity = '0.8';
-                    
-                    setTimeout(() => {
-                        this.innerHTML = originalText;
-                        this.style.opacity = '1';
-                    }, 2000);
-                }
-            });
-        });
-
-        // Enhanced keyboard navigation support
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Tab') {
-                document.body.classList.add('keyboard-navigation');
+        function typeCommand() {
+            if (cmdIndex >= commands.length) {
+                cmdIndex = 0;
+                terminal.innerHTML = '';
+                setTimeout(typeCommand, 1000);
+                return;
             }
-        });
 
-        document.addEventListener('mousedown', function() {
-            document.body.classList.remove('keyboard-navigation');
-        });
-
-        // Terminal animation trigger on scroll
-        const terminalDemo = document.querySelector('.terminal-demo');
-        let terminalAnimated = false;
-
-        const terminalObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !terminalAnimated) {
-                    const terminalLines = entry.target.querySelectorAll('.terminal-line');
-                    terminalLines.forEach((line, index) => {
-                        setTimeout(() => {
-                            line.style.opacity = '1';
-                        }, (index + 1) * 600);
-                    });
-                    terminalAnimated = true;
-                    terminalObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-
-        if (terminalDemo) {
-            terminalObserver.observe(terminalDemo);
+            const current = commands[cmdIndex];
+            
+            if (!isTyping) {
+                const line = document.createElement('div');
+                line.className = 'command-line';
+                line.innerHTML = `<span class="prompt">❯</span><span class="command"></span>`;
+                terminal.appendChild(line);
+                isTyping = true;
+                charIndex = 0;
+                
+                const cmdElement = line.querySelector('.command');
+                const cursor = document.createElement('span');
+                cursor.className = 'typing-cursor';
+                cmdElement.appendChild(cursor);
+                
+                const typeChar = () => {
+                    if (charIndex < current.cmd.length) {
+                        cursor.insertAdjacentText('beforebegin', current.cmd[charIndex]);
+                        charIndex++;
+                        setTimeout(typeChar, 50 + Math.random() * 50);
+                    } else {
+                        cursor.remove();
+                        setTimeout(() => showOutput(), 500);
+                    }
+                };
+                
+                setTimeout(typeChar, 500);
+            }
         }
 
-        // Terminal recordings tab functionality
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const recordingPanels = document.querySelectorAll('.recording-panel');
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const target = button.getAttribute('data-target');
-                
-                // Update active tab
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // Update active panel
-                recordingPanels.forEach(panel => panel.classList.remove('active'));
-                const targetPanel = document.getElementById(target);
-                if (targetPanel) {
-                    targetPanel.classList.add('active');
-                }
-            });
-        });
-
-        // Performance optimization: Preload critical resources
-        const preloadCriticalResources = () => {
-            const criticalLinks = document.querySelectorAll('a[href^="https://github.com"], a[href^="https://gallifrey.consulting"]');
-            criticalLinks.forEach(link => {
-                const preloadLink = document.createElement('link');
-                preloadLink.rel = 'preload';
-                preloadLink.href = link.href;
-                preloadLink.as = 'document';
-                document.head.appendChild(preloadLink);
-            });
-        };
-
-        // Initialize performance optimizations
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(preloadCriticalResources);
-        } else {
-            setTimeout(preloadCriticalResources, 2000);
+        function showOutput() {
+            const current = commands[cmdIndex];
+            const output = document.createElement('div');
+            output.className = 'output';
+            output.innerHTML = current.output;
+            output.style.animationDelay = '0.2s';
+            terminal.appendChild(output);
+            
+            cmdIndex++;
+            isTyping = false;
+            
+            setTimeout(typeCommand, 3000);
         }
 
-        // Analytics placeholder (respecting privacy)
-        const trackInteraction = (action, element) => {
-            // Privacy-friendly analytics would go here
-            console.log(`User interaction: ${action} on ${element}`);
-        };
+        // Start animation after page loads
+        window.addEventListener('load', () => {
+            setTimeout(typeCommand, 1000);
+        });
 
-        // Track important interactions
-        document.querySelectorAll('.btn-primary, .github-badge').forEach(element => {
-            element.addEventListener('click', () => {
-                trackInteraction('click', element.className);
-            });
+        // Smooth scroll for demo link
+        document.querySelector('a[href="#demo"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>

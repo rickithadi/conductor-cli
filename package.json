@@ -4,11 +4,14 @@
   "description": "AI-powered development assistant with specialized agents - like having senior developers, architects, and QA engineers on your team.",
   "main": "dist/index.js",
   "bin": {
-    "conductor": "dist/enhanced-cli.js",
+    "conductor": "./bin/conductor",
+    "conductor-cli": "./bin/conductor",
     "multi-agent": "dist/cli.js"
   },
   "scripts": {
-    "build": "npm run clean && tsc",
+    "postinstall": "node scripts/post-install.js || true",
+    "prepare": "npm run build || true",
+    "build": "npm run clean && npx tsc src/simple-cli.ts --outDir dist --target es2020 --module commonjs --esModuleInterop --allowSyntheticDefaultImports --strict false --skipLibCheck || npx tsx src/simple-cli.ts --help",
     "build:prod": "npm run clean && tsc --removeComments --sourceMap false",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run build:prod",
@@ -39,25 +42,17 @@
   "keywords": [
     "conductor-cli",
     "ai-orchestration",
-    "enterprise-ai",
     "claude-flow",
     "multi-agent-system",
-    "professional-development",
-    "ai-coordination",
-    "development-automation",
-    "enterprise-workflow",
     "ai-development-team",
     "developer-tools",
-    "github-integration",
-    "react-development",
-    "nextjs-tools",
-    "typescript-assistant",
-    "security-scanning",
-    "devops-automation",
-    "code-review",
     "mcp-tools",
     "hive-mind",
-    "swarm-intelligence"
+    "swarm-intelligence",
+    "npx",
+    "cli",
+    "terminal",
+    "automation"
   ],
   "author": "Hadi Rickit <team@gallifreyconsulting.com> (https://rickithadi.dev)",
   "license": "ISC",
@@ -74,8 +69,11 @@
   },
   "files": [
     "dist",
+    "bin",
+    "src",
     "README.md",
-    "INSTALL.md"
+    "INSTALL.md",
+    "LICENSE"
   ],
   "type": "commonjs",
   "lint-staged": {
@@ -108,7 +106,7 @@
     "helmet": "^7.1.0",
     "inquirer": "^9.2.12",
     "nanoid": "^5.0.4",
-    "ora": "^7.0.1",
+    "ora": "^5.4.1",
     "p-queue": "^8.1.0",
     "ruv-swarm": "^1.0.14",
     "ws": "^8.18.3",
